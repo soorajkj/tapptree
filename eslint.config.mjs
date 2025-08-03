@@ -10,7 +10,19 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...compat.config({
+    extends: ["next/core-web-vitals", "next/typescript"],
+    ignorePatterns: ["**/generated/"],
+    rules: {
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        {
+          prefer: "type-imports", // enforce `import type`
+          disallowTypeAnnotations: false,
+        },
+      ],
+    },
+  }),
 ];
 
 export default eslintConfig;

@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String  @id @default(cuid())
+  email     String
+  username  String
+  name      String?
+  password  String
+  avatarUrl String?
+  role      Role    @default(USER)
+
+  profile     Profile?
+  socialLinks SocialLink[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([email])
+  @@unique([username])
+  @@map("user")
+}
+
+enum Role {
+  USER
+  ADMIN
+  GUEST
+}
+
+model Profile {
+  id           String   @id @default(cuid())
+  userId       String   @unique
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  displayName  String
+  bio          String?
+  contactEmail String?
+  phone        String?
+  address      String?
+  website      String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([userId])
+}
+
+model SocialPlatform {
+  id          String       @id @default(cuid())
+  name        String       @unique
+  baseUrl     String
+  icon        String?
+  archive     Boolean      @default(false)
+  socialLinks SocialLink[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("socialPlatform")
+}
+
+model SocialLink {
+  id         String         @id @default(cuid())
+  platform   SocialPlatform @relation(fields: [platformId], references: [id], onDelete: Cascade)
+  platformId String
+  userId     String
+  user       User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  url        String
+  order      Int            @default(0)
+  archive    Boolean        @default(false)
+  createdAt  DateTime       @default(now())
+  updatedAt  DateTime       @updatedAt
+
+  @@unique([platformId, userId])
+  @@index([userId, order])
+  @@map("socialLink")
+}
