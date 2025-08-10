@@ -27,12 +27,11 @@ const profile = hono
               website: true,
             },
           },
-          socialLinks: {
+          handles: {
             where: { archive: false },
             orderBy: { order: "asc" },
             select: {
               id: true,
-              label: true,
               url: true,
               platform: {
                 select: {
@@ -45,8 +44,7 @@ const profile = hono
           },
         },
       });
-      if (!user) return c.json({ error: "User not found" }, 404);
-      return c.json({ user }, 200);
+      return c.json(user, 200);
     }
   );
 

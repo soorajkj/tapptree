@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, type ComponentProps, type ReactNode } from "react";
+import { type ComponentProps, type ReactNode } from "react";
 import {
   closestCenter,
   DndContext,
@@ -18,22 +18,21 @@ import {
   rectSortingStrategy,
 } from "@dnd-kit/sortable";
 import { restrictToParentElement } from "@dnd-kit/modifiers";
-import type { VariantProps } from "tailwind-variants";
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
 
 type SortableItemBase = { id: UniqueIdentifier };
 
 interface SortableListProps<T extends SortableItemBase>
   extends VariantProps<typeof sortableListStyles>,
-    Omit<ComponentProps<"ul">, "onChange"> {
+    ComponentProps<"ul"> {
   items: T[];
-  onChange(items: T[]): void;
+  onDragEventEnd(items: T[]): void;
   renderItem(item: T): ReactNode;
 }
 
 export default function SortableList<T extends SortableItemBase>({
   items,
-  onChange,
+  onDragEventEnd,
   renderItem,
   variant = "list",
   className,
@@ -46,12 +45,11 @@ export default function SortableList<T extends SortableItemBase>({
   );
 
   const handleDragEnd = (event: DragEndEvent) => {
-    console.log(event);
     const { active, over } = event;
     if (over && active.id !== over?.id) {
       const from = items.findIndex(({ id }) => id === active.id);
       const to = items.findIndex(({ id }) => id === over.id);
-      onChange(arrayMove(items, from, to));
+      onDragEventEnd(arrayMove(items, from, to));
     }
   };
 
@@ -62,21 +60,19 @@ export default function SortableList<T extends SortableItemBase>({
       modifiers={[restrictToParentElement]}
       onDragEnd={handleDragEnd}
     >
-      <SortableContext items={items} strategy={rectSortingStrategy}>
-        <ul
-          className={sortableListStyles({ variant, className })}
-          role="application"
-        >
-          {items.map((item) => (
-            <Fragment key={item.id}>{renderItem(item)}</Fragment>
-          ))}
-        </ul>
-      </SortableContext>
+      <ul
+        className={sortableListStyles({ variant, className })}
+        role="application"
+      >
+        <SortableContext items={items} strategy={rectSortingStrategy}>
+          {items.map((item) => renderItem(item))}
+        </SortableContext>
+      </ul>
     </DndContext>
   );
 }
 
 const sortableListStyles = tv({
-  base: ["grid w-full"],
+  base: ["grid w-full gap-2 overflow-hidden"],
   variants: { variant: { grid: "grid-cols-2", list: "grid-cols-1" } },
 });

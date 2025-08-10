@@ -12,7 +12,7 @@ import OtherLinks from "./OtherLinks";
 
 export default function PublicPage({ username }: { username: string }) {
   const { data, isPending, isError } = useQuery({
-    queryKey: ["username"],
+    queryKey: ["USERNAME", username],
     queryFn: async () => {
       const res = await rpc.api.profile[":username"].$get({
         param: { username },
@@ -20,16 +20,15 @@ export default function PublicPage({ username }: { username: string }) {
       if (!res.ok) throw new Error();
       return await res.json();
     },
-    retry: false,
   });
 
   if (isPending) return "Loading";
 
-  if (isError || !data.user) return notFound();
+  if (isError || !data) return notFound();
 
   return (
     <Fragment>
-      <PermaLink user={data.user} />
+      <PermaLink user={data} />
       <SocialsList />
       <ShareTools />
       <OtherLinks />

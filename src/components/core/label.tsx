@@ -20,5 +20,5 @@ export function Label(props: LabelProps) {
 }
 
 const labelStyle = tv({
-  base: ["select-none text-sm font-medium text-neutral-400"],
+  base: ["dark:text-carbon-300 text-sm font-medium select-none"],
 });

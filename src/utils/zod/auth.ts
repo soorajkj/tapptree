@@ -39,6 +39,3 @@ export const signInSchema = z.object({
     .trim()
     .nonempty("Password can't be empty"),
 });
-
-export type SignUpSchema = z.infer<typeof signUpSchema>;
-export type SignInSchema = z.infer<typeof signInSchema>;

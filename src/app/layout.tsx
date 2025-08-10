@@ -1,6 +1,8 @@
 import type { PropsWithChildren } from "react";
 import type { Metadata } from "next";
 import fonts from "@/lib/fonts";
+import ThemeProvider from "@/components/ThemeProvider";
+import ThemeToggler from "@/components/ThemeToggler";
 import QueryClientProvider from "@/components/QueryClientProvider";
 import "@/app/globals.css";
 
@@ -12,8 +14,16 @@ export const metadata: Metadata = {
 export default function Layout({ children }: PropsWithChildren) {
   return (
     <html lang="en" className={fonts} suppressHydrationWarning>
-      <body className="font-inter h-full min-h-screen w-full bg-neutral-900 text-base leading-normal font-normal text-neutral-400 not-italic antialiased">
-        <QueryClientProvider>{children}</QueryClientProvider>
+      <body className="font-inter text-carbon-700 dark:bg-carbon-900 dark:text-carbon-400 h-full min-h-screen w-full bg-white text-base leading-normal font-normal not-italic antialiased">
+        <ThemeProvider
+          enableSystem
+          disableTransitionOnChange
+          defaultTheme="system"
+          attribute="class"
+        >
+          <ThemeToggler />
+          <QueryClientProvider>{children}</QueryClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -9,17 +9,15 @@ datasource db {
 }
 
 model User {
-  id        String  @id @default(cuid())
+  id        String   @id @default(cuid())
   email     String
   username  String
   name      String?
   password  String
   avatarUrl String?
-  role      Role    @default(USER)
-
-  profile     Profile?
-  socialLinks SocialLink[]
-
+  role      Role     @default(USER)
+  profile   Profile?
+  handles   Handle[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -48,35 +46,35 @@ model Profile {
   updatedAt    DateTime @updatedAt
 
   @@index([userId])
+  @@map("profile")
 }
 
-model SocialPlatform {
-  id          String       @id @default(cuid())
-  name        String       @unique
-  baseUrl     String
-  icon        String?
-  archive     Boolean      @default(false)
-  socialLinks SocialLink[]
-
+model Platform {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  baseUrl   String
+  icon      String?
+  archive   Boolean  @default(false)
+  handles   Handle[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@map("socialPlatform")
+  @@map("platform")
 }
 
-model SocialLink {
-  id         String         @id @default(cuid())
-  platform   SocialPlatform @relation(fields: [platformId], references: [id], onDelete: Cascade)
+model Handle {
+  id         String   @id @default(cuid())
+  platform   Platform @relation(fields: [platformId], references: [id], onDelete: Cascade)
   platformId String
   userId     String
-  user       User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   url        String
-  order      Int            @default(0)
-  archive    Boolean        @default(false)
-  createdAt  DateTime       @default(now())
-  updatedAt  DateTime       @updatedAt
+  order      Int      @default(0)
+  archive    Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 
   @@unique([platformId, userId])
   @@index([userId, order])
-  @@map("socialLink")
+  @@map("handle")
 }

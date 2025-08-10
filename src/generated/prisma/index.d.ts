@@ -24,15 +24,15 @@ export type User = $Result.DefaultSelection<Prisma.$UserPayload>
  */
 export type Profile = $Result.DefaultSelection<Prisma.$ProfilePayload>
 /**
- * Model SocialPlatform
+ * Model Platform
  * 
  */
-export type SocialPlatform = $Result.DefaultSelection<Prisma.$SocialPlatformPayload>
+export type Platform = $Result.DefaultSelection<Prisma.$PlatformPayload>
 /**
- * Model SocialLink
+ * Model Handle
  * 
  */
-export type SocialLink = $Result.DefaultSelection<Prisma.$SocialLinkPayload>
+export type Handle = $Result.DefaultSelection<Prisma.$HandlePayload>
 
 /**
  * Enums
@@ -198,24 +198,24 @@ export class PrismaClient<
   get profile(): Prisma.ProfileDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.socialPlatform`: Exposes CRUD operations for the **SocialPlatform** model.
+   * `prisma.platform`: Exposes CRUD operations for the **Platform** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more SocialPlatforms
-    * const socialPlatforms = await prisma.socialPlatform.findMany()
+    * // Fetch zero or more Platforms
+    * const platforms = await prisma.platform.findMany()
     * ```
     */
-  get socialPlatform(): Prisma.SocialPlatformDelegate<ExtArgs, ClientOptions>;
+  get platform(): Prisma.PlatformDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.socialLink`: Exposes CRUD operations for the **SocialLink** model.
+   * `prisma.handle`: Exposes CRUD operations for the **Handle** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more SocialLinks
-    * const socialLinks = await prisma.socialLink.findMany()
+    * // Fetch zero or more Handles
+    * const handles = await prisma.handle.findMany()
     * ```
     */
-  get socialLink(): Prisma.SocialLinkDelegate<ExtArgs, ClientOptions>;
+  get handle(): Prisma.HandleDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -658,8 +658,8 @@ export namespace Prisma {
   export const ModelName: {
     User: 'User',
     Profile: 'Profile',
-    SocialPlatform: 'SocialPlatform',
-    SocialLink: 'SocialLink'
+    Platform: 'Platform',
+    Handle: 'Handle'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -678,7 +678,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "profile" | "socialPlatform" | "socialLink"
+      modelProps: "user" | "profile" | "platform" | "handle"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -830,151 +830,151 @@ export namespace Prisma {
           }
         }
       }
-      SocialPlatform: {
-        payload: Prisma.$SocialPlatformPayload<ExtArgs>
-        fields: Prisma.SocialPlatformFieldRefs
+      Platform: {
+        payload: Prisma.$PlatformPayload<ExtArgs>
+        fields: Prisma.PlatformFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.SocialPlatformFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialPlatformPayload> | null
+            args: Prisma.PlatformFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlatformPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.SocialPlatformFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialPlatformPayload>
+            args: Prisma.PlatformFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlatformPayload>
           }
           findFirst: {
-            args: Prisma.SocialPlatformFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialPlatformPayload> | null
+            args: Prisma.PlatformFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlatformPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.SocialPlatformFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialPlatformPayload>
+            args: Prisma.PlatformFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlatformPayload>
           }
           findMany: {
-            args: Prisma.SocialPlatformFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialPlatformPayload>[]
+            args: Prisma.PlatformFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlatformPayload>[]
           }
           create: {
-            args: Prisma.SocialPlatformCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialPlatformPayload>
+            args: Prisma.PlatformCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlatformPayload>
           }
           createMany: {
-            args: Prisma.SocialPlatformCreateManyArgs<ExtArgs>
+            args: Prisma.PlatformCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.SocialPlatformCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialPlatformPayload>[]
+            args: Prisma.PlatformCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlatformPayload>[]
           }
           delete: {
-            args: Prisma.SocialPlatformDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialPlatformPayload>
+            args: Prisma.PlatformDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlatformPayload>
           }
           update: {
-            args: Prisma.SocialPlatformUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialPlatformPayload>
+            args: Prisma.PlatformUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlatformPayload>
           }
           deleteMany: {
-            args: Prisma.SocialPlatformDeleteManyArgs<ExtArgs>
+            args: Prisma.PlatformDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.SocialPlatformUpdateManyArgs<ExtArgs>
+            args: Prisma.PlatformUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.SocialPlatformUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialPlatformPayload>[]
+            args: Prisma.PlatformUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlatformPayload>[]
           }
           upsert: {
-            args: Prisma.SocialPlatformUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialPlatformPayload>
+            args: Prisma.PlatformUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlatformPayload>
           }
           aggregate: {
-            args: Prisma.SocialPlatformAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateSocialPlatform>
+            args: Prisma.PlatformAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePlatform>
           }
           groupBy: {
-            args: Prisma.SocialPlatformGroupByArgs<ExtArgs>
-            result: $Utils.Optional<SocialPlatformGroupByOutputType>[]
+            args: Prisma.PlatformGroupByArgs<ExtArgs>
+            result: $Utils.Optional<PlatformGroupByOutputType>[]
           }
           count: {
-            args: Prisma.SocialPlatformCountArgs<ExtArgs>
-            result: $Utils.Optional<SocialPlatformCountAggregateOutputType> | number
+            args: Prisma.PlatformCountArgs<ExtArgs>
+            result: $Utils.Optional<PlatformCountAggregateOutputType> | number
           }
         }
       }
-      SocialLink: {
-        payload: Prisma.$SocialLinkPayload<ExtArgs>
-        fields: Prisma.SocialLinkFieldRefs
+      Handle: {
+        payload: Prisma.$HandlePayload<ExtArgs>
+        fields: Prisma.HandleFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.SocialLinkFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialLinkPayload> | null
+            args: Prisma.HandleFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandlePayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.SocialLinkFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialLinkPayload>
+            args: Prisma.HandleFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandlePayload>
           }
           findFirst: {
-            args: Prisma.SocialLinkFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialLinkPayload> | null
+            args: Prisma.HandleFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandlePayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.SocialLinkFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialLinkPayload>
+            args: Prisma.HandleFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandlePayload>
           }
           findMany: {
-            args: Prisma.SocialLinkFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialLinkPayload>[]
+            args: Prisma.HandleFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandlePayload>[]
           }
           create: {
-            args: Prisma.SocialLinkCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialLinkPayload>
+            args: Prisma.HandleCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandlePayload>
           }
           createMany: {
-            args: Prisma.SocialLinkCreateManyArgs<ExtArgs>
+            args: Prisma.HandleCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.SocialLinkCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialLinkPayload>[]
+            args: Prisma.HandleCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandlePayload>[]
           }
           delete: {
-            args: Prisma.SocialLinkDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialLinkPayload>
+            args: Prisma.HandleDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandlePayload>
           }
           update: {
-            args: Prisma.SocialLinkUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialLinkPayload>
+            args: Prisma.HandleUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandlePayload>
           }
           deleteMany: {
-            args: Prisma.SocialLinkDeleteManyArgs<ExtArgs>
+            args: Prisma.HandleDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.SocialLinkUpdateManyArgs<ExtArgs>
+            args: Prisma.HandleUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.SocialLinkUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialLinkPayload>[]
+            args: Prisma.HandleUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandlePayload>[]
           }
           upsert: {
-            args: Prisma.SocialLinkUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$SocialLinkPayload>
+            args: Prisma.HandleUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HandlePayload>
           }
           aggregate: {
-            args: Prisma.SocialLinkAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateSocialLink>
+            args: Prisma.HandleAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateHandle>
           }
           groupBy: {
-            args: Prisma.SocialLinkGroupByArgs<ExtArgs>
-            result: $Utils.Optional<SocialLinkGroupByOutputType>[]
+            args: Prisma.HandleGroupByArgs<ExtArgs>
+            result: $Utils.Optional<HandleGroupByOutputType>[]
           }
           count: {
-            args: Prisma.SocialLinkCountArgs<ExtArgs>
-            result: $Utils.Optional<SocialLinkCountAggregateOutputType> | number
+            args: Prisma.HandleCountArgs<ExtArgs>
+            result: $Utils.Optional<HandleCountAggregateOutputType> | number
           }
         }
       }
@@ -1072,8 +1072,8 @@ export namespace Prisma {
   export type GlobalOmitConfig = {
     user?: UserOmit
     profile?: ProfileOmit
-    socialPlatform?: SocialPlatformOmit
-    socialLink?: SocialLinkOmit
+    platform?: PlatformOmit
+    handle?: HandleOmit
   }
 
   /* Types for Logging */
@@ -1173,11 +1173,11 @@ export namespace Prisma {
    */
 
   export type UserCountOutputType = {
-    socialLinks: number
+    handles: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    socialLinks?: boolean | UserCountOutputTypeCountSocialLinksArgs
+    handles?: boolean | UserCountOutputTypeCountHandlesArgs
   }
 
   // Custom InputTypes
@@ -1194,39 +1194,39 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountSocialLinksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: SocialLinkWhereInput
+  export type UserCountOutputTypeCountHandlesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HandleWhereInput
   }
 
 
   /**
-   * Count Type SocialPlatformCountOutputType
+   * Count Type PlatformCountOutputType
    */
 
-  export type SocialPlatformCountOutputType = {
-    socialLinks: number
+  export type PlatformCountOutputType = {
+    handles: number
   }
 
-  export type SocialPlatformCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    socialLinks?: boolean | SocialPlatformCountOutputTypeCountSocialLinksArgs
+  export type PlatformCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    handles?: boolean | PlatformCountOutputTypeCountHandlesArgs
   }
 
   // Custom InputTypes
   /**
-   * SocialPlatformCountOutputType without action
+   * PlatformCountOutputType without action
    */
-  export type SocialPlatformCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PlatformCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialPlatformCountOutputType
+     * Select specific fields to fetch from the PlatformCountOutputType
      */
-    select?: SocialPlatformCountOutputTypeSelect<ExtArgs> | null
+    select?: PlatformCountOutputTypeSelect<ExtArgs> | null
   }
 
   /**
-   * SocialPlatformCountOutputType without action
+   * PlatformCountOutputType without action
    */
-  export type SocialPlatformCountOutputTypeCountSocialLinksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: SocialLinkWhereInput
+  export type PlatformCountOutputTypeCountHandlesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HandleWhereInput
   }
 
 
@@ -1431,7 +1431,7 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     profile?: boolean | User$profileArgs<ExtArgs>
-    socialLinks?: boolean | User$socialLinksArgs<ExtArgs>
+    handles?: boolean | User$handlesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -1474,7 +1474,7 @@ export namespace Prisma {
   export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "username" | "name" | "password" | "avatarUrl" | "role" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     profile?: boolean | User$profileArgs<ExtArgs>
-    socialLinks?: boolean | User$socialLinksArgs<ExtArgs>
+    handles?: boolean | User$handlesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1484,7 +1484,7 @@ export namespace Prisma {
     name: "User"
     objects: {
       profile: Prisma.$ProfilePayload<ExtArgs> | null
-      socialLinks: Prisma.$SocialLinkPayload<ExtArgs>[]
+      handles: Prisma.$HandlePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -1891,7 +1891,7 @@ export namespace Prisma {
   export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     profile<T extends User$profileArgs<ExtArgs> = {}>(args?: Subset<T, User$profileArgs<ExtArgs>>): Prisma__ProfileClient<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    socialLinks<T extends User$socialLinksArgs<ExtArgs> = {}>(args?: Subset<T, User$socialLinksArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SocialLinkPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    handles<T extends User$handlesArgs<ExtArgs> = {}>(args?: Subset<T, User$handlesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HandlePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2337,27 +2337,27 @@ export namespace Prisma {
   }
 
   /**
-   * User.socialLinks
+   * User.handles
    */
-  export type User$socialLinksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$handlesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialLink
+     * Select specific fields to fetch from the Handle
      */
-    select?: SocialLinkSelect<ExtArgs> | null
+    select?: HandleSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialLink
+     * Omit specific fields from the Handle
      */
-    omit?: SocialLinkOmit<ExtArgs> | null
+    omit?: HandleOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialLinkInclude<ExtArgs> | null
-    where?: SocialLinkWhereInput
-    orderBy?: SocialLinkOrderByWithRelationInput | SocialLinkOrderByWithRelationInput[]
-    cursor?: SocialLinkWhereUniqueInput
+    include?: HandleInclude<ExtArgs> | null
+    where?: HandleWhereInput
+    orderBy?: HandleOrderByWithRelationInput | HandleOrderByWithRelationInput[]
+    cursor?: HandleWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: SocialLinkScalarFieldEnum | SocialLinkScalarFieldEnum[]
+    distinct?: HandleScalarFieldEnum | HandleScalarFieldEnum[]
   }
 
   /**
@@ -3503,16 +3503,16 @@ export namespace Prisma {
 
 
   /**
-   * Model SocialPlatform
+   * Model Platform
    */
 
-  export type AggregateSocialPlatform = {
-    _count: SocialPlatformCountAggregateOutputType | null
-    _min: SocialPlatformMinAggregateOutputType | null
-    _max: SocialPlatformMaxAggregateOutputType | null
+  export type AggregatePlatform = {
+    _count: PlatformCountAggregateOutputType | null
+    _min: PlatformMinAggregateOutputType | null
+    _max: PlatformMaxAggregateOutputType | null
   }
 
-  export type SocialPlatformMinAggregateOutputType = {
+  export type PlatformMinAggregateOutputType = {
     id: string | null
     name: string | null
     baseUrl: string | null
@@ -3522,7 +3522,7 @@ export namespace Prisma {
     updatedAt: Date | null
   }
 
-  export type SocialPlatformMaxAggregateOutputType = {
+  export type PlatformMaxAggregateOutputType = {
     id: string | null
     name: string | null
     baseUrl: string | null
@@ -3532,7 +3532,7 @@ export namespace Prisma {
     updatedAt: Date | null
   }
 
-  export type SocialPlatformCountAggregateOutputType = {
+  export type PlatformCountAggregateOutputType = {
     id: number
     name: number
     baseUrl: number
@@ -3544,7 +3544,7 @@ export namespace Prisma {
   }
 
 
-  export type SocialPlatformMinAggregateInputType = {
+  export type PlatformMinAggregateInputType = {
     id?: true
     name?: true
     baseUrl?: true
@@ -3554,7 +3554,7 @@ export namespace Prisma {
     updatedAt?: true
   }
 
-  export type SocialPlatformMaxAggregateInputType = {
+  export type PlatformMaxAggregateInputType = {
     id?: true
     name?: true
     baseUrl?: true
@@ -3564,7 +3564,7 @@ export namespace Prisma {
     updatedAt?: true
   }
 
-  export type SocialPlatformCountAggregateInputType = {
+  export type PlatformCountAggregateInputType = {
     id?: true
     name?: true
     baseUrl?: true
@@ -3575,79 +3575,79 @@ export namespace Prisma {
     _all?: true
   }
 
-  export type SocialPlatformAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PlatformAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which SocialPlatform to aggregate.
+     * Filter which Platform to aggregate.
      */
-    where?: SocialPlatformWhereInput
+    where?: PlatformWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of SocialPlatforms to fetch.
+     * Determine the order of Platforms to fetch.
      */
-    orderBy?: SocialPlatformOrderByWithRelationInput | SocialPlatformOrderByWithRelationInput[]
+    orderBy?: PlatformOrderByWithRelationInput | PlatformOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: SocialPlatformWhereUniqueInput
+    cursor?: PlatformWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` SocialPlatforms from the position of the cursor.
+     * Take `±n` Platforms from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` SocialPlatforms.
+     * Skip the first `n` Platforms.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned SocialPlatforms
+     * Count returned Platforms
     **/
-    _count?: true | SocialPlatformCountAggregateInputType
+    _count?: true | PlatformCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: SocialPlatformMinAggregateInputType
+    _min?: PlatformMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: SocialPlatformMaxAggregateInputType
+    _max?: PlatformMaxAggregateInputType
   }
 
-  export type GetSocialPlatformAggregateType<T extends SocialPlatformAggregateArgs> = {
-        [P in keyof T & keyof AggregateSocialPlatform]: P extends '_count' | 'count'
+  export type GetPlatformAggregateType<T extends PlatformAggregateArgs> = {
+        [P in keyof T & keyof AggregatePlatform]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateSocialPlatform[P]>
-      : GetScalarType<T[P], AggregateSocialPlatform[P]>
+        : GetScalarType<T[P], AggregatePlatform[P]>
+      : GetScalarType<T[P], AggregatePlatform[P]>
   }
 
 
 
 
-  export type SocialPlatformGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: SocialPlatformWhereInput
-    orderBy?: SocialPlatformOrderByWithAggregationInput | SocialPlatformOrderByWithAggregationInput[]
-    by: SocialPlatformScalarFieldEnum[] | SocialPlatformScalarFieldEnum
-    having?: SocialPlatformScalarWhereWithAggregatesInput
+  export type PlatformGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PlatformWhereInput
+    orderBy?: PlatformOrderByWithAggregationInput | PlatformOrderByWithAggregationInput[]
+    by: PlatformScalarFieldEnum[] | PlatformScalarFieldEnum
+    having?: PlatformScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: SocialPlatformCountAggregateInputType | true
-    _min?: SocialPlatformMinAggregateInputType
-    _max?: SocialPlatformMaxAggregateInputType
+    _count?: PlatformCountAggregateInputType | true
+    _min?: PlatformMinAggregateInputType
+    _max?: PlatformMaxAggregateInputType
   }
 
-  export type SocialPlatformGroupByOutputType = {
+  export type PlatformGroupByOutputType = {
     id: string
     name: string
     baseUrl: string
@@ -3655,26 +3655,26 @@ export namespace Prisma {
     archive: boolean
     createdAt: Date
     updatedAt: Date
-    _count: SocialPlatformCountAggregateOutputType | null
-    _min: SocialPlatformMinAggregateOutputType | null
-    _max: SocialPlatformMaxAggregateOutputType | null
+    _count: PlatformCountAggregateOutputType | null
+    _min: PlatformMinAggregateOutputType | null
+    _max: PlatformMaxAggregateOutputType | null
   }
 
-  type GetSocialPlatformGroupByPayload<T extends SocialPlatformGroupByArgs> = Prisma.PrismaPromise<
+  type GetPlatformGroupByPayload<T extends PlatformGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<SocialPlatformGroupByOutputType, T['by']> &
+      PickEnumerable<PlatformGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof SocialPlatformGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof PlatformGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], SocialPlatformGroupByOutputType[P]>
-            : GetScalarType<T[P], SocialPlatformGroupByOutputType[P]>
+              : GetScalarType<T[P], PlatformGroupByOutputType[P]>
+            : GetScalarType<T[P], PlatformGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type SocialPlatformSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type PlatformSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     baseUrl?: boolean
@@ -3682,11 +3682,11 @@ export namespace Prisma {
     archive?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    socialLinks?: boolean | SocialPlatform$socialLinksArgs<ExtArgs>
-    _count?: boolean | SocialPlatformCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["socialPlatform"]>
+    handles?: boolean | Platform$handlesArgs<ExtArgs>
+    _count?: boolean | PlatformCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["platform"]>
 
-  export type SocialPlatformSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type PlatformSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     baseUrl?: boolean
@@ -3694,9 +3694,9 @@ export namespace Prisma {
     archive?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-  }, ExtArgs["result"]["socialPlatform"]>
+  }, ExtArgs["result"]["platform"]>
 
-  export type SocialPlatformSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type PlatformSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     baseUrl?: boolean
@@ -3704,9 +3704,9 @@ export namespace Prisma {
     archive?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-  }, ExtArgs["result"]["socialPlatform"]>
+  }, ExtArgs["result"]["platform"]>
 
-  export type SocialPlatformSelectScalar = {
+  export type PlatformSelectScalar = {
     id?: boolean
     name?: boolean
     baseUrl?: boolean
@@ -3716,18 +3716,18 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type SocialPlatformOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "baseUrl" | "icon" | "archive" | "createdAt" | "updatedAt", ExtArgs["result"]["socialPlatform"]>
-  export type SocialPlatformInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    socialLinks?: boolean | SocialPlatform$socialLinksArgs<ExtArgs>
-    _count?: boolean | SocialPlatformCountOutputTypeDefaultArgs<ExtArgs>
+  export type PlatformOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "baseUrl" | "icon" | "archive" | "createdAt" | "updatedAt", ExtArgs["result"]["platform"]>
+  export type PlatformInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    handles?: boolean | Platform$handlesArgs<ExtArgs>
+    _count?: boolean | PlatformCountOutputTypeDefaultArgs<ExtArgs>
   }
-  export type SocialPlatformIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-  export type SocialPlatformIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type PlatformIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type PlatformIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
-  export type $SocialPlatformPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "SocialPlatform"
+  export type $PlatformPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Platform"
     objects: {
-      socialLinks: Prisma.$SocialLinkPayload<ExtArgs>[]
+      handles: Prisma.$HandlePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -3737,136 +3737,136 @@ export namespace Prisma {
       archive: boolean
       createdAt: Date
       updatedAt: Date
-    }, ExtArgs["result"]["socialPlatform"]>
+    }, ExtArgs["result"]["platform"]>
     composites: {}
   }
 
-  type SocialPlatformGetPayload<S extends boolean | null | undefined | SocialPlatformDefaultArgs> = $Result.GetResult<Prisma.$SocialPlatformPayload, S>
+  type PlatformGetPayload<S extends boolean | null | undefined | PlatformDefaultArgs> = $Result.GetResult<Prisma.$PlatformPayload, S>
 
-  type SocialPlatformCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<SocialPlatformFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: SocialPlatformCountAggregateInputType | true
+  type PlatformCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<PlatformFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: PlatformCountAggregateInputType | true
     }
 
-  export interface SocialPlatformDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['SocialPlatform'], meta: { name: 'SocialPlatform' } }
+  export interface PlatformDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Platform'], meta: { name: 'Platform' } }
     /**
-     * Find zero or one SocialPlatform that matches the filter.
-     * @param {SocialPlatformFindUniqueArgs} args - Arguments to find a SocialPlatform
+     * Find zero or one Platform that matches the filter.
+     * @param {PlatformFindUniqueArgs} args - Arguments to find a Platform
      * @example
-     * // Get one SocialPlatform
-     * const socialPlatform = await prisma.socialPlatform.findUnique({
+     * // Get one Platform
+     * const platform = await prisma.platform.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends SocialPlatformFindUniqueArgs>(args: SelectSubset<T, SocialPlatformFindUniqueArgs<ExtArgs>>): Prisma__SocialPlatformClient<$Result.GetResult<Prisma.$SocialPlatformPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends PlatformFindUniqueArgs>(args: SelectSubset<T, PlatformFindUniqueArgs<ExtArgs>>): Prisma__PlatformClient<$Result.GetResult<Prisma.$PlatformPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one SocialPlatform that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Platform that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {SocialPlatformFindUniqueOrThrowArgs} args - Arguments to find a SocialPlatform
+     * @param {PlatformFindUniqueOrThrowArgs} args - Arguments to find a Platform
      * @example
-     * // Get one SocialPlatform
-     * const socialPlatform = await prisma.socialPlatform.findUniqueOrThrow({
+     * // Get one Platform
+     * const platform = await prisma.platform.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends SocialPlatformFindUniqueOrThrowArgs>(args: SelectSubset<T, SocialPlatformFindUniqueOrThrowArgs<ExtArgs>>): Prisma__SocialPlatformClient<$Result.GetResult<Prisma.$SocialPlatformPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends PlatformFindUniqueOrThrowArgs>(args: SelectSubset<T, PlatformFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PlatformClient<$Result.GetResult<Prisma.$PlatformPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first SocialPlatform that matches the filter.
+     * Find the first Platform that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SocialPlatformFindFirstArgs} args - Arguments to find a SocialPlatform
+     * @param {PlatformFindFirstArgs} args - Arguments to find a Platform
      * @example
-     * // Get one SocialPlatform
-     * const socialPlatform = await prisma.socialPlatform.findFirst({
+     * // Get one Platform
+     * const platform = await prisma.platform.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends SocialPlatformFindFirstArgs>(args?: SelectSubset<T, SocialPlatformFindFirstArgs<ExtArgs>>): Prisma__SocialPlatformClient<$Result.GetResult<Prisma.$SocialPlatformPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends PlatformFindFirstArgs>(args?: SelectSubset<T, PlatformFindFirstArgs<ExtArgs>>): Prisma__PlatformClient<$Result.GetResult<Prisma.$PlatformPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first SocialPlatform that matches the filter or
+     * Find the first Platform that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SocialPlatformFindFirstOrThrowArgs} args - Arguments to find a SocialPlatform
+     * @param {PlatformFindFirstOrThrowArgs} args - Arguments to find a Platform
      * @example
-     * // Get one SocialPlatform
-     * const socialPlatform = await prisma.socialPlatform.findFirstOrThrow({
+     * // Get one Platform
+     * const platform = await prisma.platform.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends SocialPlatformFindFirstOrThrowArgs>(args?: SelectSubset<T, SocialPlatformFindFirstOrThrowArgs<ExtArgs>>): Prisma__SocialPlatformClient<$Result.GetResult<Prisma.$SocialPlatformPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends PlatformFindFirstOrThrowArgs>(args?: SelectSubset<T, PlatformFindFirstOrThrowArgs<ExtArgs>>): Prisma__PlatformClient<$Result.GetResult<Prisma.$PlatformPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more SocialPlatforms that matches the filter.
+     * Find zero or more Platforms that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SocialPlatformFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {PlatformFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all SocialPlatforms
-     * const socialPlatforms = await prisma.socialPlatform.findMany()
+     * // Get all Platforms
+     * const platforms = await prisma.platform.findMany()
      * 
-     * // Get first 10 SocialPlatforms
-     * const socialPlatforms = await prisma.socialPlatform.findMany({ take: 10 })
+     * // Get first 10 Platforms
+     * const platforms = await prisma.platform.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const socialPlatformWithIdOnly = await prisma.socialPlatform.findMany({ select: { id: true } })
+     * const platformWithIdOnly = await prisma.platform.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends SocialPlatformFindManyArgs>(args?: SelectSubset<T, SocialPlatformFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SocialPlatformPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends PlatformFindManyArgs>(args?: SelectSubset<T, PlatformFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PlatformPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a SocialPlatform.
-     * @param {SocialPlatformCreateArgs} args - Arguments to create a SocialPlatform.
+     * Create a Platform.
+     * @param {PlatformCreateArgs} args - Arguments to create a Platform.
      * @example
-     * // Create one SocialPlatform
-     * const SocialPlatform = await prisma.socialPlatform.create({
+     * // Create one Platform
+     * const Platform = await prisma.platform.create({
      *   data: {
-     *     // ... data to create a SocialPlatform
+     *     // ... data to create a Platform
      *   }
      * })
      * 
      */
-    create<T extends SocialPlatformCreateArgs>(args: SelectSubset<T, SocialPlatformCreateArgs<ExtArgs>>): Prisma__SocialPlatformClient<$Result.GetResult<Prisma.$SocialPlatformPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends PlatformCreateArgs>(args: SelectSubset<T, PlatformCreateArgs<ExtArgs>>): Prisma__PlatformClient<$Result.GetResult<Prisma.$PlatformPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many SocialPlatforms.
-     * @param {SocialPlatformCreateManyArgs} args - Arguments to create many SocialPlatforms.
+     * Create many Platforms.
+     * @param {PlatformCreateManyArgs} args - Arguments to create many Platforms.
      * @example
-     * // Create many SocialPlatforms
-     * const socialPlatform = await prisma.socialPlatform.createMany({
+     * // Create many Platforms
+     * const platform = await prisma.platform.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends SocialPlatformCreateManyArgs>(args?: SelectSubset<T, SocialPlatformCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends PlatformCreateManyArgs>(args?: SelectSubset<T, PlatformCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many SocialPlatforms and returns the data saved in the database.
-     * @param {SocialPlatformCreateManyAndReturnArgs} args - Arguments to create many SocialPlatforms.
+     * Create many Platforms and returns the data saved in the database.
+     * @param {PlatformCreateManyAndReturnArgs} args - Arguments to create many Platforms.
      * @example
-     * // Create many SocialPlatforms
-     * const socialPlatform = await prisma.socialPlatform.createManyAndReturn({
+     * // Create many Platforms
+     * const platform = await prisma.platform.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many SocialPlatforms and only return the `id`
-     * const socialPlatformWithIdOnly = await prisma.socialPlatform.createManyAndReturn({
+     * // Create many Platforms and only return the `id`
+     * const platformWithIdOnly = await prisma.platform.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -3876,28 +3876,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends SocialPlatformCreateManyAndReturnArgs>(args?: SelectSubset<T, SocialPlatformCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SocialPlatformPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends PlatformCreateManyAndReturnArgs>(args?: SelectSubset<T, PlatformCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PlatformPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a SocialPlatform.
-     * @param {SocialPlatformDeleteArgs} args - Arguments to delete one SocialPlatform.
+     * Delete a Platform.
+     * @param {PlatformDeleteArgs} args - Arguments to delete one Platform.
      * @example
-     * // Delete one SocialPlatform
-     * const SocialPlatform = await prisma.socialPlatform.delete({
+     * // Delete one Platform
+     * const Platform = await prisma.platform.delete({
      *   where: {
-     *     // ... filter to delete one SocialPlatform
+     *     // ... filter to delete one Platform
      *   }
      * })
      * 
      */
-    delete<T extends SocialPlatformDeleteArgs>(args: SelectSubset<T, SocialPlatformDeleteArgs<ExtArgs>>): Prisma__SocialPlatformClient<$Result.GetResult<Prisma.$SocialPlatformPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends PlatformDeleteArgs>(args: SelectSubset<T, PlatformDeleteArgs<ExtArgs>>): Prisma__PlatformClient<$Result.GetResult<Prisma.$PlatformPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one SocialPlatform.
-     * @param {SocialPlatformUpdateArgs} args - Arguments to update one SocialPlatform.
+     * Update one Platform.
+     * @param {PlatformUpdateArgs} args - Arguments to update one Platform.
      * @example
-     * // Update one SocialPlatform
-     * const socialPlatform = await prisma.socialPlatform.update({
+     * // Update one Platform
+     * const platform = await prisma.platform.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3907,30 +3907,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends SocialPlatformUpdateArgs>(args: SelectSubset<T, SocialPlatformUpdateArgs<ExtArgs>>): Prisma__SocialPlatformClient<$Result.GetResult<Prisma.$SocialPlatformPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends PlatformUpdateArgs>(args: SelectSubset<T, PlatformUpdateArgs<ExtArgs>>): Prisma__PlatformClient<$Result.GetResult<Prisma.$PlatformPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more SocialPlatforms.
-     * @param {SocialPlatformDeleteManyArgs} args - Arguments to filter SocialPlatforms to delete.
+     * Delete zero or more Platforms.
+     * @param {PlatformDeleteManyArgs} args - Arguments to filter Platforms to delete.
      * @example
-     * // Delete a few SocialPlatforms
-     * const { count } = await prisma.socialPlatform.deleteMany({
+     * // Delete a few Platforms
+     * const { count } = await prisma.platform.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends SocialPlatformDeleteManyArgs>(args?: SelectSubset<T, SocialPlatformDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends PlatformDeleteManyArgs>(args?: SelectSubset<T, PlatformDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more SocialPlatforms.
+     * Update zero or more Platforms.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SocialPlatformUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {PlatformUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many SocialPlatforms
-     * const socialPlatform = await prisma.socialPlatform.updateMany({
+     * // Update many Platforms
+     * const platform = await prisma.platform.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3940,14 +3940,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends SocialPlatformUpdateManyArgs>(args: SelectSubset<T, SocialPlatformUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends PlatformUpdateManyArgs>(args: SelectSubset<T, PlatformUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more SocialPlatforms and returns the data updated in the database.
-     * @param {SocialPlatformUpdateManyAndReturnArgs} args - Arguments to update many SocialPlatforms.
+     * Update zero or more Platforms and returns the data updated in the database.
+     * @param {PlatformUpdateManyAndReturnArgs} args - Arguments to update many Platforms.
      * @example
-     * // Update many SocialPlatforms
-     * const socialPlatform = await prisma.socialPlatform.updateManyAndReturn({
+     * // Update many Platforms
+     * const platform = await prisma.platform.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3956,8 +3956,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more SocialPlatforms and only return the `id`
-     * const socialPlatformWithIdOnly = await prisma.socialPlatform.updateManyAndReturn({
+     * // Update zero or more Platforms and only return the `id`
+     * const platformWithIdOnly = await prisma.platform.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -3970,56 +3970,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends SocialPlatformUpdateManyAndReturnArgs>(args: SelectSubset<T, SocialPlatformUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SocialPlatformPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends PlatformUpdateManyAndReturnArgs>(args: SelectSubset<T, PlatformUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PlatformPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one SocialPlatform.
-     * @param {SocialPlatformUpsertArgs} args - Arguments to update or create a SocialPlatform.
+     * Create or update one Platform.
+     * @param {PlatformUpsertArgs} args - Arguments to update or create a Platform.
      * @example
-     * // Update or create a SocialPlatform
-     * const socialPlatform = await prisma.socialPlatform.upsert({
+     * // Update or create a Platform
+     * const platform = await prisma.platform.upsert({
      *   create: {
-     *     // ... data to create a SocialPlatform
+     *     // ... data to create a Platform
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the SocialPlatform we want to update
+     *     // ... the filter for the Platform we want to update
      *   }
      * })
      */
-    upsert<T extends SocialPlatformUpsertArgs>(args: SelectSubset<T, SocialPlatformUpsertArgs<ExtArgs>>): Prisma__SocialPlatformClient<$Result.GetResult<Prisma.$SocialPlatformPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends PlatformUpsertArgs>(args: SelectSubset<T, PlatformUpsertArgs<ExtArgs>>): Prisma__PlatformClient<$Result.GetResult<Prisma.$PlatformPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of SocialPlatforms.
+     * Count the number of Platforms.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SocialPlatformCountArgs} args - Arguments to filter SocialPlatforms to count.
+     * @param {PlatformCountArgs} args - Arguments to filter Platforms to count.
      * @example
-     * // Count the number of SocialPlatforms
-     * const count = await prisma.socialPlatform.count({
+     * // Count the number of Platforms
+     * const count = await prisma.platform.count({
      *   where: {
-     *     // ... the filter for the SocialPlatforms we want to count
+     *     // ... the filter for the Platforms we want to count
      *   }
      * })
     **/
-    count<T extends SocialPlatformCountArgs>(
-      args?: Subset<T, SocialPlatformCountArgs>,
+    count<T extends PlatformCountArgs>(
+      args?: Subset<T, PlatformCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], SocialPlatformCountAggregateOutputType>
+          : GetScalarType<T['select'], PlatformCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a SocialPlatform.
+     * Allows you to perform aggregations operations on a Platform.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SocialPlatformAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {PlatformAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -4039,13 +4039,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends SocialPlatformAggregateArgs>(args: Subset<T, SocialPlatformAggregateArgs>): Prisma.PrismaPromise<GetSocialPlatformAggregateType<T>>
+    aggregate<T extends PlatformAggregateArgs>(args: Subset<T, PlatformAggregateArgs>): Prisma.PrismaPromise<GetPlatformAggregateType<T>>
 
     /**
-     * Group by SocialPlatform.
+     * Group by Platform.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SocialPlatformGroupByArgs} args - Group by arguments.
+     * @param {PlatformGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -4060,14 +4060,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends SocialPlatformGroupByArgs,
+      T extends PlatformGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: SocialPlatformGroupByArgs['orderBy'] }
-        : { orderBy?: SocialPlatformGroupByArgs['orderBy'] },
+        ? { orderBy: PlatformGroupByArgs['orderBy'] }
+        : { orderBy?: PlatformGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -4116,22 +4116,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, SocialPlatformGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSocialPlatformGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, PlatformGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlatformGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the SocialPlatform model
+   * Fields of the Platform model
    */
-  readonly fields: SocialPlatformFieldRefs;
+  readonly fields: PlatformFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for SocialPlatform.
+   * The delegate class that acts as a "Promise-like" for Platform.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__SocialPlatformClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__PlatformClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    socialLinks<T extends SocialPlatform$socialLinksArgs<ExtArgs> = {}>(args?: Subset<T, SocialPlatform$socialLinksArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SocialLinkPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    handles<T extends Platform$handlesArgs<ExtArgs> = {}>(args?: Subset<T, Platform$handlesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HandlePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4158,467 +4158,467 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the SocialPlatform model
+   * Fields of the Platform model
    */
-  interface SocialPlatformFieldRefs {
-    readonly id: FieldRef<"SocialPlatform", 'String'>
-    readonly name: FieldRef<"SocialPlatform", 'String'>
-    readonly baseUrl: FieldRef<"SocialPlatform", 'String'>
-    readonly icon: FieldRef<"SocialPlatform", 'String'>
-    readonly archive: FieldRef<"SocialPlatform", 'Boolean'>
-    readonly createdAt: FieldRef<"SocialPlatform", 'DateTime'>
-    readonly updatedAt: FieldRef<"SocialPlatform", 'DateTime'>
+  interface PlatformFieldRefs {
+    readonly id: FieldRef<"Platform", 'String'>
+    readonly name: FieldRef<"Platform", 'String'>
+    readonly baseUrl: FieldRef<"Platform", 'String'>
+    readonly icon: FieldRef<"Platform", 'String'>
+    readonly archive: FieldRef<"Platform", 'Boolean'>
+    readonly createdAt: FieldRef<"Platform", 'DateTime'>
+    readonly updatedAt: FieldRef<"Platform", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * SocialPlatform findUnique
+   * Platform findUnique
    */
-  export type SocialPlatformFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PlatformFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialPlatform
+     * Select specific fields to fetch from the Platform
      */
-    select?: SocialPlatformSelect<ExtArgs> | null
+    select?: PlatformSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialPlatform
+     * Omit specific fields from the Platform
      */
-    omit?: SocialPlatformOmit<ExtArgs> | null
+    omit?: PlatformOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialPlatformInclude<ExtArgs> | null
+    include?: PlatformInclude<ExtArgs> | null
     /**
-     * Filter, which SocialPlatform to fetch.
+     * Filter, which Platform to fetch.
      */
-    where: SocialPlatformWhereUniqueInput
+    where: PlatformWhereUniqueInput
   }
 
   /**
-   * SocialPlatform findUniqueOrThrow
+   * Platform findUniqueOrThrow
    */
-  export type SocialPlatformFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PlatformFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialPlatform
+     * Select specific fields to fetch from the Platform
      */
-    select?: SocialPlatformSelect<ExtArgs> | null
+    select?: PlatformSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialPlatform
+     * Omit specific fields from the Platform
      */
-    omit?: SocialPlatformOmit<ExtArgs> | null
+    omit?: PlatformOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialPlatformInclude<ExtArgs> | null
+    include?: PlatformInclude<ExtArgs> | null
     /**
-     * Filter, which SocialPlatform to fetch.
+     * Filter, which Platform to fetch.
      */
-    where: SocialPlatformWhereUniqueInput
+    where: PlatformWhereUniqueInput
   }
 
   /**
-   * SocialPlatform findFirst
+   * Platform findFirst
    */
-  export type SocialPlatformFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PlatformFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialPlatform
+     * Select specific fields to fetch from the Platform
      */
-    select?: SocialPlatformSelect<ExtArgs> | null
+    select?: PlatformSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialPlatform
+     * Omit specific fields from the Platform
      */
-    omit?: SocialPlatformOmit<ExtArgs> | null
+    omit?: PlatformOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialPlatformInclude<ExtArgs> | null
+    include?: PlatformInclude<ExtArgs> | null
     /**
-     * Filter, which SocialPlatform to fetch.
+     * Filter, which Platform to fetch.
      */
-    where?: SocialPlatformWhereInput
+    where?: PlatformWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of SocialPlatforms to fetch.
+     * Determine the order of Platforms to fetch.
      */
-    orderBy?: SocialPlatformOrderByWithRelationInput | SocialPlatformOrderByWithRelationInput[]
+    orderBy?: PlatformOrderByWithRelationInput | PlatformOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for SocialPlatforms.
+     * Sets the position for searching for Platforms.
      */
-    cursor?: SocialPlatformWhereUniqueInput
+    cursor?: PlatformWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` SocialPlatforms from the position of the cursor.
+     * Take `±n` Platforms from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` SocialPlatforms.
+     * Skip the first `n` Platforms.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of SocialPlatforms.
+     * Filter by unique combinations of Platforms.
      */
-    distinct?: SocialPlatformScalarFieldEnum | SocialPlatformScalarFieldEnum[]
+    distinct?: PlatformScalarFieldEnum | PlatformScalarFieldEnum[]
   }
 
   /**
-   * SocialPlatform findFirstOrThrow
+   * Platform findFirstOrThrow
    */
-  export type SocialPlatformFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PlatformFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialPlatform
+     * Select specific fields to fetch from the Platform
      */
-    select?: SocialPlatformSelect<ExtArgs> | null
+    select?: PlatformSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialPlatform
+     * Omit specific fields from the Platform
      */
-    omit?: SocialPlatformOmit<ExtArgs> | null
+    omit?: PlatformOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialPlatformInclude<ExtArgs> | null
+    include?: PlatformInclude<ExtArgs> | null
     /**
-     * Filter, which SocialPlatform to fetch.
+     * Filter, which Platform to fetch.
      */
-    where?: SocialPlatformWhereInput
+    where?: PlatformWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of SocialPlatforms to fetch.
+     * Determine the order of Platforms to fetch.
      */
-    orderBy?: SocialPlatformOrderByWithRelationInput | SocialPlatformOrderByWithRelationInput[]
+    orderBy?: PlatformOrderByWithRelationInput | PlatformOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for SocialPlatforms.
+     * Sets the position for searching for Platforms.
      */
-    cursor?: SocialPlatformWhereUniqueInput
+    cursor?: PlatformWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` SocialPlatforms from the position of the cursor.
+     * Take `±n` Platforms from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` SocialPlatforms.
+     * Skip the first `n` Platforms.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of SocialPlatforms.
+     * Filter by unique combinations of Platforms.
      */
-    distinct?: SocialPlatformScalarFieldEnum | SocialPlatformScalarFieldEnum[]
+    distinct?: PlatformScalarFieldEnum | PlatformScalarFieldEnum[]
   }
 
   /**
-   * SocialPlatform findMany
+   * Platform findMany
    */
-  export type SocialPlatformFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PlatformFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialPlatform
+     * Select specific fields to fetch from the Platform
      */
-    select?: SocialPlatformSelect<ExtArgs> | null
+    select?: PlatformSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialPlatform
+     * Omit specific fields from the Platform
      */
-    omit?: SocialPlatformOmit<ExtArgs> | null
+    omit?: PlatformOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialPlatformInclude<ExtArgs> | null
+    include?: PlatformInclude<ExtArgs> | null
     /**
-     * Filter, which SocialPlatforms to fetch.
+     * Filter, which Platforms to fetch.
      */
-    where?: SocialPlatformWhereInput
+    where?: PlatformWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of SocialPlatforms to fetch.
+     * Determine the order of Platforms to fetch.
      */
-    orderBy?: SocialPlatformOrderByWithRelationInput | SocialPlatformOrderByWithRelationInput[]
+    orderBy?: PlatformOrderByWithRelationInput | PlatformOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing SocialPlatforms.
+     * Sets the position for listing Platforms.
      */
-    cursor?: SocialPlatformWhereUniqueInput
+    cursor?: PlatformWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` SocialPlatforms from the position of the cursor.
+     * Take `±n` Platforms from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` SocialPlatforms.
+     * Skip the first `n` Platforms.
      */
     skip?: number
-    distinct?: SocialPlatformScalarFieldEnum | SocialPlatformScalarFieldEnum[]
+    distinct?: PlatformScalarFieldEnum | PlatformScalarFieldEnum[]
   }
 
   /**
-   * SocialPlatform create
+   * Platform create
    */
-  export type SocialPlatformCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PlatformCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialPlatform
+     * Select specific fields to fetch from the Platform
      */
-    select?: SocialPlatformSelect<ExtArgs> | null
+    select?: PlatformSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialPlatform
+     * Omit specific fields from the Platform
      */
-    omit?: SocialPlatformOmit<ExtArgs> | null
+    omit?: PlatformOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialPlatformInclude<ExtArgs> | null
+    include?: PlatformInclude<ExtArgs> | null
     /**
-     * The data needed to create a SocialPlatform.
+     * The data needed to create a Platform.
      */
-    data: XOR<SocialPlatformCreateInput, SocialPlatformUncheckedCreateInput>
+    data: XOR<PlatformCreateInput, PlatformUncheckedCreateInput>
   }
 
   /**
-   * SocialPlatform createMany
+   * Platform createMany
    */
-  export type SocialPlatformCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PlatformCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many SocialPlatforms.
+     * The data used to create many Platforms.
      */
-    data: SocialPlatformCreateManyInput | SocialPlatformCreateManyInput[]
+    data: PlatformCreateManyInput | PlatformCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * SocialPlatform createManyAndReturn
+   * Platform createManyAndReturn
    */
-  export type SocialPlatformCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PlatformCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialPlatform
+     * Select specific fields to fetch from the Platform
      */
-    select?: SocialPlatformSelectCreateManyAndReturn<ExtArgs> | null
+    select?: PlatformSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialPlatform
+     * Omit specific fields from the Platform
      */
-    omit?: SocialPlatformOmit<ExtArgs> | null
+    omit?: PlatformOmit<ExtArgs> | null
     /**
-     * The data used to create many SocialPlatforms.
+     * The data used to create many Platforms.
      */
-    data: SocialPlatformCreateManyInput | SocialPlatformCreateManyInput[]
+    data: PlatformCreateManyInput | PlatformCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * SocialPlatform update
+   * Platform update
    */
-  export type SocialPlatformUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PlatformUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialPlatform
+     * Select specific fields to fetch from the Platform
      */
-    select?: SocialPlatformSelect<ExtArgs> | null
+    select?: PlatformSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialPlatform
+     * Omit specific fields from the Platform
      */
-    omit?: SocialPlatformOmit<ExtArgs> | null
+    omit?: PlatformOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialPlatformInclude<ExtArgs> | null
+    include?: PlatformInclude<ExtArgs> | null
     /**
-     * The data needed to update a SocialPlatform.
+     * The data needed to update a Platform.
      */
-    data: XOR<SocialPlatformUpdateInput, SocialPlatformUncheckedUpdateInput>
+    data: XOR<PlatformUpdateInput, PlatformUncheckedUpdateInput>
     /**
-     * Choose, which SocialPlatform to update.
+     * Choose, which Platform to update.
      */
-    where: SocialPlatformWhereUniqueInput
+    where: PlatformWhereUniqueInput
   }
 
   /**
-   * SocialPlatform updateMany
+   * Platform updateMany
    */
-  export type SocialPlatformUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PlatformUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update SocialPlatforms.
+     * The data used to update Platforms.
      */
-    data: XOR<SocialPlatformUpdateManyMutationInput, SocialPlatformUncheckedUpdateManyInput>
+    data: XOR<PlatformUpdateManyMutationInput, PlatformUncheckedUpdateManyInput>
     /**
-     * Filter which SocialPlatforms to update
+     * Filter which Platforms to update
      */
-    where?: SocialPlatformWhereInput
+    where?: PlatformWhereInput
     /**
-     * Limit how many SocialPlatforms to update.
+     * Limit how many Platforms to update.
      */
     limit?: number
   }
 
   /**
-   * SocialPlatform updateManyAndReturn
+   * Platform updateManyAndReturn
    */
-  export type SocialPlatformUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PlatformUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialPlatform
+     * Select specific fields to fetch from the Platform
      */
-    select?: SocialPlatformSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: PlatformSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialPlatform
+     * Omit specific fields from the Platform
      */
-    omit?: SocialPlatformOmit<ExtArgs> | null
+    omit?: PlatformOmit<ExtArgs> | null
     /**
-     * The data used to update SocialPlatforms.
+     * The data used to update Platforms.
      */
-    data: XOR<SocialPlatformUpdateManyMutationInput, SocialPlatformUncheckedUpdateManyInput>
+    data: XOR<PlatformUpdateManyMutationInput, PlatformUncheckedUpdateManyInput>
     /**
-     * Filter which SocialPlatforms to update
+     * Filter which Platforms to update
      */
-    where?: SocialPlatformWhereInput
+    where?: PlatformWhereInput
     /**
-     * Limit how many SocialPlatforms to update.
+     * Limit how many Platforms to update.
      */
     limit?: number
   }
 
   /**
-   * SocialPlatform upsert
+   * Platform upsert
    */
-  export type SocialPlatformUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PlatformUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialPlatform
+     * Select specific fields to fetch from the Platform
      */
-    select?: SocialPlatformSelect<ExtArgs> | null
+    select?: PlatformSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialPlatform
+     * Omit specific fields from the Platform
      */
-    omit?: SocialPlatformOmit<ExtArgs> | null
+    omit?: PlatformOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialPlatformInclude<ExtArgs> | null
+    include?: PlatformInclude<ExtArgs> | null
     /**
-     * The filter to search for the SocialPlatform to update in case it exists.
+     * The filter to search for the Platform to update in case it exists.
      */
-    where: SocialPlatformWhereUniqueInput
+    where: PlatformWhereUniqueInput
     /**
-     * In case the SocialPlatform found by the `where` argument doesn't exist, create a new SocialPlatform with this data.
+     * In case the Platform found by the `where` argument doesn't exist, create a new Platform with this data.
      */
-    create: XOR<SocialPlatformCreateInput, SocialPlatformUncheckedCreateInput>
+    create: XOR<PlatformCreateInput, PlatformUncheckedCreateInput>
     /**
-     * In case the SocialPlatform was found with the provided `where` argument, update it with this data.
+     * In case the Platform was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<SocialPlatformUpdateInput, SocialPlatformUncheckedUpdateInput>
+    update: XOR<PlatformUpdateInput, PlatformUncheckedUpdateInput>
   }
 
   /**
-   * SocialPlatform delete
+   * Platform delete
    */
-  export type SocialPlatformDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PlatformDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialPlatform
+     * Select specific fields to fetch from the Platform
      */
-    select?: SocialPlatformSelect<ExtArgs> | null
+    select?: PlatformSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialPlatform
+     * Omit specific fields from the Platform
      */
-    omit?: SocialPlatformOmit<ExtArgs> | null
+    omit?: PlatformOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialPlatformInclude<ExtArgs> | null
+    include?: PlatformInclude<ExtArgs> | null
     /**
-     * Filter which SocialPlatform to delete.
+     * Filter which Platform to delete.
      */
-    where: SocialPlatformWhereUniqueInput
+    where: PlatformWhereUniqueInput
   }
 
   /**
-   * SocialPlatform deleteMany
+   * Platform deleteMany
    */
-  export type SocialPlatformDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PlatformDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which SocialPlatforms to delete
+     * Filter which Platforms to delete
      */
-    where?: SocialPlatformWhereInput
+    where?: PlatformWhereInput
     /**
-     * Limit how many SocialPlatforms to delete.
+     * Limit how many Platforms to delete.
      */
     limit?: number
   }
 
   /**
-   * SocialPlatform.socialLinks
+   * Platform.handles
    */
-  export type SocialPlatform$socialLinksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Platform$handlesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialLink
+     * Select specific fields to fetch from the Handle
      */
-    select?: SocialLinkSelect<ExtArgs> | null
+    select?: HandleSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialLink
+     * Omit specific fields from the Handle
      */
-    omit?: SocialLinkOmit<ExtArgs> | null
+    omit?: HandleOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialLinkInclude<ExtArgs> | null
-    where?: SocialLinkWhereInput
-    orderBy?: SocialLinkOrderByWithRelationInput | SocialLinkOrderByWithRelationInput[]
-    cursor?: SocialLinkWhereUniqueInput
+    include?: HandleInclude<ExtArgs> | null
+    where?: HandleWhereInput
+    orderBy?: HandleOrderByWithRelationInput | HandleOrderByWithRelationInput[]
+    cursor?: HandleWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: SocialLinkScalarFieldEnum | SocialLinkScalarFieldEnum[]
+    distinct?: HandleScalarFieldEnum | HandleScalarFieldEnum[]
   }
 
   /**
-   * SocialPlatform without action
+   * Platform without action
    */
-  export type SocialPlatformDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PlatformDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialPlatform
+     * Select specific fields to fetch from the Platform
      */
-    select?: SocialPlatformSelect<ExtArgs> | null
+    select?: PlatformSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialPlatform
+     * Omit specific fields from the Platform
      */
-    omit?: SocialPlatformOmit<ExtArgs> | null
+    omit?: PlatformOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialPlatformInclude<ExtArgs> | null
+    include?: PlatformInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model SocialLink
+   * Model Handle
    */
 
-  export type AggregateSocialLink = {
-    _count: SocialLinkCountAggregateOutputType | null
-    _avg: SocialLinkAvgAggregateOutputType | null
-    _sum: SocialLinkSumAggregateOutputType | null
-    _min: SocialLinkMinAggregateOutputType | null
-    _max: SocialLinkMaxAggregateOutputType | null
+  export type AggregateHandle = {
+    _count: HandleCountAggregateOutputType | null
+    _avg: HandleAvgAggregateOutputType | null
+    _sum: HandleSumAggregateOutputType | null
+    _min: HandleMinAggregateOutputType | null
+    _max: HandleMaxAggregateOutputType | null
   }
 
-  export type SocialLinkAvgAggregateOutputType = {
+  export type HandleAvgAggregateOutputType = {
     order: number | null
   }
 
-  export type SocialLinkSumAggregateOutputType = {
+  export type HandleSumAggregateOutputType = {
     order: number | null
   }
 
-  export type SocialLinkMinAggregateOutputType = {
+  export type HandleMinAggregateOutputType = {
     id: string | null
     platformId: string | null
     userId: string | null
@@ -4629,7 +4629,7 @@ export namespace Prisma {
     updatedAt: Date | null
   }
 
-  export type SocialLinkMaxAggregateOutputType = {
+  export type HandleMaxAggregateOutputType = {
     id: string | null
     platformId: string | null
     userId: string | null
@@ -4640,7 +4640,7 @@ export namespace Prisma {
     updatedAt: Date | null
   }
 
-  export type SocialLinkCountAggregateOutputType = {
+  export type HandleCountAggregateOutputType = {
     id: number
     platformId: number
     userId: number
@@ -4653,15 +4653,15 @@ export namespace Prisma {
   }
 
 
-  export type SocialLinkAvgAggregateInputType = {
+  export type HandleAvgAggregateInputType = {
     order?: true
   }
 
-  export type SocialLinkSumAggregateInputType = {
+  export type HandleSumAggregateInputType = {
     order?: true
   }
 
-  export type SocialLinkMinAggregateInputType = {
+  export type HandleMinAggregateInputType = {
     id?: true
     platformId?: true
     userId?: true
@@ -4672,7 +4672,7 @@ export namespace Prisma {
     updatedAt?: true
   }
 
-  export type SocialLinkMaxAggregateInputType = {
+  export type HandleMaxAggregateInputType = {
     id?: true
     platformId?: true
     userId?: true
@@ -4683,7 +4683,7 @@ export namespace Prisma {
     updatedAt?: true
   }
 
-  export type SocialLinkCountAggregateInputType = {
+  export type HandleCountAggregateInputType = {
     id?: true
     platformId?: true
     userId?: true
@@ -4695,93 +4695,93 @@ export namespace Prisma {
     _all?: true
   }
 
-  export type SocialLinkAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type HandleAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which SocialLink to aggregate.
+     * Filter which Handle to aggregate.
      */
-    where?: SocialLinkWhereInput
+    where?: HandleWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of SocialLinks to fetch.
+     * Determine the order of Handles to fetch.
      */
-    orderBy?: SocialLinkOrderByWithRelationInput | SocialLinkOrderByWithRelationInput[]
+    orderBy?: HandleOrderByWithRelationInput | HandleOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: SocialLinkWhereUniqueInput
+    cursor?: HandleWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` SocialLinks from the position of the cursor.
+     * Take `±n` Handles from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` SocialLinks.
+     * Skip the first `n` Handles.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned SocialLinks
+     * Count returned Handles
     **/
-    _count?: true | SocialLinkCountAggregateInputType
+    _count?: true | HandleCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: SocialLinkAvgAggregateInputType
+    _avg?: HandleAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: SocialLinkSumAggregateInputType
+    _sum?: HandleSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: SocialLinkMinAggregateInputType
+    _min?: HandleMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: SocialLinkMaxAggregateInputType
+    _max?: HandleMaxAggregateInputType
   }
 
-  export type GetSocialLinkAggregateType<T extends SocialLinkAggregateArgs> = {
-        [P in keyof T & keyof AggregateSocialLink]: P extends '_count' | 'count'
+  export type GetHandleAggregateType<T extends HandleAggregateArgs> = {
+        [P in keyof T & keyof AggregateHandle]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateSocialLink[P]>
-      : GetScalarType<T[P], AggregateSocialLink[P]>
+        : GetScalarType<T[P], AggregateHandle[P]>
+      : GetScalarType<T[P], AggregateHandle[P]>
   }
 
 
 
 
-  export type SocialLinkGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: SocialLinkWhereInput
-    orderBy?: SocialLinkOrderByWithAggregationInput | SocialLinkOrderByWithAggregationInput[]
-    by: SocialLinkScalarFieldEnum[] | SocialLinkScalarFieldEnum
-    having?: SocialLinkScalarWhereWithAggregatesInput
+  export type HandleGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HandleWhereInput
+    orderBy?: HandleOrderByWithAggregationInput | HandleOrderByWithAggregationInput[]
+    by: HandleScalarFieldEnum[] | HandleScalarFieldEnum
+    having?: HandleScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: SocialLinkCountAggregateInputType | true
-    _avg?: SocialLinkAvgAggregateInputType
-    _sum?: SocialLinkSumAggregateInputType
-    _min?: SocialLinkMinAggregateInputType
-    _max?: SocialLinkMaxAggregateInputType
+    _count?: HandleCountAggregateInputType | true
+    _avg?: HandleAvgAggregateInputType
+    _sum?: HandleSumAggregateInputType
+    _min?: HandleMinAggregateInputType
+    _max?: HandleMaxAggregateInputType
   }
 
-  export type SocialLinkGroupByOutputType = {
+  export type HandleGroupByOutputType = {
     id: string
     platformId: string
     userId: string
@@ -4790,28 +4790,28 @@ export namespace Prisma {
     archive: boolean
     createdAt: Date
     updatedAt: Date
-    _count: SocialLinkCountAggregateOutputType | null
-    _avg: SocialLinkAvgAggregateOutputType | null
-    _sum: SocialLinkSumAggregateOutputType | null
-    _min: SocialLinkMinAggregateOutputType | null
-    _max: SocialLinkMaxAggregateOutputType | null
+    _count: HandleCountAggregateOutputType | null
+    _avg: HandleAvgAggregateOutputType | null
+    _sum: HandleSumAggregateOutputType | null
+    _min: HandleMinAggregateOutputType | null
+    _max: HandleMaxAggregateOutputType | null
   }
 
-  type GetSocialLinkGroupByPayload<T extends SocialLinkGroupByArgs> = Prisma.PrismaPromise<
+  type GetHandleGroupByPayload<T extends HandleGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<SocialLinkGroupByOutputType, T['by']> &
+      PickEnumerable<HandleGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof SocialLinkGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof HandleGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], SocialLinkGroupByOutputType[P]>
-            : GetScalarType<T[P], SocialLinkGroupByOutputType[P]>
+              : GetScalarType<T[P], HandleGroupByOutputType[P]>
+            : GetScalarType<T[P], HandleGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type SocialLinkSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type HandleSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     platformId?: boolean
     userId?: boolean
@@ -4820,11 +4820,11 @@ export namespace Prisma {
     archive?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    platform?: boolean | SocialPlatformDefaultArgs<ExtArgs>
+    platform?: boolean | PlatformDefaultArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["socialLink"]>
+  }, ExtArgs["result"]["handle"]>
 
-  export type SocialLinkSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type HandleSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     platformId?: boolean
     userId?: boolean
@@ -4833,11 +4833,11 @@ export namespace Prisma {
     archive?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    platform?: boolean | SocialPlatformDefaultArgs<ExtArgs>
+    platform?: boolean | PlatformDefaultArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["socialLink"]>
+  }, ExtArgs["result"]["handle"]>
 
-  export type SocialLinkSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type HandleSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     platformId?: boolean
     userId?: boolean
@@ -4846,11 +4846,11 @@ export namespace Prisma {
     archive?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    platform?: boolean | SocialPlatformDefaultArgs<ExtArgs>
+    platform?: boolean | PlatformDefaultArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["socialLink"]>
+  }, ExtArgs["result"]["handle"]>
 
-  export type SocialLinkSelectScalar = {
+  export type HandleSelectScalar = {
     id?: boolean
     platformId?: boolean
     userId?: boolean
@@ -4861,24 +4861,24 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type SocialLinkOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "platformId" | "userId" | "url" | "order" | "archive" | "createdAt" | "updatedAt", ExtArgs["result"]["socialLink"]>
-  export type SocialLinkInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    platform?: boolean | SocialPlatformDefaultArgs<ExtArgs>
+  export type HandleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "platformId" | "userId" | "url" | "order" | "archive" | "createdAt" | "updatedAt", ExtArgs["result"]["handle"]>
+  export type HandleInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    platform?: boolean | PlatformDefaultArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
   }
-  export type SocialLinkIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    platform?: boolean | SocialPlatformDefaultArgs<ExtArgs>
+  export type HandleIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    platform?: boolean | PlatformDefaultArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
   }
-  export type SocialLinkIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    platform?: boolean | SocialPlatformDefaultArgs<ExtArgs>
+  export type HandleIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    platform?: boolean | PlatformDefaultArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
   }
 
-  export type $SocialLinkPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "SocialLink"
+  export type $HandlePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Handle"
     objects: {
-      platform: Prisma.$SocialPlatformPayload<ExtArgs>
+      platform: Prisma.$PlatformPayload<ExtArgs>
       user: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -4890,136 +4890,136 @@ export namespace Prisma {
       archive: boolean
       createdAt: Date
       updatedAt: Date
-    }, ExtArgs["result"]["socialLink"]>
+    }, ExtArgs["result"]["handle"]>
     composites: {}
   }
 
-  type SocialLinkGetPayload<S extends boolean | null | undefined | SocialLinkDefaultArgs> = $Result.GetResult<Prisma.$SocialLinkPayload, S>
+  type HandleGetPayload<S extends boolean | null | undefined | HandleDefaultArgs> = $Result.GetResult<Prisma.$HandlePayload, S>
 
-  type SocialLinkCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<SocialLinkFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: SocialLinkCountAggregateInputType | true
+  type HandleCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<HandleFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: HandleCountAggregateInputType | true
     }
 
-  export interface SocialLinkDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['SocialLink'], meta: { name: 'SocialLink' } }
+  export interface HandleDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Handle'], meta: { name: 'Handle' } }
     /**
-     * Find zero or one SocialLink that matches the filter.
-     * @param {SocialLinkFindUniqueArgs} args - Arguments to find a SocialLink
+     * Find zero or one Handle that matches the filter.
+     * @param {HandleFindUniqueArgs} args - Arguments to find a Handle
      * @example
-     * // Get one SocialLink
-     * const socialLink = await prisma.socialLink.findUnique({
+     * // Get one Handle
+     * const handle = await prisma.handle.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends SocialLinkFindUniqueArgs>(args: SelectSubset<T, SocialLinkFindUniqueArgs<ExtArgs>>): Prisma__SocialLinkClient<$Result.GetResult<Prisma.$SocialLinkPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends HandleFindUniqueArgs>(args: SelectSubset<T, HandleFindUniqueArgs<ExtArgs>>): Prisma__HandleClient<$Result.GetResult<Prisma.$HandlePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one SocialLink that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Handle that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {SocialLinkFindUniqueOrThrowArgs} args - Arguments to find a SocialLink
+     * @param {HandleFindUniqueOrThrowArgs} args - Arguments to find a Handle
      * @example
-     * // Get one SocialLink
-     * const socialLink = await prisma.socialLink.findUniqueOrThrow({
+     * // Get one Handle
+     * const handle = await prisma.handle.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends SocialLinkFindUniqueOrThrowArgs>(args: SelectSubset<T, SocialLinkFindUniqueOrThrowArgs<ExtArgs>>): Prisma__SocialLinkClient<$Result.GetResult<Prisma.$SocialLinkPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends HandleFindUniqueOrThrowArgs>(args: SelectSubset<T, HandleFindUniqueOrThrowArgs<ExtArgs>>): Prisma__HandleClient<$Result.GetResult<Prisma.$HandlePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first SocialLink that matches the filter.
+     * Find the first Handle that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SocialLinkFindFirstArgs} args - Arguments to find a SocialLink
+     * @param {HandleFindFirstArgs} args - Arguments to find a Handle
      * @example
-     * // Get one SocialLink
-     * const socialLink = await prisma.socialLink.findFirst({
+     * // Get one Handle
+     * const handle = await prisma.handle.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends SocialLinkFindFirstArgs>(args?: SelectSubset<T, SocialLinkFindFirstArgs<ExtArgs>>): Prisma__SocialLinkClient<$Result.GetResult<Prisma.$SocialLinkPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends HandleFindFirstArgs>(args?: SelectSubset<T, HandleFindFirstArgs<ExtArgs>>): Prisma__HandleClient<$Result.GetResult<Prisma.$HandlePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first SocialLink that matches the filter or
+     * Find the first Handle that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SocialLinkFindFirstOrThrowArgs} args - Arguments to find a SocialLink
+     * @param {HandleFindFirstOrThrowArgs} args - Arguments to find a Handle
      * @example
-     * // Get one SocialLink
-     * const socialLink = await prisma.socialLink.findFirstOrThrow({
+     * // Get one Handle
+     * const handle = await prisma.handle.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends SocialLinkFindFirstOrThrowArgs>(args?: SelectSubset<T, SocialLinkFindFirstOrThrowArgs<ExtArgs>>): Prisma__SocialLinkClient<$Result.GetResult<Prisma.$SocialLinkPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends HandleFindFirstOrThrowArgs>(args?: SelectSubset<T, HandleFindFirstOrThrowArgs<ExtArgs>>): Prisma__HandleClient<$Result.GetResult<Prisma.$HandlePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more SocialLinks that matches the filter.
+     * Find zero or more Handles that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SocialLinkFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {HandleFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all SocialLinks
-     * const socialLinks = await prisma.socialLink.findMany()
+     * // Get all Handles
+     * const handles = await prisma.handle.findMany()
      * 
-     * // Get first 10 SocialLinks
-     * const socialLinks = await prisma.socialLink.findMany({ take: 10 })
+     * // Get first 10 Handles
+     * const handles = await prisma.handle.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const socialLinkWithIdOnly = await prisma.socialLink.findMany({ select: { id: true } })
+     * const handleWithIdOnly = await prisma.handle.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends SocialLinkFindManyArgs>(args?: SelectSubset<T, SocialLinkFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SocialLinkPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends HandleFindManyArgs>(args?: SelectSubset<T, HandleFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HandlePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a SocialLink.
-     * @param {SocialLinkCreateArgs} args - Arguments to create a SocialLink.
+     * Create a Handle.
+     * @param {HandleCreateArgs} args - Arguments to create a Handle.
      * @example
-     * // Create one SocialLink
-     * const SocialLink = await prisma.socialLink.create({
+     * // Create one Handle
+     * const Handle = await prisma.handle.create({
      *   data: {
-     *     // ... data to create a SocialLink
+     *     // ... data to create a Handle
      *   }
      * })
      * 
      */
-    create<T extends SocialLinkCreateArgs>(args: SelectSubset<T, SocialLinkCreateArgs<ExtArgs>>): Prisma__SocialLinkClient<$Result.GetResult<Prisma.$SocialLinkPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends HandleCreateArgs>(args: SelectSubset<T, HandleCreateArgs<ExtArgs>>): Prisma__HandleClient<$Result.GetResult<Prisma.$HandlePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many SocialLinks.
-     * @param {SocialLinkCreateManyArgs} args - Arguments to create many SocialLinks.
+     * Create many Handles.
+     * @param {HandleCreateManyArgs} args - Arguments to create many Handles.
      * @example
-     * // Create many SocialLinks
-     * const socialLink = await prisma.socialLink.createMany({
+     * // Create many Handles
+     * const handle = await prisma.handle.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends SocialLinkCreateManyArgs>(args?: SelectSubset<T, SocialLinkCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends HandleCreateManyArgs>(args?: SelectSubset<T, HandleCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many SocialLinks and returns the data saved in the database.
-     * @param {SocialLinkCreateManyAndReturnArgs} args - Arguments to create many SocialLinks.
+     * Create many Handles and returns the data saved in the database.
+     * @param {HandleCreateManyAndReturnArgs} args - Arguments to create many Handles.
      * @example
-     * // Create many SocialLinks
-     * const socialLink = await prisma.socialLink.createManyAndReturn({
+     * // Create many Handles
+     * const handle = await prisma.handle.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many SocialLinks and only return the `id`
-     * const socialLinkWithIdOnly = await prisma.socialLink.createManyAndReturn({
+     * // Create many Handles and only return the `id`
+     * const handleWithIdOnly = await prisma.handle.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -5029,28 +5029,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends SocialLinkCreateManyAndReturnArgs>(args?: SelectSubset<T, SocialLinkCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SocialLinkPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends HandleCreateManyAndReturnArgs>(args?: SelectSubset<T, HandleCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HandlePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a SocialLink.
-     * @param {SocialLinkDeleteArgs} args - Arguments to delete one SocialLink.
+     * Delete a Handle.
+     * @param {HandleDeleteArgs} args - Arguments to delete one Handle.
      * @example
-     * // Delete one SocialLink
-     * const SocialLink = await prisma.socialLink.delete({
+     * // Delete one Handle
+     * const Handle = await prisma.handle.delete({
      *   where: {
-     *     // ... filter to delete one SocialLink
+     *     // ... filter to delete one Handle
      *   }
      * })
      * 
      */
-    delete<T extends SocialLinkDeleteArgs>(args: SelectSubset<T, SocialLinkDeleteArgs<ExtArgs>>): Prisma__SocialLinkClient<$Result.GetResult<Prisma.$SocialLinkPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends HandleDeleteArgs>(args: SelectSubset<T, HandleDeleteArgs<ExtArgs>>): Prisma__HandleClient<$Result.GetResult<Prisma.$HandlePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one SocialLink.
-     * @param {SocialLinkUpdateArgs} args - Arguments to update one SocialLink.
+     * Update one Handle.
+     * @param {HandleUpdateArgs} args - Arguments to update one Handle.
      * @example
-     * // Update one SocialLink
-     * const socialLink = await prisma.socialLink.update({
+     * // Update one Handle
+     * const handle = await prisma.handle.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -5060,30 +5060,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends SocialLinkUpdateArgs>(args: SelectSubset<T, SocialLinkUpdateArgs<ExtArgs>>): Prisma__SocialLinkClient<$Result.GetResult<Prisma.$SocialLinkPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends HandleUpdateArgs>(args: SelectSubset<T, HandleUpdateArgs<ExtArgs>>): Prisma__HandleClient<$Result.GetResult<Prisma.$HandlePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more SocialLinks.
-     * @param {SocialLinkDeleteManyArgs} args - Arguments to filter SocialLinks to delete.
+     * Delete zero or more Handles.
+     * @param {HandleDeleteManyArgs} args - Arguments to filter Handles to delete.
      * @example
-     * // Delete a few SocialLinks
-     * const { count } = await prisma.socialLink.deleteMany({
+     * // Delete a few Handles
+     * const { count } = await prisma.handle.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends SocialLinkDeleteManyArgs>(args?: SelectSubset<T, SocialLinkDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends HandleDeleteManyArgs>(args?: SelectSubset<T, HandleDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more SocialLinks.
+     * Update zero or more Handles.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SocialLinkUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {HandleUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many SocialLinks
-     * const socialLink = await prisma.socialLink.updateMany({
+     * // Update many Handles
+     * const handle = await prisma.handle.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -5093,14 +5093,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends SocialLinkUpdateManyArgs>(args: SelectSubset<T, SocialLinkUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends HandleUpdateManyArgs>(args: SelectSubset<T, HandleUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more SocialLinks and returns the data updated in the database.
-     * @param {SocialLinkUpdateManyAndReturnArgs} args - Arguments to update many SocialLinks.
+     * Update zero or more Handles and returns the data updated in the database.
+     * @param {HandleUpdateManyAndReturnArgs} args - Arguments to update many Handles.
      * @example
-     * // Update many SocialLinks
-     * const socialLink = await prisma.socialLink.updateManyAndReturn({
+     * // Update many Handles
+     * const handle = await prisma.handle.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -5109,8 +5109,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more SocialLinks and only return the `id`
-     * const socialLinkWithIdOnly = await prisma.socialLink.updateManyAndReturn({
+     * // Update zero or more Handles and only return the `id`
+     * const handleWithIdOnly = await prisma.handle.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -5123,56 +5123,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends SocialLinkUpdateManyAndReturnArgs>(args: SelectSubset<T, SocialLinkUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SocialLinkPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends HandleUpdateManyAndReturnArgs>(args: SelectSubset<T, HandleUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HandlePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one SocialLink.
-     * @param {SocialLinkUpsertArgs} args - Arguments to update or create a SocialLink.
+     * Create or update one Handle.
+     * @param {HandleUpsertArgs} args - Arguments to update or create a Handle.
      * @example
-     * // Update or create a SocialLink
-     * const socialLink = await prisma.socialLink.upsert({
+     * // Update or create a Handle
+     * const handle = await prisma.handle.upsert({
      *   create: {
-     *     // ... data to create a SocialLink
+     *     // ... data to create a Handle
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the SocialLink we want to update
+     *     // ... the filter for the Handle we want to update
      *   }
      * })
      */
-    upsert<T extends SocialLinkUpsertArgs>(args: SelectSubset<T, SocialLinkUpsertArgs<ExtArgs>>): Prisma__SocialLinkClient<$Result.GetResult<Prisma.$SocialLinkPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends HandleUpsertArgs>(args: SelectSubset<T, HandleUpsertArgs<ExtArgs>>): Prisma__HandleClient<$Result.GetResult<Prisma.$HandlePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of SocialLinks.
+     * Count the number of Handles.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SocialLinkCountArgs} args - Arguments to filter SocialLinks to count.
+     * @param {HandleCountArgs} args - Arguments to filter Handles to count.
      * @example
-     * // Count the number of SocialLinks
-     * const count = await prisma.socialLink.count({
+     * // Count the number of Handles
+     * const count = await prisma.handle.count({
      *   where: {
-     *     // ... the filter for the SocialLinks we want to count
+     *     // ... the filter for the Handles we want to count
      *   }
      * })
     **/
-    count<T extends SocialLinkCountArgs>(
-      args?: Subset<T, SocialLinkCountArgs>,
+    count<T extends HandleCountArgs>(
+      args?: Subset<T, HandleCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], SocialLinkCountAggregateOutputType>
+          : GetScalarType<T['select'], HandleCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a SocialLink.
+     * Allows you to perform aggregations operations on a Handle.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SocialLinkAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {HandleAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -5192,13 +5192,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends SocialLinkAggregateArgs>(args: Subset<T, SocialLinkAggregateArgs>): Prisma.PrismaPromise<GetSocialLinkAggregateType<T>>
+    aggregate<T extends HandleAggregateArgs>(args: Subset<T, HandleAggregateArgs>): Prisma.PrismaPromise<GetHandleAggregateType<T>>
 
     /**
-     * Group by SocialLink.
+     * Group by Handle.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SocialLinkGroupByArgs} args - Group by arguments.
+     * @param {HandleGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -5213,14 +5213,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends SocialLinkGroupByArgs,
+      T extends HandleGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: SocialLinkGroupByArgs['orderBy'] }
-        : { orderBy?: SocialLinkGroupByArgs['orderBy'] },
+        ? { orderBy: HandleGroupByArgs['orderBy'] }
+        : { orderBy?: HandleGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -5269,22 +5269,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, SocialLinkGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSocialLinkGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, HandleGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetHandleGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the SocialLink model
+   * Fields of the Handle model
    */
-  readonly fields: SocialLinkFieldRefs;
+  readonly fields: HandleFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for SocialLink.
+   * The delegate class that acts as a "Promise-like" for Handle.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__SocialLinkClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__HandleClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    platform<T extends SocialPlatformDefaultArgs<ExtArgs> = {}>(args?: Subset<T, SocialPlatformDefaultArgs<ExtArgs>>): Prisma__SocialPlatformClient<$Result.GetResult<Prisma.$SocialPlatformPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    platform<T extends PlatformDefaultArgs<ExtArgs> = {}>(args?: Subset<T, PlatformDefaultArgs<ExtArgs>>): Prisma__PlatformClient<$Result.GetResult<Prisma.$PlatformPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -5312,428 +5312,428 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the SocialLink model
+   * Fields of the Handle model
    */
-  interface SocialLinkFieldRefs {
-    readonly id: FieldRef<"SocialLink", 'String'>
-    readonly platformId: FieldRef<"SocialLink", 'String'>
-    readonly userId: FieldRef<"SocialLink", 'String'>
-    readonly url: FieldRef<"SocialLink", 'String'>
-    readonly order: FieldRef<"SocialLink", 'Int'>
-    readonly archive: FieldRef<"SocialLink", 'Boolean'>
-    readonly createdAt: FieldRef<"SocialLink", 'DateTime'>
-    readonly updatedAt: FieldRef<"SocialLink", 'DateTime'>
+  interface HandleFieldRefs {
+    readonly id: FieldRef<"Handle", 'String'>
+    readonly platformId: FieldRef<"Handle", 'String'>
+    readonly userId: FieldRef<"Handle", 'String'>
+    readonly url: FieldRef<"Handle", 'String'>
+    readonly order: FieldRef<"Handle", 'Int'>
+    readonly archive: FieldRef<"Handle", 'Boolean'>
+    readonly createdAt: FieldRef<"Handle", 'DateTime'>
+    readonly updatedAt: FieldRef<"Handle", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * SocialLink findUnique
+   * Handle findUnique
    */
-  export type SocialLinkFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type HandleFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialLink
+     * Select specific fields to fetch from the Handle
      */
-    select?: SocialLinkSelect<ExtArgs> | null
+    select?: HandleSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialLink
+     * Omit specific fields from the Handle
      */
-    omit?: SocialLinkOmit<ExtArgs> | null
+    omit?: HandleOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialLinkInclude<ExtArgs> | null
+    include?: HandleInclude<ExtArgs> | null
     /**
-     * Filter, which SocialLink to fetch.
+     * Filter, which Handle to fetch.
      */
-    where: SocialLinkWhereUniqueInput
+    where: HandleWhereUniqueInput
   }
 
   /**
-   * SocialLink findUniqueOrThrow
+   * Handle findUniqueOrThrow
    */
-  export type SocialLinkFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type HandleFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialLink
+     * Select specific fields to fetch from the Handle
      */
-    select?: SocialLinkSelect<ExtArgs> | null
+    select?: HandleSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialLink
+     * Omit specific fields from the Handle
      */
-    omit?: SocialLinkOmit<ExtArgs> | null
+    omit?: HandleOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialLinkInclude<ExtArgs> | null
+    include?: HandleInclude<ExtArgs> | null
     /**
-     * Filter, which SocialLink to fetch.
+     * Filter, which Handle to fetch.
      */
-    where: SocialLinkWhereUniqueInput
+    where: HandleWhereUniqueInput
   }
 
   /**
-   * SocialLink findFirst
+   * Handle findFirst
    */
-  export type SocialLinkFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type HandleFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialLink
+     * Select specific fields to fetch from the Handle
      */
-    select?: SocialLinkSelect<ExtArgs> | null
+    select?: HandleSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialLink
+     * Omit specific fields from the Handle
      */
-    omit?: SocialLinkOmit<ExtArgs> | null
+    omit?: HandleOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialLinkInclude<ExtArgs> | null
+    include?: HandleInclude<ExtArgs> | null
     /**
-     * Filter, which SocialLink to fetch.
+     * Filter, which Handle to fetch.
      */
-    where?: SocialLinkWhereInput
+    where?: HandleWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of SocialLinks to fetch.
+     * Determine the order of Handles to fetch.
      */
-    orderBy?: SocialLinkOrderByWithRelationInput | SocialLinkOrderByWithRelationInput[]
+    orderBy?: HandleOrderByWithRelationInput | HandleOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for SocialLinks.
+     * Sets the position for searching for Handles.
      */
-    cursor?: SocialLinkWhereUniqueInput
+    cursor?: HandleWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` SocialLinks from the position of the cursor.
+     * Take `±n` Handles from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` SocialLinks.
+     * Skip the first `n` Handles.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of SocialLinks.
+     * Filter by unique combinations of Handles.
      */
-    distinct?: SocialLinkScalarFieldEnum | SocialLinkScalarFieldEnum[]
+    distinct?: HandleScalarFieldEnum | HandleScalarFieldEnum[]
   }
 
   /**
-   * SocialLink findFirstOrThrow
+   * Handle findFirstOrThrow
    */
-  export type SocialLinkFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type HandleFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialLink
+     * Select specific fields to fetch from the Handle
      */
-    select?: SocialLinkSelect<ExtArgs> | null
+    select?: HandleSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialLink
+     * Omit specific fields from the Handle
      */
-    omit?: SocialLinkOmit<ExtArgs> | null
+    omit?: HandleOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialLinkInclude<ExtArgs> | null
+    include?: HandleInclude<ExtArgs> | null
     /**
-     * Filter, which SocialLink to fetch.
+     * Filter, which Handle to fetch.
      */
-    where?: SocialLinkWhereInput
+    where?: HandleWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of SocialLinks to fetch.
+     * Determine the order of Handles to fetch.
      */
-    orderBy?: SocialLinkOrderByWithRelationInput | SocialLinkOrderByWithRelationInput[]
+    orderBy?: HandleOrderByWithRelationInput | HandleOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for SocialLinks.
+     * Sets the position for searching for Handles.
      */
-    cursor?: SocialLinkWhereUniqueInput
+    cursor?: HandleWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` SocialLinks from the position of the cursor.
+     * Take `±n` Handles from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` SocialLinks.
+     * Skip the first `n` Handles.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of SocialLinks.
+     * Filter by unique combinations of Handles.
      */
-    distinct?: SocialLinkScalarFieldEnum | SocialLinkScalarFieldEnum[]
+    distinct?: HandleScalarFieldEnum | HandleScalarFieldEnum[]
   }
 
   /**
-   * SocialLink findMany
+   * Handle findMany
    */
-  export type SocialLinkFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type HandleFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialLink
+     * Select specific fields to fetch from the Handle
      */
-    select?: SocialLinkSelect<ExtArgs> | null
+    select?: HandleSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialLink
+     * Omit specific fields from the Handle
      */
-    omit?: SocialLinkOmit<ExtArgs> | null
+    omit?: HandleOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialLinkInclude<ExtArgs> | null
+    include?: HandleInclude<ExtArgs> | null
     /**
-     * Filter, which SocialLinks to fetch.
+     * Filter, which Handles to fetch.
      */
-    where?: SocialLinkWhereInput
+    where?: HandleWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of SocialLinks to fetch.
+     * Determine the order of Handles to fetch.
      */
-    orderBy?: SocialLinkOrderByWithRelationInput | SocialLinkOrderByWithRelationInput[]
+    orderBy?: HandleOrderByWithRelationInput | HandleOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing SocialLinks.
+     * Sets the position for listing Handles.
      */
-    cursor?: SocialLinkWhereUniqueInput
+    cursor?: HandleWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` SocialLinks from the position of the cursor.
+     * Take `±n` Handles from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` SocialLinks.
+     * Skip the first `n` Handles.
      */
     skip?: number
-    distinct?: SocialLinkScalarFieldEnum | SocialLinkScalarFieldEnum[]
+    distinct?: HandleScalarFieldEnum | HandleScalarFieldEnum[]
   }
 
   /**
-   * SocialLink create
+   * Handle create
    */
-  export type SocialLinkCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type HandleCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialLink
+     * Select specific fields to fetch from the Handle
      */
-    select?: SocialLinkSelect<ExtArgs> | null
+    select?: HandleSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialLink
+     * Omit specific fields from the Handle
      */
-    omit?: SocialLinkOmit<ExtArgs> | null
+    omit?: HandleOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialLinkInclude<ExtArgs> | null
+    include?: HandleInclude<ExtArgs> | null
     /**
-     * The data needed to create a SocialLink.
+     * The data needed to create a Handle.
      */
-    data: XOR<SocialLinkCreateInput, SocialLinkUncheckedCreateInput>
+    data: XOR<HandleCreateInput, HandleUncheckedCreateInput>
   }
 
   /**
-   * SocialLink createMany
+   * Handle createMany
    */
-  export type SocialLinkCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type HandleCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many SocialLinks.
+     * The data used to create many Handles.
      */
-    data: SocialLinkCreateManyInput | SocialLinkCreateManyInput[]
+    data: HandleCreateManyInput | HandleCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * SocialLink createManyAndReturn
+   * Handle createManyAndReturn
    */
-  export type SocialLinkCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type HandleCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialLink
+     * Select specific fields to fetch from the Handle
      */
-    select?: SocialLinkSelectCreateManyAndReturn<ExtArgs> | null
+    select?: HandleSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialLink
+     * Omit specific fields from the Handle
      */
-    omit?: SocialLinkOmit<ExtArgs> | null
+    omit?: HandleOmit<ExtArgs> | null
     /**
-     * The data used to create many SocialLinks.
+     * The data used to create many Handles.
      */
-    data: SocialLinkCreateManyInput | SocialLinkCreateManyInput[]
+    data: HandleCreateManyInput | HandleCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialLinkIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: HandleIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * SocialLink update
+   * Handle update
    */
-  export type SocialLinkUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type HandleUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialLink
+     * Select specific fields to fetch from the Handle
      */
-    select?: SocialLinkSelect<ExtArgs> | null
+    select?: HandleSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialLink
+     * Omit specific fields from the Handle
      */
-    omit?: SocialLinkOmit<ExtArgs> | null
+    omit?: HandleOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialLinkInclude<ExtArgs> | null
+    include?: HandleInclude<ExtArgs> | null
     /**
-     * The data needed to update a SocialLink.
+     * The data needed to update a Handle.
      */
-    data: XOR<SocialLinkUpdateInput, SocialLinkUncheckedUpdateInput>
+    data: XOR<HandleUpdateInput, HandleUncheckedUpdateInput>
     /**
-     * Choose, which SocialLink to update.
+     * Choose, which Handle to update.
      */
-    where: SocialLinkWhereUniqueInput
+    where: HandleWhereUniqueInput
   }
 
   /**
-   * SocialLink updateMany
+   * Handle updateMany
    */
-  export type SocialLinkUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type HandleUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update SocialLinks.
+     * The data used to update Handles.
      */
-    data: XOR<SocialLinkUpdateManyMutationInput, SocialLinkUncheckedUpdateManyInput>
+    data: XOR<HandleUpdateManyMutationInput, HandleUncheckedUpdateManyInput>
     /**
-     * Filter which SocialLinks to update
+     * Filter which Handles to update
      */
-    where?: SocialLinkWhereInput
+    where?: HandleWhereInput
     /**
-     * Limit how many SocialLinks to update.
+     * Limit how many Handles to update.
      */
     limit?: number
   }
 
   /**
-   * SocialLink updateManyAndReturn
+   * Handle updateManyAndReturn
    */
-  export type SocialLinkUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type HandleUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialLink
+     * Select specific fields to fetch from the Handle
      */
-    select?: SocialLinkSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: HandleSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialLink
+     * Omit specific fields from the Handle
      */
-    omit?: SocialLinkOmit<ExtArgs> | null
+    omit?: HandleOmit<ExtArgs> | null
     /**
-     * The data used to update SocialLinks.
+     * The data used to update Handles.
      */
-    data: XOR<SocialLinkUpdateManyMutationInput, SocialLinkUncheckedUpdateManyInput>
+    data: XOR<HandleUpdateManyMutationInput, HandleUncheckedUpdateManyInput>
     /**
-     * Filter which SocialLinks to update
+     * Filter which Handles to update
      */
-    where?: SocialLinkWhereInput
+    where?: HandleWhereInput
     /**
-     * Limit how many SocialLinks to update.
+     * Limit how many Handles to update.
      */
     limit?: number
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialLinkIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: HandleIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * SocialLink upsert
+   * Handle upsert
    */
-  export type SocialLinkUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type HandleUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialLink
+     * Select specific fields to fetch from the Handle
      */
-    select?: SocialLinkSelect<ExtArgs> | null
+    select?: HandleSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialLink
+     * Omit specific fields from the Handle
      */
-    omit?: SocialLinkOmit<ExtArgs> | null
+    omit?: HandleOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialLinkInclude<ExtArgs> | null
+    include?: HandleInclude<ExtArgs> | null
     /**
-     * The filter to search for the SocialLink to update in case it exists.
+     * The filter to search for the Handle to update in case it exists.
      */
-    where: SocialLinkWhereUniqueInput
+    where: HandleWhereUniqueInput
     /**
-     * In case the SocialLink found by the `where` argument doesn't exist, create a new SocialLink with this data.
+     * In case the Handle found by the `where` argument doesn't exist, create a new Handle with this data.
      */
-    create: XOR<SocialLinkCreateInput, SocialLinkUncheckedCreateInput>
+    create: XOR<HandleCreateInput, HandleUncheckedCreateInput>
     /**
-     * In case the SocialLink was found with the provided `where` argument, update it with this data.
+     * In case the Handle was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<SocialLinkUpdateInput, SocialLinkUncheckedUpdateInput>
+    update: XOR<HandleUpdateInput, HandleUncheckedUpdateInput>
   }
 
   /**
-   * SocialLink delete
+   * Handle delete
    */
-  export type SocialLinkDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type HandleDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialLink
+     * Select specific fields to fetch from the Handle
      */
-    select?: SocialLinkSelect<ExtArgs> | null
+    select?: HandleSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialLink
+     * Omit specific fields from the Handle
      */
-    omit?: SocialLinkOmit<ExtArgs> | null
+    omit?: HandleOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialLinkInclude<ExtArgs> | null
+    include?: HandleInclude<ExtArgs> | null
     /**
-     * Filter which SocialLink to delete.
+     * Filter which Handle to delete.
      */
-    where: SocialLinkWhereUniqueInput
+    where: HandleWhereUniqueInput
   }
 
   /**
-   * SocialLink deleteMany
+   * Handle deleteMany
    */
-  export type SocialLinkDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type HandleDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which SocialLinks to delete
+     * Filter which Handles to delete
      */
-    where?: SocialLinkWhereInput
+    where?: HandleWhereInput
     /**
-     * Limit how many SocialLinks to delete.
+     * Limit how many Handles to delete.
      */
     limit?: number
   }
 
   /**
-   * SocialLink without action
+   * Handle without action
    */
-  export type SocialLinkDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type HandleDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the SocialLink
+     * Select specific fields to fetch from the Handle
      */
-    select?: SocialLinkSelect<ExtArgs> | null
+    select?: HandleSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the SocialLink
+     * Omit specific fields from the Handle
      */
-    omit?: SocialLinkOmit<ExtArgs> | null
+    omit?: HandleOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: SocialLinkInclude<ExtArgs> | null
+    include?: HandleInclude<ExtArgs> | null
   }
 
 
@@ -5782,7 +5782,7 @@ export namespace Prisma {
   export type ProfileScalarFieldEnum = (typeof ProfileScalarFieldEnum)[keyof typeof ProfileScalarFieldEnum]
 
 
-  export const SocialPlatformScalarFieldEnum: {
+  export const PlatformScalarFieldEnum: {
     id: 'id',
     name: 'name',
     baseUrl: 'baseUrl',
@@ -5792,10 +5792,10 @@ export namespace Prisma {
     updatedAt: 'updatedAt'
   };
 
-  export type SocialPlatformScalarFieldEnum = (typeof SocialPlatformScalarFieldEnum)[keyof typeof SocialPlatformScalarFieldEnum]
+  export type PlatformScalarFieldEnum = (typeof PlatformScalarFieldEnum)[keyof typeof PlatformScalarFieldEnum]
 
 
-  export const SocialLinkScalarFieldEnum: {
+  export const HandleScalarFieldEnum: {
     id: 'id',
     platformId: 'platformId',
     userId: 'userId',
@@ -5806,7 +5806,7 @@ export namespace Prisma {
     updatedAt: 'updatedAt'
   };
 
-  export type SocialLinkScalarFieldEnum = (typeof SocialLinkScalarFieldEnum)[keyof typeof SocialLinkScalarFieldEnum]
+  export type HandleScalarFieldEnum = (typeof HandleScalarFieldEnum)[keyof typeof HandleScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -5932,7 +5932,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
     profile?: XOR<ProfileNullableScalarRelationFilter, ProfileWhereInput> | null
-    socialLinks?: SocialLinkListRelationFilter
+    handles?: HandleListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
@@ -5946,7 +5946,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     profile?: ProfileOrderByWithRelationInput
-    socialLinks?: SocialLinkOrderByRelationAggregateInput
+    handles?: HandleOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -5963,7 +5963,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
     profile?: XOR<ProfileNullableScalarRelationFilter, ProfileWhereInput> | null
-    socialLinks?: SocialLinkListRelationFilter
+    handles?: HandleListRelationFilter
   }, "id" | "email" | "username">
 
   export type UserOrderByWithAggregationInput = {
@@ -6076,21 +6076,21 @@ export namespace Prisma {
     updatedAt?: DateTimeWithAggregatesFilter<"Profile"> | Date | string
   }
 
-  export type SocialPlatformWhereInput = {
-    AND?: SocialPlatformWhereInput | SocialPlatformWhereInput[]
-    OR?: SocialPlatformWhereInput[]
-    NOT?: SocialPlatformWhereInput | SocialPlatformWhereInput[]
-    id?: StringFilter<"SocialPlatform"> | string
-    name?: StringFilter<"SocialPlatform"> | string
-    baseUrl?: StringFilter<"SocialPlatform"> | string
-    icon?: StringNullableFilter<"SocialPlatform"> | string | null
-    archive?: BoolFilter<"SocialPlatform"> | boolean
-    createdAt?: DateTimeFilter<"SocialPlatform"> | Date | string
-    updatedAt?: DateTimeFilter<"SocialPlatform"> | Date | string
-    socialLinks?: SocialLinkListRelationFilter
+  export type PlatformWhereInput = {
+    AND?: PlatformWhereInput | PlatformWhereInput[]
+    OR?: PlatformWhereInput[]
+    NOT?: PlatformWhereInput | PlatformWhereInput[]
+    id?: StringFilter<"Platform"> | string
+    name?: StringFilter<"Platform"> | string
+    baseUrl?: StringFilter<"Platform"> | string
+    icon?: StringNullableFilter<"Platform"> | string | null
+    archive?: BoolFilter<"Platform"> | boolean
+    createdAt?: DateTimeFilter<"Platform"> | Date | string
+    updatedAt?: DateTimeFilter<"Platform"> | Date | string
+    handles?: HandleListRelationFilter
   }
 
-  export type SocialPlatformOrderByWithRelationInput = {
+  export type PlatformOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
     baseUrl?: SortOrder
@@ -6098,24 +6098,24 @@ export namespace Prisma {
     archive?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    socialLinks?: SocialLinkOrderByRelationAggregateInput
+    handles?: HandleOrderByRelationAggregateInput
   }
 
-  export type SocialPlatformWhereUniqueInput = Prisma.AtLeast<{
+  export type PlatformWhereUniqueInput = Prisma.AtLeast<{
     id?: string
     name?: string
-    AND?: SocialPlatformWhereInput | SocialPlatformWhereInput[]
-    OR?: SocialPlatformWhereInput[]
-    NOT?: SocialPlatformWhereInput | SocialPlatformWhereInput[]
-    baseUrl?: StringFilter<"SocialPlatform"> | string
-    icon?: StringNullableFilter<"SocialPlatform"> | string | null
-    archive?: BoolFilter<"SocialPlatform"> | boolean
-    createdAt?: DateTimeFilter<"SocialPlatform"> | Date | string
-    updatedAt?: DateTimeFilter<"SocialPlatform"> | Date | string
-    socialLinks?: SocialLinkListRelationFilter
+    AND?: PlatformWhereInput | PlatformWhereInput[]
+    OR?: PlatformWhereInput[]
+    NOT?: PlatformWhereInput | PlatformWhereInput[]
+    baseUrl?: StringFilter<"Platform"> | string
+    icon?: StringNullableFilter<"Platform"> | string | null
+    archive?: BoolFilter<"Platform"> | boolean
+    createdAt?: DateTimeFilter<"Platform"> | Date | string
+    updatedAt?: DateTimeFilter<"Platform"> | Date | string
+    handles?: HandleListRelationFilter
   }, "id" | "name">
 
-  export type SocialPlatformOrderByWithAggregationInput = {
+  export type PlatformOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
     baseUrl?: SortOrder
@@ -6123,41 +6123,41 @@ export namespace Prisma {
     archive?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    _count?: SocialPlatformCountOrderByAggregateInput
-    _max?: SocialPlatformMaxOrderByAggregateInput
-    _min?: SocialPlatformMinOrderByAggregateInput
+    _count?: PlatformCountOrderByAggregateInput
+    _max?: PlatformMaxOrderByAggregateInput
+    _min?: PlatformMinOrderByAggregateInput
   }
 
-  export type SocialPlatformScalarWhereWithAggregatesInput = {
-    AND?: SocialPlatformScalarWhereWithAggregatesInput | SocialPlatformScalarWhereWithAggregatesInput[]
-    OR?: SocialPlatformScalarWhereWithAggregatesInput[]
-    NOT?: SocialPlatformScalarWhereWithAggregatesInput | SocialPlatformScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"SocialPlatform"> | string
-    name?: StringWithAggregatesFilter<"SocialPlatform"> | string
-    baseUrl?: StringWithAggregatesFilter<"SocialPlatform"> | string
-    icon?: StringNullableWithAggregatesFilter<"SocialPlatform"> | string | null
-    archive?: BoolWithAggregatesFilter<"SocialPlatform"> | boolean
-    createdAt?: DateTimeWithAggregatesFilter<"SocialPlatform"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"SocialPlatform"> | Date | string
+  export type PlatformScalarWhereWithAggregatesInput = {
+    AND?: PlatformScalarWhereWithAggregatesInput | PlatformScalarWhereWithAggregatesInput[]
+    OR?: PlatformScalarWhereWithAggregatesInput[]
+    NOT?: PlatformScalarWhereWithAggregatesInput | PlatformScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Platform"> | string
+    name?: StringWithAggregatesFilter<"Platform"> | string
+    baseUrl?: StringWithAggregatesFilter<"Platform"> | string
+    icon?: StringNullableWithAggregatesFilter<"Platform"> | string | null
+    archive?: BoolWithAggregatesFilter<"Platform"> | boolean
+    createdAt?: DateTimeWithAggregatesFilter<"Platform"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Platform"> | Date | string
   }
 
-  export type SocialLinkWhereInput = {
-    AND?: SocialLinkWhereInput | SocialLinkWhereInput[]
-    OR?: SocialLinkWhereInput[]
-    NOT?: SocialLinkWhereInput | SocialLinkWhereInput[]
-    id?: StringFilter<"SocialLink"> | string
-    platformId?: StringFilter<"SocialLink"> | string
-    userId?: StringFilter<"SocialLink"> | string
-    url?: StringFilter<"SocialLink"> | string
-    order?: IntFilter<"SocialLink"> | number
-    archive?: BoolFilter<"SocialLink"> | boolean
-    createdAt?: DateTimeFilter<"SocialLink"> | Date | string
-    updatedAt?: DateTimeFilter<"SocialLink"> | Date | string
-    platform?: XOR<SocialPlatformScalarRelationFilter, SocialPlatformWhereInput>
+  export type HandleWhereInput = {
+    AND?: HandleWhereInput | HandleWhereInput[]
+    OR?: HandleWhereInput[]
+    NOT?: HandleWhereInput | HandleWhereInput[]
+    id?: StringFilter<"Handle"> | string
+    platformId?: StringFilter<"Handle"> | string
+    userId?: StringFilter<"Handle"> | string
+    url?: StringFilter<"Handle"> | string
+    order?: IntFilter<"Handle"> | number
+    archive?: BoolFilter<"Handle"> | boolean
+    createdAt?: DateTimeFilter<"Handle"> | Date | string
+    updatedAt?: DateTimeFilter<"Handle"> | Date | string
+    platform?: XOR<PlatformScalarRelationFilter, PlatformWhereInput>
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
-  export type SocialLinkOrderByWithRelationInput = {
+  export type HandleOrderByWithRelationInput = {
     id?: SortOrder
     platformId?: SortOrder
     userId?: SortOrder
@@ -6166,28 +6166,28 @@ export namespace Prisma {
     archive?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    platform?: SocialPlatformOrderByWithRelationInput
+    platform?: PlatformOrderByWithRelationInput
     user?: UserOrderByWithRelationInput
   }
 
-  export type SocialLinkWhereUniqueInput = Prisma.AtLeast<{
+  export type HandleWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    platformId_userId?: SocialLinkPlatformIdUserIdCompoundUniqueInput
-    AND?: SocialLinkWhereInput | SocialLinkWhereInput[]
-    OR?: SocialLinkWhereInput[]
-    NOT?: SocialLinkWhereInput | SocialLinkWhereInput[]
-    platformId?: StringFilter<"SocialLink"> | string
-    userId?: StringFilter<"SocialLink"> | string
-    url?: StringFilter<"SocialLink"> | string
-    order?: IntFilter<"SocialLink"> | number
-    archive?: BoolFilter<"SocialLink"> | boolean
-    createdAt?: DateTimeFilter<"SocialLink"> | Date | string
-    updatedAt?: DateTimeFilter<"SocialLink"> | Date | string
-    platform?: XOR<SocialPlatformScalarRelationFilter, SocialPlatformWhereInput>
+    platformId_userId?: HandlePlatformIdUserIdCompoundUniqueInput
+    AND?: HandleWhereInput | HandleWhereInput[]
+    OR?: HandleWhereInput[]
+    NOT?: HandleWhereInput | HandleWhereInput[]
+    platformId?: StringFilter<"Handle"> | string
+    userId?: StringFilter<"Handle"> | string
+    url?: StringFilter<"Handle"> | string
+    order?: IntFilter<"Handle"> | number
+    archive?: BoolFilter<"Handle"> | boolean
+    createdAt?: DateTimeFilter<"Handle"> | Date | string
+    updatedAt?: DateTimeFilter<"Handle"> | Date | string
+    platform?: XOR<PlatformScalarRelationFilter, PlatformWhereInput>
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id" | "platformId_userId">
 
-  export type SocialLinkOrderByWithAggregationInput = {
+  export type HandleOrderByWithAggregationInput = {
     id?: SortOrder
     platformId?: SortOrder
     userId?: SortOrder
@@ -6196,25 +6196,25 @@ export namespace Prisma {
     archive?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    _count?: SocialLinkCountOrderByAggregateInput
-    _avg?: SocialLinkAvgOrderByAggregateInput
-    _max?: SocialLinkMaxOrderByAggregateInput
-    _min?: SocialLinkMinOrderByAggregateInput
-    _sum?: SocialLinkSumOrderByAggregateInput
+    _count?: HandleCountOrderByAggregateInput
+    _avg?: HandleAvgOrderByAggregateInput
+    _max?: HandleMaxOrderByAggregateInput
+    _min?: HandleMinOrderByAggregateInput
+    _sum?: HandleSumOrderByAggregateInput
   }
 
-  export type SocialLinkScalarWhereWithAggregatesInput = {
-    AND?: SocialLinkScalarWhereWithAggregatesInput | SocialLinkScalarWhereWithAggregatesInput[]
-    OR?: SocialLinkScalarWhereWithAggregatesInput[]
-    NOT?: SocialLinkScalarWhereWithAggregatesInput | SocialLinkScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"SocialLink"> | string
-    platformId?: StringWithAggregatesFilter<"SocialLink"> | string
-    userId?: StringWithAggregatesFilter<"SocialLink"> | string
-    url?: StringWithAggregatesFilter<"SocialLink"> | string
-    order?: IntWithAggregatesFilter<"SocialLink"> | number
-    archive?: BoolWithAggregatesFilter<"SocialLink"> | boolean
-    createdAt?: DateTimeWithAggregatesFilter<"SocialLink"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"SocialLink"> | Date | string
+  export type HandleScalarWhereWithAggregatesInput = {
+    AND?: HandleScalarWhereWithAggregatesInput | HandleScalarWhereWithAggregatesInput[]
+    OR?: HandleScalarWhereWithAggregatesInput[]
+    NOT?: HandleScalarWhereWithAggregatesInput | HandleScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Handle"> | string
+    platformId?: StringWithAggregatesFilter<"Handle"> | string
+    userId?: StringWithAggregatesFilter<"Handle"> | string
+    url?: StringWithAggregatesFilter<"Handle"> | string
+    order?: IntWithAggregatesFilter<"Handle"> | number
+    archive?: BoolWithAggregatesFilter<"Handle"> | boolean
+    createdAt?: DateTimeWithAggregatesFilter<"Handle"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Handle"> | Date | string
   }
 
   export type UserCreateInput = {
@@ -6228,7 +6228,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     profile?: ProfileCreateNestedOneWithoutUserInput
-    socialLinks?: SocialLinkCreateNestedManyWithoutUserInput
+    handles?: HandleCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -6242,7 +6242,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    socialLinks?: SocialLinkUncheckedCreateNestedManyWithoutUserInput
+    handles?: HandleUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserUpdateInput = {
@@ -6256,7 +6256,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     profile?: ProfileUpdateOneWithoutUserNestedInput
-    socialLinks?: SocialLinkUpdateManyWithoutUserNestedInput
+    handles?: HandleUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -6270,7 +6270,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    socialLinks?: SocialLinkUncheckedUpdateManyWithoutUserNestedInput
+    handles?: HandleUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -6399,7 +6399,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type SocialPlatformCreateInput = {
+  export type PlatformCreateInput = {
     id?: string
     name: string
     baseUrl: string
@@ -6407,10 +6407,10 @@ export namespace Prisma {
     archive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    socialLinks?: SocialLinkCreateNestedManyWithoutPlatformInput
+    handles?: HandleCreateNestedManyWithoutPlatformInput
   }
 
-  export type SocialPlatformUncheckedCreateInput = {
+  export type PlatformUncheckedCreateInput = {
     id?: string
     name: string
     baseUrl: string
@@ -6418,10 +6418,10 @@ export namespace Prisma {
     archive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    socialLinks?: SocialLinkUncheckedCreateNestedManyWithoutPlatformInput
+    handles?: HandleUncheckedCreateNestedManyWithoutPlatformInput
   }
 
-  export type SocialPlatformUpdateInput = {
+  export type PlatformUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     baseUrl?: StringFieldUpdateOperationsInput | string
@@ -6429,10 +6429,10 @@ export namespace Prisma {
     archive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    socialLinks?: SocialLinkUpdateManyWithoutPlatformNestedInput
+    handles?: HandleUpdateManyWithoutPlatformNestedInput
   }
 
-  export type SocialPlatformUncheckedUpdateInput = {
+  export type PlatformUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     baseUrl?: StringFieldUpdateOperationsInput | string
@@ -6440,10 +6440,10 @@ export namespace Prisma {
     archive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    socialLinks?: SocialLinkUncheckedUpdateManyWithoutPlatformNestedInput
+    handles?: HandleUncheckedUpdateManyWithoutPlatformNestedInput
   }
 
-  export type SocialPlatformCreateManyInput = {
+  export type PlatformCreateManyInput = {
     id?: string
     name: string
     baseUrl: string
@@ -6453,7 +6453,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type SocialPlatformUpdateManyMutationInput = {
+  export type PlatformUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     baseUrl?: StringFieldUpdateOperationsInput | string
@@ -6463,7 +6463,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type SocialPlatformUncheckedUpdateManyInput = {
+  export type PlatformUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     baseUrl?: StringFieldUpdateOperationsInput | string
@@ -6473,18 +6473,18 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type SocialLinkCreateInput = {
+  export type HandleCreateInput = {
     id?: string
     url: string
     order?: number
     archive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    platform: SocialPlatformCreateNestedOneWithoutSocialLinksInput
-    user: UserCreateNestedOneWithoutSocialLinksInput
+    platform: PlatformCreateNestedOneWithoutHandlesInput
+    user: UserCreateNestedOneWithoutHandlesInput
   }
 
-  export type SocialLinkUncheckedCreateInput = {
+  export type HandleUncheckedCreateInput = {
     id?: string
     platformId: string
     userId: string
@@ -6495,18 +6495,18 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type SocialLinkUpdateInput = {
+  export type HandleUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
     order?: IntFieldUpdateOperationsInput | number
     archive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    platform?: SocialPlatformUpdateOneRequiredWithoutSocialLinksNestedInput
-    user?: UserUpdateOneRequiredWithoutSocialLinksNestedInput
+    platform?: PlatformUpdateOneRequiredWithoutHandlesNestedInput
+    user?: UserUpdateOneRequiredWithoutHandlesNestedInput
   }
 
-  export type SocialLinkUncheckedUpdateInput = {
+  export type HandleUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     platformId?: StringFieldUpdateOperationsInput | string
     userId?: StringFieldUpdateOperationsInput | string
@@ -6517,7 +6517,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type SocialLinkCreateManyInput = {
+  export type HandleCreateManyInput = {
     id?: string
     platformId: string
     userId: string
@@ -6528,7 +6528,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type SocialLinkUpdateManyMutationInput = {
+  export type HandleUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
     order?: IntFieldUpdateOperationsInput | number
@@ -6537,7 +6537,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type SocialLinkUncheckedUpdateManyInput = {
+  export type HandleUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     platformId?: StringFieldUpdateOperationsInput | string
     userId?: StringFieldUpdateOperationsInput | string
@@ -6601,10 +6601,10 @@ export namespace Prisma {
     isNot?: ProfileWhereInput | null
   }
 
-  export type SocialLinkListRelationFilter = {
-    every?: SocialLinkWhereInput
-    some?: SocialLinkWhereInput
-    none?: SocialLinkWhereInput
+  export type HandleListRelationFilter = {
+    every?: HandleWhereInput
+    some?: HandleWhereInput
+    none?: HandleWhereInput
   }
 
   export type SortOrderInput = {
@@ -6612,7 +6612,7 @@ export namespace Prisma {
     nulls?: NullsOrder
   }
 
-  export type SocialLinkOrderByRelationAggregateInput = {
+  export type HandleOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -6761,7 +6761,7 @@ export namespace Prisma {
     not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
-  export type SocialPlatformCountOrderByAggregateInput = {
+  export type PlatformCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     baseUrl?: SortOrder
@@ -6771,7 +6771,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type SocialPlatformMaxOrderByAggregateInput = {
+  export type PlatformMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     baseUrl?: SortOrder
@@ -6781,7 +6781,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type SocialPlatformMinOrderByAggregateInput = {
+  export type PlatformMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     baseUrl?: SortOrder
@@ -6810,17 +6810,17 @@ export namespace Prisma {
     not?: NestedIntFilter<$PrismaModel> | number
   }
 
-  export type SocialPlatformScalarRelationFilter = {
-    is?: SocialPlatformWhereInput
-    isNot?: SocialPlatformWhereInput
+  export type PlatformScalarRelationFilter = {
+    is?: PlatformWhereInput
+    isNot?: PlatformWhereInput
   }
 
-  export type SocialLinkPlatformIdUserIdCompoundUniqueInput = {
+  export type HandlePlatformIdUserIdCompoundUniqueInput = {
     platformId: string
     userId: string
   }
 
-  export type SocialLinkCountOrderByAggregateInput = {
+  export type HandleCountOrderByAggregateInput = {
     id?: SortOrder
     platformId?: SortOrder
     userId?: SortOrder
@@ -6831,11 +6831,11 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type SocialLinkAvgOrderByAggregateInput = {
+  export type HandleAvgOrderByAggregateInput = {
     order?: SortOrder
   }
 
-  export type SocialLinkMaxOrderByAggregateInput = {
+  export type HandleMaxOrderByAggregateInput = {
     id?: SortOrder
     platformId?: SortOrder
     userId?: SortOrder
@@ -6846,7 +6846,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type SocialLinkMinOrderByAggregateInput = {
+  export type HandleMinOrderByAggregateInput = {
     id?: SortOrder
     platformId?: SortOrder
     userId?: SortOrder
@@ -6857,7 +6857,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type SocialLinkSumOrderByAggregateInput = {
+  export type HandleSumOrderByAggregateInput = {
     order?: SortOrder
   }
 
@@ -6883,11 +6883,11 @@ export namespace Prisma {
     connect?: ProfileWhereUniqueInput
   }
 
-  export type SocialLinkCreateNestedManyWithoutUserInput = {
-    create?: XOR<SocialLinkCreateWithoutUserInput, SocialLinkUncheckedCreateWithoutUserInput> | SocialLinkCreateWithoutUserInput[] | SocialLinkUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: SocialLinkCreateOrConnectWithoutUserInput | SocialLinkCreateOrConnectWithoutUserInput[]
-    createMany?: SocialLinkCreateManyUserInputEnvelope
-    connect?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
+  export type HandleCreateNestedManyWithoutUserInput = {
+    create?: XOR<HandleCreateWithoutUserInput, HandleUncheckedCreateWithoutUserInput> | HandleCreateWithoutUserInput[] | HandleUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: HandleCreateOrConnectWithoutUserInput | HandleCreateOrConnectWithoutUserInput[]
+    createMany?: HandleCreateManyUserInputEnvelope
+    connect?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
   }
 
   export type ProfileUncheckedCreateNestedOneWithoutUserInput = {
@@ -6896,11 +6896,11 @@ export namespace Prisma {
     connect?: ProfileWhereUniqueInput
   }
 
-  export type SocialLinkUncheckedCreateNestedManyWithoutUserInput = {
-    create?: XOR<SocialLinkCreateWithoutUserInput, SocialLinkUncheckedCreateWithoutUserInput> | SocialLinkCreateWithoutUserInput[] | SocialLinkUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: SocialLinkCreateOrConnectWithoutUserInput | SocialLinkCreateOrConnectWithoutUserInput[]
-    createMany?: SocialLinkCreateManyUserInputEnvelope
-    connect?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
+  export type HandleUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<HandleCreateWithoutUserInput, HandleUncheckedCreateWithoutUserInput> | HandleCreateWithoutUserInput[] | HandleUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: HandleCreateOrConnectWithoutUserInput | HandleCreateOrConnectWithoutUserInput[]
+    createMany?: HandleCreateManyUserInputEnvelope
+    connect?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -6929,18 +6929,18 @@ export namespace Prisma {
     update?: XOR<XOR<ProfileUpdateToOneWithWhereWithoutUserInput, ProfileUpdateWithoutUserInput>, ProfileUncheckedUpdateWithoutUserInput>
   }
 
-  export type SocialLinkUpdateManyWithoutUserNestedInput = {
-    create?: XOR<SocialLinkCreateWithoutUserInput, SocialLinkUncheckedCreateWithoutUserInput> | SocialLinkCreateWithoutUserInput[] | SocialLinkUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: SocialLinkCreateOrConnectWithoutUserInput | SocialLinkCreateOrConnectWithoutUserInput[]
-    upsert?: SocialLinkUpsertWithWhereUniqueWithoutUserInput | SocialLinkUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: SocialLinkCreateManyUserInputEnvelope
-    set?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
-    disconnect?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
-    delete?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
-    connect?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
-    update?: SocialLinkUpdateWithWhereUniqueWithoutUserInput | SocialLinkUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: SocialLinkUpdateManyWithWhereWithoutUserInput | SocialLinkUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: SocialLinkScalarWhereInput | SocialLinkScalarWhereInput[]
+  export type HandleUpdateManyWithoutUserNestedInput = {
+    create?: XOR<HandleCreateWithoutUserInput, HandleUncheckedCreateWithoutUserInput> | HandleCreateWithoutUserInput[] | HandleUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: HandleCreateOrConnectWithoutUserInput | HandleCreateOrConnectWithoutUserInput[]
+    upsert?: HandleUpsertWithWhereUniqueWithoutUserInput | HandleUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: HandleCreateManyUserInputEnvelope
+    set?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
+    disconnect?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
+    delete?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
+    connect?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
+    update?: HandleUpdateWithWhereUniqueWithoutUserInput | HandleUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: HandleUpdateManyWithWhereWithoutUserInput | HandleUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: HandleScalarWhereInput | HandleScalarWhereInput[]
   }
 
   export type ProfileUncheckedUpdateOneWithoutUserNestedInput = {
@@ -6953,18 +6953,18 @@ export namespace Prisma {
     update?: XOR<XOR<ProfileUpdateToOneWithWhereWithoutUserInput, ProfileUpdateWithoutUserInput>, ProfileUncheckedUpdateWithoutUserInput>
   }
 
-  export type SocialLinkUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<SocialLinkCreateWithoutUserInput, SocialLinkUncheckedCreateWithoutUserInput> | SocialLinkCreateWithoutUserInput[] | SocialLinkUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: SocialLinkCreateOrConnectWithoutUserInput | SocialLinkCreateOrConnectWithoutUserInput[]
-    upsert?: SocialLinkUpsertWithWhereUniqueWithoutUserInput | SocialLinkUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: SocialLinkCreateManyUserInputEnvelope
-    set?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
-    disconnect?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
-    delete?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
-    connect?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
-    update?: SocialLinkUpdateWithWhereUniqueWithoutUserInput | SocialLinkUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: SocialLinkUpdateManyWithWhereWithoutUserInput | SocialLinkUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: SocialLinkScalarWhereInput | SocialLinkScalarWhereInput[]
+  export type HandleUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<HandleCreateWithoutUserInput, HandleUncheckedCreateWithoutUserInput> | HandleCreateWithoutUserInput[] | HandleUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: HandleCreateOrConnectWithoutUserInput | HandleCreateOrConnectWithoutUserInput[]
+    upsert?: HandleUpsertWithWhereUniqueWithoutUserInput | HandleUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: HandleCreateManyUserInputEnvelope
+    set?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
+    disconnect?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
+    delete?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
+    connect?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
+    update?: HandleUpdateWithWhereUniqueWithoutUserInput | HandleUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: HandleUpdateManyWithWhereWithoutUserInput | HandleUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: HandleScalarWhereInput | HandleScalarWhereInput[]
   }
 
   export type UserCreateNestedOneWithoutProfileInput = {
@@ -6981,61 +6981,61 @@ export namespace Prisma {
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutProfileInput, UserUpdateWithoutProfileInput>, UserUncheckedUpdateWithoutProfileInput>
   }
 
-  export type SocialLinkCreateNestedManyWithoutPlatformInput = {
-    create?: XOR<SocialLinkCreateWithoutPlatformInput, SocialLinkUncheckedCreateWithoutPlatformInput> | SocialLinkCreateWithoutPlatformInput[] | SocialLinkUncheckedCreateWithoutPlatformInput[]
-    connectOrCreate?: SocialLinkCreateOrConnectWithoutPlatformInput | SocialLinkCreateOrConnectWithoutPlatformInput[]
-    createMany?: SocialLinkCreateManyPlatformInputEnvelope
-    connect?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
+  export type HandleCreateNestedManyWithoutPlatformInput = {
+    create?: XOR<HandleCreateWithoutPlatformInput, HandleUncheckedCreateWithoutPlatformInput> | HandleCreateWithoutPlatformInput[] | HandleUncheckedCreateWithoutPlatformInput[]
+    connectOrCreate?: HandleCreateOrConnectWithoutPlatformInput | HandleCreateOrConnectWithoutPlatformInput[]
+    createMany?: HandleCreateManyPlatformInputEnvelope
+    connect?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
   }
 
-  export type SocialLinkUncheckedCreateNestedManyWithoutPlatformInput = {
-    create?: XOR<SocialLinkCreateWithoutPlatformInput, SocialLinkUncheckedCreateWithoutPlatformInput> | SocialLinkCreateWithoutPlatformInput[] | SocialLinkUncheckedCreateWithoutPlatformInput[]
-    connectOrCreate?: SocialLinkCreateOrConnectWithoutPlatformInput | SocialLinkCreateOrConnectWithoutPlatformInput[]
-    createMany?: SocialLinkCreateManyPlatformInputEnvelope
-    connect?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
+  export type HandleUncheckedCreateNestedManyWithoutPlatformInput = {
+    create?: XOR<HandleCreateWithoutPlatformInput, HandleUncheckedCreateWithoutPlatformInput> | HandleCreateWithoutPlatformInput[] | HandleUncheckedCreateWithoutPlatformInput[]
+    connectOrCreate?: HandleCreateOrConnectWithoutPlatformInput | HandleCreateOrConnectWithoutPlatformInput[]
+    createMany?: HandleCreateManyPlatformInputEnvelope
+    connect?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
   }
 
   export type BoolFieldUpdateOperationsInput = {
     set?: boolean
   }
 
-  export type SocialLinkUpdateManyWithoutPlatformNestedInput = {
-    create?: XOR<SocialLinkCreateWithoutPlatformInput, SocialLinkUncheckedCreateWithoutPlatformInput> | SocialLinkCreateWithoutPlatformInput[] | SocialLinkUncheckedCreateWithoutPlatformInput[]
-    connectOrCreate?: SocialLinkCreateOrConnectWithoutPlatformInput | SocialLinkCreateOrConnectWithoutPlatformInput[]
-    upsert?: SocialLinkUpsertWithWhereUniqueWithoutPlatformInput | SocialLinkUpsertWithWhereUniqueWithoutPlatformInput[]
-    createMany?: SocialLinkCreateManyPlatformInputEnvelope
-    set?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
-    disconnect?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
-    delete?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
-    connect?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
-    update?: SocialLinkUpdateWithWhereUniqueWithoutPlatformInput | SocialLinkUpdateWithWhereUniqueWithoutPlatformInput[]
-    updateMany?: SocialLinkUpdateManyWithWhereWithoutPlatformInput | SocialLinkUpdateManyWithWhereWithoutPlatformInput[]
-    deleteMany?: SocialLinkScalarWhereInput | SocialLinkScalarWhereInput[]
+  export type HandleUpdateManyWithoutPlatformNestedInput = {
+    create?: XOR<HandleCreateWithoutPlatformInput, HandleUncheckedCreateWithoutPlatformInput> | HandleCreateWithoutPlatformInput[] | HandleUncheckedCreateWithoutPlatformInput[]
+    connectOrCreate?: HandleCreateOrConnectWithoutPlatformInput | HandleCreateOrConnectWithoutPlatformInput[]
+    upsert?: HandleUpsertWithWhereUniqueWithoutPlatformInput | HandleUpsertWithWhereUniqueWithoutPlatformInput[]
+    createMany?: HandleCreateManyPlatformInputEnvelope
+    set?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
+    disconnect?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
+    delete?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
+    connect?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
+    update?: HandleUpdateWithWhereUniqueWithoutPlatformInput | HandleUpdateWithWhereUniqueWithoutPlatformInput[]
+    updateMany?: HandleUpdateManyWithWhereWithoutPlatformInput | HandleUpdateManyWithWhereWithoutPlatformInput[]
+    deleteMany?: HandleScalarWhereInput | HandleScalarWhereInput[]
   }
 
-  export type SocialLinkUncheckedUpdateManyWithoutPlatformNestedInput = {
-    create?: XOR<SocialLinkCreateWithoutPlatformInput, SocialLinkUncheckedCreateWithoutPlatformInput> | SocialLinkCreateWithoutPlatformInput[] | SocialLinkUncheckedCreateWithoutPlatformInput[]
-    connectOrCreate?: SocialLinkCreateOrConnectWithoutPlatformInput | SocialLinkCreateOrConnectWithoutPlatformInput[]
-    upsert?: SocialLinkUpsertWithWhereUniqueWithoutPlatformInput | SocialLinkUpsertWithWhereUniqueWithoutPlatformInput[]
-    createMany?: SocialLinkCreateManyPlatformInputEnvelope
-    set?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
-    disconnect?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
-    delete?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
-    connect?: SocialLinkWhereUniqueInput | SocialLinkWhereUniqueInput[]
-    update?: SocialLinkUpdateWithWhereUniqueWithoutPlatformInput | SocialLinkUpdateWithWhereUniqueWithoutPlatformInput[]
-    updateMany?: SocialLinkUpdateManyWithWhereWithoutPlatformInput | SocialLinkUpdateManyWithWhereWithoutPlatformInput[]
-    deleteMany?: SocialLinkScalarWhereInput | SocialLinkScalarWhereInput[]
+  export type HandleUncheckedUpdateManyWithoutPlatformNestedInput = {
+    create?: XOR<HandleCreateWithoutPlatformInput, HandleUncheckedCreateWithoutPlatformInput> | HandleCreateWithoutPlatformInput[] | HandleUncheckedCreateWithoutPlatformInput[]
+    connectOrCreate?: HandleCreateOrConnectWithoutPlatformInput | HandleCreateOrConnectWithoutPlatformInput[]
+    upsert?: HandleUpsertWithWhereUniqueWithoutPlatformInput | HandleUpsertWithWhereUniqueWithoutPlatformInput[]
+    createMany?: HandleCreateManyPlatformInputEnvelope
+    set?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
+    disconnect?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
+    delete?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
+    connect?: HandleWhereUniqueInput | HandleWhereUniqueInput[]
+    update?: HandleUpdateWithWhereUniqueWithoutPlatformInput | HandleUpdateWithWhereUniqueWithoutPlatformInput[]
+    updateMany?: HandleUpdateManyWithWhereWithoutPlatformInput | HandleUpdateManyWithWhereWithoutPlatformInput[]
+    deleteMany?: HandleScalarWhereInput | HandleScalarWhereInput[]
   }
 
-  export type SocialPlatformCreateNestedOneWithoutSocialLinksInput = {
-    create?: XOR<SocialPlatformCreateWithoutSocialLinksInput, SocialPlatformUncheckedCreateWithoutSocialLinksInput>
-    connectOrCreate?: SocialPlatformCreateOrConnectWithoutSocialLinksInput
-    connect?: SocialPlatformWhereUniqueInput
+  export type PlatformCreateNestedOneWithoutHandlesInput = {
+    create?: XOR<PlatformCreateWithoutHandlesInput, PlatformUncheckedCreateWithoutHandlesInput>
+    connectOrCreate?: PlatformCreateOrConnectWithoutHandlesInput
+    connect?: PlatformWhereUniqueInput
   }
 
-  export type UserCreateNestedOneWithoutSocialLinksInput = {
-    create?: XOR<UserCreateWithoutSocialLinksInput, UserUncheckedCreateWithoutSocialLinksInput>
-    connectOrCreate?: UserCreateOrConnectWithoutSocialLinksInput
+  export type UserCreateNestedOneWithoutHandlesInput = {
+    create?: XOR<UserCreateWithoutHandlesInput, UserUncheckedCreateWithoutHandlesInput>
+    connectOrCreate?: UserCreateOrConnectWithoutHandlesInput
     connect?: UserWhereUniqueInput
   }
 
@@ -7047,20 +7047,20 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type SocialPlatformUpdateOneRequiredWithoutSocialLinksNestedInput = {
-    create?: XOR<SocialPlatformCreateWithoutSocialLinksInput, SocialPlatformUncheckedCreateWithoutSocialLinksInput>
-    connectOrCreate?: SocialPlatformCreateOrConnectWithoutSocialLinksInput
-    upsert?: SocialPlatformUpsertWithoutSocialLinksInput
-    connect?: SocialPlatformWhereUniqueInput
-    update?: XOR<XOR<SocialPlatformUpdateToOneWithWhereWithoutSocialLinksInput, SocialPlatformUpdateWithoutSocialLinksInput>, SocialPlatformUncheckedUpdateWithoutSocialLinksInput>
+  export type PlatformUpdateOneRequiredWithoutHandlesNestedInput = {
+    create?: XOR<PlatformCreateWithoutHandlesInput, PlatformUncheckedCreateWithoutHandlesInput>
+    connectOrCreate?: PlatformCreateOrConnectWithoutHandlesInput
+    upsert?: PlatformUpsertWithoutHandlesInput
+    connect?: PlatformWhereUniqueInput
+    update?: XOR<XOR<PlatformUpdateToOneWithWhereWithoutHandlesInput, PlatformUpdateWithoutHandlesInput>, PlatformUncheckedUpdateWithoutHandlesInput>
   }
 
-  export type UserUpdateOneRequiredWithoutSocialLinksNestedInput = {
-    create?: XOR<UserCreateWithoutSocialLinksInput, UserUncheckedCreateWithoutSocialLinksInput>
-    connectOrCreate?: UserCreateOrConnectWithoutSocialLinksInput
-    upsert?: UserUpsertWithoutSocialLinksInput
+  export type UserUpdateOneRequiredWithoutHandlesNestedInput = {
+    create?: XOR<UserCreateWithoutHandlesInput, UserUncheckedCreateWithoutHandlesInput>
+    connectOrCreate?: UserCreateOrConnectWithoutHandlesInput
+    upsert?: UserUpsertWithoutHandlesInput
     connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutSocialLinksInput, UserUpdateWithoutSocialLinksInput>, UserUncheckedUpdateWithoutSocialLinksInput>
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutHandlesInput, UserUpdateWithoutHandlesInput>, UserUncheckedUpdateWithoutHandlesInput>
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -7258,17 +7258,17 @@ export namespace Prisma {
     create: XOR<ProfileCreateWithoutUserInput, ProfileUncheckedCreateWithoutUserInput>
   }
 
-  export type SocialLinkCreateWithoutUserInput = {
+  export type HandleCreateWithoutUserInput = {
     id?: string
     url: string
     order?: number
     archive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    platform: SocialPlatformCreateNestedOneWithoutSocialLinksInput
+    platform: PlatformCreateNestedOneWithoutHandlesInput
   }
 
-  export type SocialLinkUncheckedCreateWithoutUserInput = {
+  export type HandleUncheckedCreateWithoutUserInput = {
     id?: string
     platformId: string
     url: string
@@ -7278,13 +7278,13 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type SocialLinkCreateOrConnectWithoutUserInput = {
-    where: SocialLinkWhereUniqueInput
-    create: XOR<SocialLinkCreateWithoutUserInput, SocialLinkUncheckedCreateWithoutUserInput>
+  export type HandleCreateOrConnectWithoutUserInput = {
+    where: HandleWhereUniqueInput
+    create: XOR<HandleCreateWithoutUserInput, HandleUncheckedCreateWithoutUserInput>
   }
 
-  export type SocialLinkCreateManyUserInputEnvelope = {
-    data: SocialLinkCreateManyUserInput | SocialLinkCreateManyUserInput[]
+  export type HandleCreateManyUserInputEnvelope = {
+    data: HandleCreateManyUserInput | HandleCreateManyUserInput[]
     skipDuplicates?: boolean
   }
 
@@ -7323,34 +7323,34 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type SocialLinkUpsertWithWhereUniqueWithoutUserInput = {
-    where: SocialLinkWhereUniqueInput
-    update: XOR<SocialLinkUpdateWithoutUserInput, SocialLinkUncheckedUpdateWithoutUserInput>
-    create: XOR<SocialLinkCreateWithoutUserInput, SocialLinkUncheckedCreateWithoutUserInput>
+  export type HandleUpsertWithWhereUniqueWithoutUserInput = {
+    where: HandleWhereUniqueInput
+    update: XOR<HandleUpdateWithoutUserInput, HandleUncheckedUpdateWithoutUserInput>
+    create: XOR<HandleCreateWithoutUserInput, HandleUncheckedCreateWithoutUserInput>
   }
 
-  export type SocialLinkUpdateWithWhereUniqueWithoutUserInput = {
-    where: SocialLinkWhereUniqueInput
-    data: XOR<SocialLinkUpdateWithoutUserInput, SocialLinkUncheckedUpdateWithoutUserInput>
+  export type HandleUpdateWithWhereUniqueWithoutUserInput = {
+    where: HandleWhereUniqueInput
+    data: XOR<HandleUpdateWithoutUserInput, HandleUncheckedUpdateWithoutUserInput>
   }
 
-  export type SocialLinkUpdateManyWithWhereWithoutUserInput = {
-    where: SocialLinkScalarWhereInput
-    data: XOR<SocialLinkUpdateManyMutationInput, SocialLinkUncheckedUpdateManyWithoutUserInput>
+  export type HandleUpdateManyWithWhereWithoutUserInput = {
+    where: HandleScalarWhereInput
+    data: XOR<HandleUpdateManyMutationInput, HandleUncheckedUpdateManyWithoutUserInput>
   }
 
-  export type SocialLinkScalarWhereInput = {
-    AND?: SocialLinkScalarWhereInput | SocialLinkScalarWhereInput[]
-    OR?: SocialLinkScalarWhereInput[]
-    NOT?: SocialLinkScalarWhereInput | SocialLinkScalarWhereInput[]
-    id?: StringFilter<"SocialLink"> | string
-    platformId?: StringFilter<"SocialLink"> | string
-    userId?: StringFilter<"SocialLink"> | string
-    url?: StringFilter<"SocialLink"> | string
-    order?: IntFilter<"SocialLink"> | number
-    archive?: BoolFilter<"SocialLink"> | boolean
-    createdAt?: DateTimeFilter<"SocialLink"> | Date | string
-    updatedAt?: DateTimeFilter<"SocialLink"> | Date | string
+  export type HandleScalarWhereInput = {
+    AND?: HandleScalarWhereInput | HandleScalarWhereInput[]
+    OR?: HandleScalarWhereInput[]
+    NOT?: HandleScalarWhereInput | HandleScalarWhereInput[]
+    id?: StringFilter<"Handle"> | string
+    platformId?: StringFilter<"Handle"> | string
+    userId?: StringFilter<"Handle"> | string
+    url?: StringFilter<"Handle"> | string
+    order?: IntFilter<"Handle"> | number
+    archive?: BoolFilter<"Handle"> | boolean
+    createdAt?: DateTimeFilter<"Handle"> | Date | string
+    updatedAt?: DateTimeFilter<"Handle"> | Date | string
   }
 
   export type UserCreateWithoutProfileInput = {
@@ -7363,7 +7363,7 @@ export namespace Prisma {
     role?: $Enums.Role
     createdAt?: Date | string
     updatedAt?: Date | string
-    socialLinks?: SocialLinkCreateNestedManyWithoutUserInput
+    handles?: HandleCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutProfileInput = {
@@ -7376,7 +7376,7 @@ export namespace Prisma {
     role?: $Enums.Role
     createdAt?: Date | string
     updatedAt?: Date | string
-    socialLinks?: SocialLinkUncheckedCreateNestedManyWithoutUserInput
+    handles?: HandleUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutProfileInput = {
@@ -7405,7 +7405,7 @@ export namespace Prisma {
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    socialLinks?: SocialLinkUpdateManyWithoutUserNestedInput
+    handles?: HandleUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutProfileInput = {
@@ -7418,20 +7418,20 @@ export namespace Prisma {
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    socialLinks?: SocialLinkUncheckedUpdateManyWithoutUserNestedInput
+    handles?: HandleUncheckedUpdateManyWithoutUserNestedInput
   }
 
-  export type SocialLinkCreateWithoutPlatformInput = {
+  export type HandleCreateWithoutPlatformInput = {
     id?: string
     url: string
     order?: number
     archive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    user: UserCreateNestedOneWithoutSocialLinksInput
+    user: UserCreateNestedOneWithoutHandlesInput
   }
 
-  export type SocialLinkUncheckedCreateWithoutPlatformInput = {
+  export type HandleUncheckedCreateWithoutPlatformInput = {
     id?: string
     userId: string
     url: string
@@ -7441,33 +7441,33 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type SocialLinkCreateOrConnectWithoutPlatformInput = {
-    where: SocialLinkWhereUniqueInput
-    create: XOR<SocialLinkCreateWithoutPlatformInput, SocialLinkUncheckedCreateWithoutPlatformInput>
+  export type HandleCreateOrConnectWithoutPlatformInput = {
+    where: HandleWhereUniqueInput
+    create: XOR<HandleCreateWithoutPlatformInput, HandleUncheckedCreateWithoutPlatformInput>
   }
 
-  export type SocialLinkCreateManyPlatformInputEnvelope = {
-    data: SocialLinkCreateManyPlatformInput | SocialLinkCreateManyPlatformInput[]
+  export type HandleCreateManyPlatformInputEnvelope = {
+    data: HandleCreateManyPlatformInput | HandleCreateManyPlatformInput[]
     skipDuplicates?: boolean
   }
 
-  export type SocialLinkUpsertWithWhereUniqueWithoutPlatformInput = {
-    where: SocialLinkWhereUniqueInput
-    update: XOR<SocialLinkUpdateWithoutPlatformInput, SocialLinkUncheckedUpdateWithoutPlatformInput>
-    create: XOR<SocialLinkCreateWithoutPlatformInput, SocialLinkUncheckedCreateWithoutPlatformInput>
+  export type HandleUpsertWithWhereUniqueWithoutPlatformInput = {
+    where: HandleWhereUniqueInput
+    update: XOR<HandleUpdateWithoutPlatformInput, HandleUncheckedUpdateWithoutPlatformInput>
+    create: XOR<HandleCreateWithoutPlatformInput, HandleUncheckedCreateWithoutPlatformInput>
   }
 
-  export type SocialLinkUpdateWithWhereUniqueWithoutPlatformInput = {
-    where: SocialLinkWhereUniqueInput
-    data: XOR<SocialLinkUpdateWithoutPlatformInput, SocialLinkUncheckedUpdateWithoutPlatformInput>
+  export type HandleUpdateWithWhereUniqueWithoutPlatformInput = {
+    where: HandleWhereUniqueInput
+    data: XOR<HandleUpdateWithoutPlatformInput, HandleUncheckedUpdateWithoutPlatformInput>
   }
 
-  export type SocialLinkUpdateManyWithWhereWithoutPlatformInput = {
-    where: SocialLinkScalarWhereInput
-    data: XOR<SocialLinkUpdateManyMutationInput, SocialLinkUncheckedUpdateManyWithoutPlatformInput>
+  export type HandleUpdateManyWithWhereWithoutPlatformInput = {
+    where: HandleScalarWhereInput
+    data: XOR<HandleUpdateManyMutationInput, HandleUncheckedUpdateManyWithoutPlatformInput>
   }
 
-  export type SocialPlatformCreateWithoutSocialLinksInput = {
+  export type PlatformCreateWithoutHandlesInput = {
     id?: string
     name: string
     baseUrl: string
@@ -7477,7 +7477,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type SocialPlatformUncheckedCreateWithoutSocialLinksInput = {
+  export type PlatformUncheckedCreateWithoutHandlesInput = {
     id?: string
     name: string
     baseUrl: string
@@ -7487,12 +7487,12 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type SocialPlatformCreateOrConnectWithoutSocialLinksInput = {
-    where: SocialPlatformWhereUniqueInput
-    create: XOR<SocialPlatformCreateWithoutSocialLinksInput, SocialPlatformUncheckedCreateWithoutSocialLinksInput>
+  export type PlatformCreateOrConnectWithoutHandlesInput = {
+    where: PlatformWhereUniqueInput
+    create: XOR<PlatformCreateWithoutHandlesInput, PlatformUncheckedCreateWithoutHandlesInput>
   }
 
-  export type UserCreateWithoutSocialLinksInput = {
+  export type UserCreateWithoutHandlesInput = {
     id?: string
     email: string
     username: string
@@ -7505,7 +7505,7 @@ export namespace Prisma {
     profile?: ProfileCreateNestedOneWithoutUserInput
   }
 
-  export type UserUncheckedCreateWithoutSocialLinksInput = {
+  export type UserUncheckedCreateWithoutHandlesInput = {
     id?: string
     email: string
     username: string
@@ -7518,23 +7518,23 @@ export namespace Prisma {
     profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
   }
 
-  export type UserCreateOrConnectWithoutSocialLinksInput = {
+  export type UserCreateOrConnectWithoutHandlesInput = {
     where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutSocialLinksInput, UserUncheckedCreateWithoutSocialLinksInput>
+    create: XOR<UserCreateWithoutHandlesInput, UserUncheckedCreateWithoutHandlesInput>
   }
 
-  export type SocialPlatformUpsertWithoutSocialLinksInput = {
-    update: XOR<SocialPlatformUpdateWithoutSocialLinksInput, SocialPlatformUncheckedUpdateWithoutSocialLinksInput>
-    create: XOR<SocialPlatformCreateWithoutSocialLinksInput, SocialPlatformUncheckedCreateWithoutSocialLinksInput>
-    where?: SocialPlatformWhereInput
+  export type PlatformUpsertWithoutHandlesInput = {
+    update: XOR<PlatformUpdateWithoutHandlesInput, PlatformUncheckedUpdateWithoutHandlesInput>
+    create: XOR<PlatformCreateWithoutHandlesInput, PlatformUncheckedCreateWithoutHandlesInput>
+    where?: PlatformWhereInput
   }
 
-  export type SocialPlatformUpdateToOneWithWhereWithoutSocialLinksInput = {
-    where?: SocialPlatformWhereInput
-    data: XOR<SocialPlatformUpdateWithoutSocialLinksInput, SocialPlatformUncheckedUpdateWithoutSocialLinksInput>
+  export type PlatformUpdateToOneWithWhereWithoutHandlesInput = {
+    where?: PlatformWhereInput
+    data: XOR<PlatformUpdateWithoutHandlesInput, PlatformUncheckedUpdateWithoutHandlesInput>
   }
 
-  export type SocialPlatformUpdateWithoutSocialLinksInput = {
+  export type PlatformUpdateWithoutHandlesInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     baseUrl?: StringFieldUpdateOperationsInput | string
@@ -7544,7 +7544,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type SocialPlatformUncheckedUpdateWithoutSocialLinksInput = {
+  export type PlatformUncheckedUpdateWithoutHandlesInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     baseUrl?: StringFieldUpdateOperationsInput | string
@@ -7554,18 +7554,18 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type UserUpsertWithoutSocialLinksInput = {
-    update: XOR<UserUpdateWithoutSocialLinksInput, UserUncheckedUpdateWithoutSocialLinksInput>
-    create: XOR<UserCreateWithoutSocialLinksInput, UserUncheckedCreateWithoutSocialLinksInput>
+  export type UserUpsertWithoutHandlesInput = {
+    update: XOR<UserUpdateWithoutHandlesInput, UserUncheckedUpdateWithoutHandlesInput>
+    create: XOR<UserCreateWithoutHandlesInput, UserUncheckedCreateWithoutHandlesInput>
     where?: UserWhereInput
   }
 
-  export type UserUpdateToOneWithWhereWithoutSocialLinksInput = {
+  export type UserUpdateToOneWithWhereWithoutHandlesInput = {
     where?: UserWhereInput
-    data: XOR<UserUpdateWithoutSocialLinksInput, UserUncheckedUpdateWithoutSocialLinksInput>
+    data: XOR<UserUpdateWithoutHandlesInput, UserUncheckedUpdateWithoutHandlesInput>
   }
 
-  export type UserUpdateWithoutSocialLinksInput = {
+  export type UserUpdateWithoutHandlesInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
@@ -7578,7 +7578,7 @@ export namespace Prisma {
     profile?: ProfileUpdateOneWithoutUserNestedInput
   }
 
-  export type UserUncheckedUpdateWithoutSocialLinksInput = {
+  export type UserUncheckedUpdateWithoutHandlesInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     username?: StringFieldUpdateOperationsInput | string
@@ -7591,7 +7591,7 @@ export namespace Prisma {
     profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
   }
 
-  export type SocialLinkCreateManyUserInput = {
+  export type HandleCreateManyUserInput = {
     id?: string
     platformId: string
     url: string
@@ -7601,27 +7601,17 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type SocialLinkUpdateWithoutUserInput = {
+  export type HandleUpdateWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
     order?: IntFieldUpdateOperationsInput | number
     archive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    platform?: SocialPlatformUpdateOneRequiredWithoutSocialLinksNestedInput
+    platform?: PlatformUpdateOneRequiredWithoutHandlesNestedInput
   }
 
-  export type SocialLinkUncheckedUpdateWithoutUserInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    platformId?: StringFieldUpdateOperationsInput | string
-    url?: StringFieldUpdateOperationsInput | string
-    order?: IntFieldUpdateOperationsInput | number
-    archive?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type SocialLinkUncheckedUpdateManyWithoutUserInput = {
+  export type HandleUncheckedUpdateWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
     platformId?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
@@ -7631,7 +7621,17 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type SocialLinkCreateManyPlatformInput = {
+  export type HandleUncheckedUpdateManyWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    platformId?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    order?: IntFieldUpdateOperationsInput | number
+    archive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HandleCreateManyPlatformInput = {
     id?: string
     userId: string
     url: string
@@ -7641,17 +7641,17 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type SocialLinkUpdateWithoutPlatformInput = {
+  export type HandleUpdateWithoutPlatformInput = {
     id?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
     order?: IntFieldUpdateOperationsInput | number
     archive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateOneRequiredWithoutSocialLinksNestedInput
+    user?: UserUpdateOneRequiredWithoutHandlesNestedInput
   }
 
-  export type SocialLinkUncheckedUpdateWithoutPlatformInput = {
+  export type HandleUncheckedUpdateWithoutPlatformInput = {
     id?: StringFieldUpdateOperationsInput | string
     userId?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
@@ -7661,7 +7661,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type SocialLinkUncheckedUpdateManyWithoutPlatformInput = {
+  export type HandleUncheckedUpdateManyWithoutPlatformInput = {
     id?: StringFieldUpdateOperationsInput | string
     userId?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string

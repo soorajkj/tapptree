@@ -145,7 +145,7 @@ exports.Prisma.ProfileScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
-exports.Prisma.SocialPlatformScalarFieldEnum = {
+exports.Prisma.PlatformScalarFieldEnum = {
   id: 'id',
   name: 'name',
   baseUrl: 'baseUrl',
@@ -155,7 +155,7 @@ exports.Prisma.SocialPlatformScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
-exports.Prisma.SocialLinkScalarFieldEnum = {
+exports.Prisma.HandleScalarFieldEnum = {
   id: 'id',
   platformId: 'platformId',
   userId: 'userId',
@@ -189,8 +189,8 @@ exports.Role = exports.$Enums.Role = {
 exports.Prisma.ModelName = {
   User: 'User',
   Profile: 'Profile',
-  SocialPlatform: 'SocialPlatform',
-  SocialLink: 'SocialLink'
+  Platform: 'Platform',
+  Handle: 'Handle'
 };
 
 /**

@@ -59,7 +59,7 @@ const platforms: Platform[] = [
 
 async function main() {
   for (const platform of platforms) {
-    await prisma.socialPlatform.upsert({
+    await prisma.platform.upsert({
       where: { name: platform.name },
       update: {},
       create: platform,

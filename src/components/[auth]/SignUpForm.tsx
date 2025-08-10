@@ -3,12 +3,14 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import type { SignUpSchema } from "@/utils/validators/auth";
-import { signUpSchema } from "@/utils/validators/auth";
+import { signUpSchema } from "@/utils/zod/auth";
 import { Form } from "@/components/core/form";
 import { Input } from "@/components/core/input";
 import { Button } from "@/components/core/button";
 import { rpc } from "@/lib/rpc";
+import type z from "zod/v3";
+
+type SignUpSchema = z.infer<typeof signUpSchema>;
 
 export default function SignUpForm() {
   const form = useForm<SignUpSchema>({

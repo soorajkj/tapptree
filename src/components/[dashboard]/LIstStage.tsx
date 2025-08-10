@@ -1,30 +1,46 @@
 "use client";
 
-import { rpc } from "@/lib/rpc";
-import { InferResponseType } from "hono";
-import { Fragment } from "react";
+import { Fragment, useCallback } from "react";
 import { Dialog } from "../core/dialog";
 import { Icon } from "../core/icon";
+import { Button } from "../core/button";
 import SortableList from "./SortableList";
 import SortableItem from "./SortableItem";
-import SocialCard from "./SocialCard";
-import { Button } from "../core/button";
-
-type Link = InferResponseType<typeof rpc.api.me.socials.$get>[number];
+import HandleControl from "./HandleControl";
+import type { THandleWithPlatform } from "@/types/handle";
 
 export default function ListStage({
-  links,
+  handles,
   onAdd,
+  handleReorder,
+  onEditHandle,
+  onToggleArchive,
 }: {
-  links: Link[];
+  handles: THandleWithPlatform[];
   onAdd: () => void;
+  handleReorder: (data: { platformIds: string[] }) => void;
+  onEditHandle: (handle: THandleWithPlatform) => void;
+  onToggleArchive: (handle: THandleWithPlatform) => void;
 }) {
+  const renderSortableItem = useCallback(
+    (handle: THandleWithPlatform) => (
+      <SortableItem id={handle.id} key={handle.id}>
+        <HandleControl
+          handle={handle}
+          onEdit={onEditHandle}
+          onToggleArchive={onToggleArchive}
+        />
+      </SortableItem>
+    ),
+    [onEditHandle, onToggleArchive]
+  );
+
   return (
     <Fragment>
       <Dialog.DialogHeader>
         <div className="flex items-center justify-between">
           <Dialog.DialogTitle>Social icons</Dialog.DialogTitle>
-          <Dialog.DialogClose className="flex items-center justify-center rounded-lg p-2 hover:bg-neutral-800/30">
+          <Dialog.DialogClose className="hover:bg-carbon-800/30 flex items-center justify-center rounded-lg p-2">
             <Icon icon="X" className="size-5" />
           </Dialog.DialogClose>
         </div>
@@ -37,15 +53,16 @@ export default function ListStage({
         </p>
       </div>
       <div className="flex h-full max-h-80 flex-col gap-4 overflow-y-auto">
-        <SortableList
-          items={links}
-          onChange={() => {}}
-          renderItem={(link) => (
-            <SortableItem id={link.id} key={link.id}>
-              <SocialCard id={link.id} item={link} />
-            </SortableItem>
-          )}
-        ></SortableList>
+        {/* <SortableList
+          items={handles}
+          onDragEventEnd={(reorderedHandles) => {
+            const platformIds = reorderedHandles.map(
+              (handle) => handle.platformId
+            );
+            handleReorder({ platformIds });
+          }}
+          renderItem={renderSortableItem}
+        ></SortableList> */}
       </div>
       <Dialog.DialogFooter>
         <Button onClick={onAdd} className="w-full">

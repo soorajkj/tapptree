@@ -3,8 +3,8 @@ import { sign } from "hono/jwt";
 import { zValidator } from "@hono/zod-validator";
 import bcrypt from "bcryptjs";
 import { hono } from "@/lib/hono";
-import { signInSchema, signUpSchema } from "@/utils/validators/auth";
-import { JWTPayload } from "@/server/types/bindings";
+import { signInSchema, signUpSchema } from "@/utils/zod/auth";
+import { type JWTPayload } from "@/server/types/bindings";
 
 const auth = hono
   .createApp()

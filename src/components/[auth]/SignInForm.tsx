@@ -4,12 +4,14 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import type { SignInSchema } from "@/utils/validators/auth";
-import { signInSchema } from "@/utils/validators/auth";
+import { signInSchema } from "@/utils/zod/auth";
 import { rpc } from "@/lib/rpc";
 import { Form } from "../core/form";
 import { Input } from "../core/input";
 import { Button } from "../core/button";
+import type z from "zod/v3";
+
+type SignInSchema = z.infer<typeof signInSchema>;
 
 export default function SignInForm() {
   const form = useForm<SignInSchema>({

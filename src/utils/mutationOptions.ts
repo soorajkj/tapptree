@@ -1,4 +1,7 @@
-import { DefaultError, UseMutationOptions } from "@tanstack/react-query";
+import {
+  type DefaultError,
+  type UseMutationOptions,
+} from "@tanstack/react-query";
 
 export const mutationOptions = <
   TData = unknown,
