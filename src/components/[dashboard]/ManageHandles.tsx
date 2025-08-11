@@ -10,11 +10,11 @@ import ListStage from "./ListStage";
 import CreateStage from "./CreateStage";
 import UpdateStage from "./UpdateStage";
 import { createHandleSchema } from "@/utils/zod/handles";
-import type z from "zod/v3";
+import { type z } from "zod/v3";
 import { usePlatforms } from "@/hooks/usePlatforms";
 import { useHandles } from "@/hooks/useHandles";
 import { useHandlesMutations } from "@/hooks/useHandlesMutations";
-import type { THandleWithPlatform } from "@/types/handle";
+import { type THandleWithPlatform } from "@/types/handle";
 
 type Stage = "list" | "choose" | "add" | "update";
 type Platform = InferResponseType<typeof rpc.api.me.platforms.$get>[number];
@@ -40,8 +40,10 @@ export default function ManageHandles() {
     (p) => !addedPlatformIds.has(p.id)
   );
 
-  const createHandlePayload = createHandleSchema.omit({ platformId: true });
-  type CreateHandlePayload = z.infer<typeof createHandlePayload>;
+  const _createHandlePayloadSchema = createHandleSchema.omit({
+    platformId: true,
+  });
+  type CreateHandlePayload = z.infer<typeof _createHandlePayloadSchema>;
 
   const handleAddLink = async (
     platformId: string,

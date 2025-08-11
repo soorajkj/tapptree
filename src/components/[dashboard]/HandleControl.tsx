@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { type SyntheticListenerMap } from "@dnd-kit/core/dist/hooks/utilities";
 import { type THandleWithPlatform } from "@/types/handle";
 import { useHandlesMutations } from "@/hooks/useHandlesMutations";
 import { Icon } from "../core/icon";

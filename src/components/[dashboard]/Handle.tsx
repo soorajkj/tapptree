@@ -1,9 +1,9 @@
 "use client";
 
-import { UniqueIdentifier } from "@dnd-kit/core";
+import { type UniqueIdentifier } from "@dnd-kit/core";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import React, { ComponentProps } from "react";
+import React, { type ComponentProps } from "react";
 
 export default function Handle({
   id,

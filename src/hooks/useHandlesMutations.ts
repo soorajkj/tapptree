@@ -7,6 +7,7 @@ import type {
   updateHandleSchema,
 } from "@/utils/zod/handles";
 import { rpc } from "@/lib/rpc";
+import { type THandleWithPlatform } from "@/types/handle";
 
 type CreateHandleSchema = z.infer<typeof createHandleSchema>;
 type ReorderHandlesSchema = z.infer<typeof reorderHandlesSchema>;
@@ -32,7 +33,9 @@ export const useHandlesMutations = () => {
     },
     onMutate: async (newOrder) => {
       await queryClient.cancelQueries({ queryKey: ["handles"] });
-      const previousHandles = queryClient.getQueryData<any[]>(["handles"]);
+      const previousHandles = queryClient.getQueryData<THandleWithPlatform[]>([
+        "handles",
+      ]);
 
       if (previousHandles) {
         const newHandles = [...previousHandles].sort(
