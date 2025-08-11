@@ -9,7 +9,6 @@ import ChooseStage from "./ChooseStage";
 import ListStage from "./ListStage";
 import CreateStage from "./CreateStage";
 import UpdateStage from "./UpdateStage";
-import type { updateHandleSchema } from "@/utils/zod/handles";
 import { createHandleSchema } from "@/utils/zod/handles";
 import type z from "zod/v3";
 import { usePlatforms } from "@/hooks/usePlatforms";
@@ -19,7 +18,6 @@ import type { THandleWithPlatform } from "@/types/handle";
 
 type Stage = "list" | "choose" | "add" | "update";
 type Platform = InferResponseType<typeof rpc.api.me.platforms.$get>[number];
-type UpdateHandleSchema = z.infer<typeof updateHandleSchema>;
 
 export default function ManageHandles() {
   const [stage, setStage] = useState<Stage>("list");
@@ -31,7 +29,8 @@ export default function ManageHandles() {
   const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
     null
   );
-  const [handleToUpdate, setHandleToUpdate] = useState<any>(null);
+  const [handleToUpdate, setHandleToUpdate] =
+    useState<THandleWithPlatform | null>(null);
 
   const addedPlatformIds = new Set(
     handlesQuery.data?.map((handle) => handle.platformId) ?? []
@@ -54,11 +53,6 @@ export default function ManageHandles() {
 
   const handleCloseDialog = () => {
     setSelectedPlatform(null);
-    setStage("list");
-  };
-
-  const handlePlaceholderClick = (platform: Platform) => {
-    setSelectedPlatform(platform);
     setStage("list");
   };
 
@@ -116,8 +110,6 @@ export default function ManageHandles() {
     return stages[stage];
   }
 
-  // return null;
-
   return (
     <div className="mx-auto grid w-full grid-cols-1 gap-2">
       <Dialog.DialogRoot
@@ -125,13 +117,6 @@ export default function ManageHandles() {
           if (!open) handleCloseDialog();
         }}
       >
-        {/* {handlesQuery.isPending ? (
-          [...Array(5)].map((_, i) => <HandleSkeleton key={i} />)
-        ) : !handlesQuery.data?.length ? (
-          "No handles to show"
-        ) : (
-          <Handles />
-        )} */}
         <Dialog.DialogTrigger asChild>
           <button className="bg-carbon-800/30 flex min-h-16 shrink-0 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg px-4 py-2">
             <span className="flex size-6 shrink-0 items-center justify-center rounded-sm text-white">

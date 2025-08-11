@@ -2,6 +2,7 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
 import pluginQuery from "@tanstack/eslint-plugin-query";
+import prettier from "eslint-plugin-prettier/recommended";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -19,12 +20,17 @@ const eslintConfig = [
       "@typescript-eslint/consistent-type-imports": [
         "error",
         {
-          prefer: "type-imports", // enforce `import type`
+          prefer: "type-imports",
           disallowTypeAnnotations: false,
         },
       ],
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+      ],
     },
   }),
+  prettier,
 ];
 
 export default eslintConfig;

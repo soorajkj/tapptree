@@ -1,20 +1,13 @@
 "use client";
 
-import { Fragment, useCallback } from "react";
+import { Fragment } from "react";
 import { Dialog } from "../core/dialog";
 import { Icon } from "../core/icon";
 import { Button } from "../core/button";
-import SortableList from "./SortableList";
-import SortableItem from "./SortableItem";
-import HandleControl from "./HandleControl";
 import type { THandleWithPlatform } from "@/types/handle";
 
 export default function ListStage({
-  handles,
   onAdd,
-  handleReorder,
-  onEditHandle,
-  onToggleArchive,
 }: {
   handles: THandleWithPlatform[];
   onAdd: () => void;
@@ -22,19 +15,6 @@ export default function ListStage({
   onEditHandle: (handle: THandleWithPlatform) => void;
   onToggleArchive: (handle: THandleWithPlatform) => void;
 }) {
-  const renderSortableItem = useCallback(
-    (handle: THandleWithPlatform) => (
-      <SortableItem id={handle.id} key={handle.id}>
-        <HandleControl
-          handle={handle}
-          onEdit={onEditHandle}
-          onToggleArchive={onToggleArchive}
-        />
-      </SortableItem>
-    ),
-    [onEditHandle, onToggleArchive]
-  );
-
   return (
     <Fragment>
       <Dialog.DialogHeader>
@@ -52,18 +32,7 @@ export default function ListStage({
           Linktree.
         </p>
       </div>
-      <div className="flex h-full max-h-80 flex-col gap-4 overflow-y-auto">
-        {/* <SortableList
-          items={handles}
-          onDragEventEnd={(reorderedHandles) => {
-            const platformIds = reorderedHandles.map(
-              (handle) => handle.platformId
-            );
-            handleReorder({ platformIds });
-          }}
-          renderItem={renderSortableItem}
-        ></SortableList> */}
-      </div>
+      <div className="flex h-full max-h-80 flex-col gap-4 overflow-y-auto"></div>
       <Dialog.DialogFooter>
         <Button onClick={onAdd} className="w-full">
           Add new button

@@ -1,21 +1,35 @@
-import React from "react";
-import MediaIcon, { type MediaIconType } from "../MediaIcon";
-import type { THandleWithPlatform } from "@/types/handle";
+"use client";
 
-interface HandleProps {
-  handle: THandleWithPlatform;
-}
+import { UniqueIdentifier } from "@dnd-kit/core";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+import React, { ComponentProps } from "react";
 
-export default function Handle({ handle }: HandleProps) {
+export default function Handle({
+  id,
+  ...props
+}: ComponentProps<"button"> & { id: UniqueIdentifier }) {
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({ id });
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
+
   return (
-    <button className="bg-carbon-800/30 flex min-h-16 w-full shrink-0 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg border border-transparent px-4 py-2">
+    <button
+      ref={setNodeRef}
+      style={style}
+      {...attributes}
+      {...listeners}
+      {...props}
+      className="bg-carbon-800/30 flex min-h-16 w-full shrink-0 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg border border-transparent px-4 py-2"
+    >
       <div className="flex overflow-hidden">
-        <span className="flex size-6 shrink-0 items-center justify-center rounded-sm text-white">
-          <MediaIcon icon={handle.platform?.icon as MediaIconType} />
-        </span>
+        <span className="flex size-6 shrink-0 items-center justify-center rounded-sm text-white"></span>
       </div>
       <div className="flex flex-1 flex-col items-start gap-1 *:leading-none">
-        <p className="text-white">{handle.platform.name}</p>
+        {props.children}
       </div>
     </button>
   );

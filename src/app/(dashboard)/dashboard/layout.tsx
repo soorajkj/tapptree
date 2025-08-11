@@ -6,11 +6,8 @@ export default function Layout({ children }: PropsWithChildren) {
   return (
     <div className="flex w-full flex-col">
       <Header />
-      <div className="mx-auto flex w-full max-w-6xl flex-1 gap-6">
-        <div className="w-full flex-1">
-          <main className="mx-auto w-full max-w-lg py-12">{children}</main>
-        </div>
-        <div className="w-full max-w-sm py-6"></div>
+      <div className="mx-auto flex w-full max-w-2xl flex-1 gap-6">
+        <main className="w-full flex-1">{children}</main>
       </div>
     </div>
   );

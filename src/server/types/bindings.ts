@@ -6,11 +6,15 @@ export interface JWTPayload extends HonoJWTPaylod {
   id: string;
 }
 
+type Bindings = {
+  test: string;
+};
+
 type Variables = {
   db: typeof prisma;
 } & JwtVariables<JWTPayload>;
 
 export interface AppBindings {
-  Bindings: {};
+  Bindings: Bindings;
   Variables: Variables;
 }

@@ -1,4 +1,4 @@
-import { MediaIconType } from "@/components/MediaIcon";
+import { type MediaIconType } from "@/components/MediaIcon";
 import { PrismaClient } from "../src/generated/prisma";
 
 const prisma = new PrismaClient();

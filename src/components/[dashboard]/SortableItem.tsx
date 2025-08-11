@@ -1,22 +1,21 @@
 "use client";
 
-import type { CSSProperties, PropsWithChildren } from "react";
+import type { ComponentProps, CSSProperties } from "react";
 import type { UniqueIdentifier } from "@dnd-kit/core";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
-type SortableItemProps = PropsWithChildren<{
-  id: UniqueIdentifier;
-}>;
+interface SortableItemProps extends ComponentProps<"li"> {
+  uid: UniqueIdentifier;
+}
 
-export default function SortableItem(props: SortableItemProps) {
-  const { id, children } = props;
-
-  const { setNodeRef, transform, transition } = useSortable({ id });
+export default function SortableItem({ children, uid }: SortableItemProps) {
+  const { setNodeRef, transform } = useSortable({
+    id: uid,
+  });
 
   const style = {
     transform: CSS.Transform.toString(transform),
-    transition,
   } as CSSProperties;
 
   return (

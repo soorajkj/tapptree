@@ -3,6 +3,7 @@ import { Dialog } from "../core/dialog";
 import { Input } from "../core/input";
 import { Button } from "../core/button";
 import React from "react";
+import { type THandleWithPlatform } from "@/types/handle";
 
 export default function UpdateStage({
   back,
@@ -10,7 +11,7 @@ export default function UpdateStage({
   onSave,
 }: {
   back: () => void;
-  handle: any;
+  handle: THandleWithPlatform | null;
   onSave: (url: string) => void;
 }) {
   const [url, setUrl] = useState<string>(handle?.url ?? "");

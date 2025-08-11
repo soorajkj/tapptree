@@ -1,4 +1,3 @@
-import { Icon } from "../core/icon";
 import type { MediaIconType } from "../MediaIcon";
 import MediaIcon from "../MediaIcon";
 

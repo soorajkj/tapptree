@@ -2,6 +2,7 @@ import React from "react";
 import { Icon } from "@/components/core/icon";
 import { type InferResponseType } from "hono";
 import { type rpc } from "@/lib/rpc";
+import Image from "next/image";
 
 interface PermaLinkProps {
   user: InferResponseType<(typeof rpc.api.profile)[":username"]["$get"]>;
@@ -12,8 +13,10 @@ export default function PermaLink({}: PermaLinkProps) {
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-center">
         <div className="border-carbon-900 size-16 overflow-clip rounded-full border-4">
-          <img
+          <Image
             alt=""
+            height={64}
+            width={64}
             src={
               "https://framerusercontent.com/images/gjhvusBEsI9hRN7i1JYLAZIMuwc.png"
             }
