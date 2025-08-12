@@ -1,11 +1,16 @@
-import { jwt } from "hono/jwt";
 import { hono } from "@/lib/hono";
+import { auth } from "@/lib/auth";
 
 export const authMiddleware = hono.createMiddleware(async (c, next) => {
-  const jwtMiddleware = jwt({
-    cookie: { key: "__auth" },
-    secret: "1234567890",
-  });
+  const session = await auth.api.getSession({ headers: c.req.raw.headers });
 
-  return jwtMiddleware(c, next);
+  if (!session) {
+    c.set("user", null);
+    c.set("session", null);
+    return next();
+  }
+
+  c.set("user", session.user);
+  c.set("session", session.session);
+  return next();
 });

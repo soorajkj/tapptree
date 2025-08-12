@@ -1,33 +1,36 @@
 "use client";
 
 import { useForm } from "react-hook-form";
+import type z from "zod/v3";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
 import { signUpSchema } from "@/utils/zod/auth";
 import { Form } from "@/components/core/form";
 import { Input } from "@/components/core/input";
 import { Button } from "@/components/core/button";
-import { rpc } from "@/lib/rpc";
-import type z from "zod/v3";
+import { authClient } from "@/lib/authClient";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 type SignUpSchema = z.infer<typeof signUpSchema>;
 
 export default function SignUpForm() {
+  const router = useRouter();
   const form = useForm<SignUpSchema>({
     resolver: zodResolver(signUpSchema),
     mode: "onSubmit",
     defaultValues: { email: "", password: "", name: "", username: "" },
   });
 
-  const { mutateAsync, isPending } = useMutation({
-    mutationFn: async (json: SignUpSchema) => {
-      const resp = await rpc.api.auth.signup.$post({ json });
-      return await resp.json();
-    },
-  });
-
-  const onSubmit = async (data: SignUpSchema) => {
-    await mutateAsync(data);
+  const onSubmit = async (fields: SignUpSchema) => {
+    await authClient.signUp.email(
+      { ...fields },
+      {
+        onSuccess: () => {
+          toast.success("User registration success");
+          router.push("/signin");
+        },
+      }
+    );
     form.reset();
   };
 
@@ -97,7 +100,7 @@ export default function SignUpForm() {
             </Form.FormItem>
           )}
         />
-        <Button disabled={isPending}>Get started</Button>
+        <Button>Get started</Button>
       </form>
     </Form.FormRoot>
   );

@@ -13,11 +13,11 @@ import { filterUndefined } from "@/utils/filterUndefined";
 const handles = hono
   .createApp()
   .get("/", authMiddleware, async (c) => {
-    const payload = c.get("jwtPayload");
+    const user = c.get("user");
     const db = c.get("db");
 
     const links = await db.handle.findMany({
-      where: { userId: payload.id },
+      where: { userId: user?.id },
       include: { platform: true },
       orderBy: [{ order: "asc" }, { createdAt: "asc" }],
     });
@@ -29,7 +29,7 @@ const handles = hono
     authMiddleware,
     zValidator("json", createHandleSchema),
     async (c) => {
-      const payload = c.get("jwtPayload");
+      const user = c.get("user");
       const db = c.get("db");
       const { platformId, url } = c.req.valid("json");
 
@@ -41,11 +41,13 @@ const handles = hono
         return c.json({ error: "Platform not found" }, 400);
       }
 
+      if (!user) return;
+
       const existing = await db.handle.findUnique({
         where: {
           platformId_userId: {
             platformId,
-            userId: payload.id,
+            userId: user?.id,
           },
         },
       });
@@ -55,14 +57,14 @@ const handles = hono
       }
 
       const lastHandle = await db.handle.findFirst({
-        where: { userId: payload.id },
+        where: { userId: user?.id },
         orderBy: { order: "desc" },
         select: { order: true },
       });
 
       const link = await db.handle.create({
         data: {
-          userId: payload.id,
+          userId: user.id,
           platformId,
           url,
           order: lastHandle ? lastHandle.order + 1 : 0,
@@ -81,8 +83,10 @@ const handles = hono
     zValidator("json", reorderHandlesSchema),
     async (c) => {
       const { platformIds } = c.req.valid("json");
-      const payload = c.get("jwtPayload");
+      const user = c.get("user");
       const db = c.get("db");
+
+      if (!user) return;
 
       await db.$transaction(
         platformIds.map((platformId, index) =>
@@ -90,7 +94,7 @@ const handles = hono
             where: {
               platformId_userId: {
                 platformId,
-                userId: payload.id,
+                userId: user?.id,
               },
             },
             data: { order: index },
@@ -108,11 +112,12 @@ const handles = hono
     async (c) => {
       const { id } = c.req.valid("param");
       const { archive } = c.req.valid("json");
-      const payload = c.get("jwtPayload");
+      const user = c.get("user");
+
       const db = c.get("db");
 
       await db.handle.updateMany({
-        where: { id, userId: payload.id },
+        where: { id, userId: user?.id },
         data: { archive },
       });
 
@@ -127,13 +132,14 @@ const handles = hono
     async (c) => {
       const { url } = c.req.valid("json");
       const { id } = c.req.valid("param");
-      const payload = c.get("jwtPayload");
+      const user = c.get("user");
+
       const db = c.get("db");
       const filteredUpdateData = filterUndefined({ url });
       await db.handle.updateMany({
         where: {
           id,
-          userId: payload.id,
+          userId: user?.id,
         },
         data: filteredUpdateData,
       });
@@ -148,7 +154,7 @@ const handles = hono
     async (c) => {
       const { id } = c.req.valid("param");
       const db = c.get("db");
-      const payload = c.get("jwtPayload");
+      const user = c.get("user");
 
       // 1. Find the handle being deleted
       const handle = await db.handle.findUnique({
@@ -168,7 +174,7 @@ const handles = hono
       // 3. Find and shift all handles with order > deleted one
       await db.handle.updateMany({
         where: {
-          userId: payload.id,
+          userId: user?.id,
           order: { gt: handle.order },
         },
         data: {

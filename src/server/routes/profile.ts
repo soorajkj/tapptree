@@ -16,7 +16,6 @@ const profile = hono
           id: true,
           username: true,
           name: true,
-          avatarUrl: true,
           profile: {
             select: {
               displayName: true,

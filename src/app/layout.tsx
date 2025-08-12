@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from "react";
 import type { Metadata } from "next";
+import { Toaster } from "sonner";
 import fonts from "@/lib/fonts";
 import ThemeProvider from "@/components/ThemeProvider";
 import ThemeToggler from "@/components/ThemeToggler";
@@ -23,6 +24,7 @@ export default function Layout({ children }: PropsWithChildren) {
         >
           <ThemeToggler />
           <QueryClientProvider>{children}</QueryClientProvider>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

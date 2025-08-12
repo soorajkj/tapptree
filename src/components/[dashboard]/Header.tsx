@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import SignOut from "./SignOut";
 
 export default function Header() {
   return (
@@ -21,6 +22,9 @@ export default function Header() {
             </svg>
             <span className="text-xl font-medium text-white">Taptree</span>
           </Link>
+          <div className="flex flex-1 items-center justify-end">
+            <SignOut />
+          </div>
         </div>
       </div>
     </header>

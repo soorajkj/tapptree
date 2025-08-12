@@ -77,10 +77,7 @@ export default function CreateStage({
               <Form.FormItem>
                 <Form.FormLabel>URL</Form.FormLabel>
                 <Form.FormControl>
-                  <Input
-                    placeholder={`https://${selectedPlatform.name.toLowerCase()}.com/yourusername`}
-                    {...field}
-                  />
+                  <Input {...field} />
                 </Form.FormControl>
                 <Form.FormMessage />
               </Form.FormItem>

@@ -1,20 +1,13 @@
+import { auth } from "@/lib/auth";
 import type prisma from "@/lib/prisma";
-import { type JwtVariables } from "hono/jwt";
-import { type JWTPayload as HonoJWTPaylod } from "hono/utils/jwt/types";
-
-export interface JWTPayload extends HonoJWTPaylod {
-  id: string;
-}
-
-type Bindings = {
-  test: string;
-};
 
 type Variables = {
   db: typeof prisma;
-} & JwtVariables<JWTPayload>;
+  auth: typeof auth;
+  user: typeof auth.$Infer.Session.user | null;
+  session: typeof auth.$Infer.Session.session | null;
+};
 
 export interface AppBindings {
-  Bindings: Bindings;
   Variables: Variables;
 }

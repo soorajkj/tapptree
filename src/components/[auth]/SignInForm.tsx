@@ -3,13 +3,12 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
 import { signInSchema } from "@/utils/zod/auth";
-import { rpc } from "@/lib/rpc";
 import { Form } from "../core/form";
 import { Input } from "../core/input";
 import { Button } from "../core/button";
 import type z from "zod/v3";
+import { authClient } from "@/lib/authClient";
 
 type SignInSchema = z.infer<typeof signInSchema>;
 
@@ -20,15 +19,8 @@ export default function SignInForm() {
     defaultValues: { email: "", password: "" },
   });
 
-  const { mutateAsync, isPending } = useMutation({
-    mutationFn: async (json: SignInSchema) => {
-      const resp = await rpc.api.auth.signin.$post({ json });
-      return await resp.json();
-    },
-  });
-
-  const onSubmit = async (data: SignInSchema) => {
-    await mutateAsync(data);
+  const onSubmit = async (fields: SignInSchema) => {
+    await authClient.signIn.email({ ...fields, callbackURL: "/dashboard" });
     form.reset();
   };
 
@@ -72,7 +64,7 @@ export default function SignInForm() {
             </Form.FormItem>
           )}
         />
-        <Button disabled={isPending}>Login</Button>
+        <Button>Login</Button>
       </form>
     </Form.FormRoot>
   );

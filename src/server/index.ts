@@ -1,10 +1,10 @@
 import { logger } from "hono/logger";
 import { hono } from "@/lib/hono";
-import auth from "@/server/routes/auth";
 import debug from "@/server/routes/debug";
 import profile from "@/server/routes/profile";
 import handles from "@/server/routes/handles";
 import platforms from "./routes/platforms";
+import auth from "./routes/auth";
 
 const app = hono
   .createApp()
