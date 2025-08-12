@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentProps, type ReactNode } from "react";
+import { useCallback, type ComponentProps, type ReactNode } from "react";
 import {
   closestCenter,
   DndContext,
@@ -44,15 +44,14 @@ export default function SortableList<T extends SortableItemBase>({
     })
   );
 
-  const handleDragEnd = (event: DragEndEvent) => {
+  const handleDragEnd = useCallback((event: DragEndEvent) => {
     const { active, over } = event;
-    if (over && active.id !== over?.id) {
-      const from = items.findIndex(({ id }) => id === active.id);
-      const to = items.findIndex(({ id }) => id === over.id);
-      onDragEventEnd(arrayMove(items, from, to));
-      return arrayMove(items, from, to);
-    }
-  };
+    if (!over || active.id === over.id) return;
+    const from = items.findIndex(({ id }) => id === active.id);
+    const to = items.findIndex(({ id }) => id === over.id);
+    const state = arrayMove(items, from, to);
+    onDragEventEnd(state);
+  }, []);
 
   return (
     <DndContext
@@ -74,6 +73,6 @@ export default function SortableList<T extends SortableItemBase>({
 }
 
 const sortableListStyles = tv({
-  base: ["grid w-full gap-4"],
+  base: ["grid w-full gap-2"],
   variants: { variant: { grid: "grid-cols-2", list: "grid-cols-1" } },
 });

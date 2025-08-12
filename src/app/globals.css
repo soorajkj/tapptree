@@ -1,19 +1,3 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
-
-@theme inline {
-  --font-inter: var(--font-inter);
-  --font-archivo: var(--font-archivo);
-  --color-carbon-50: oklch(0.955 0 0);
-  --color-carbon-100: oklch(0.93 0 0);
-  --color-carbon-200: oklch(0.88 0 0);
-  --color-carbon-300: oklch(0.825 0 0);
-  --color-carbon-400: oklch(0.67 0 0);
-  --color-carbon-500: oklch(0.515 0 0);
-  --color-carbon-600: oklch(0.4 0 0);
-  --color-carbon-700: oklch(0.325 0 0);
-  --color-carbon-800: oklch(0.23 0 0);
-  --color-carbon-900: oklch(0.175 0 0);
-  --color-carbon-950: oklch(0.11 0 0);
-}

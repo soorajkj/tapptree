@@ -10,12 +10,13 @@ interface SortableItemProps extends ComponentProps<"li"> {
 }
 
 export default function SortableItem({ children, uid }: SortableItemProps) {
-  const { setNodeRef, transform } = useSortable({
+  const { setNodeRef, transform, transition } = useSortable({
     id: uid,
   });
 
   const style = {
     transform: CSS.Transform.toString(transform),
+    transition,
   } as CSSProperties;
 
   return (
