@@ -9,7 +9,13 @@ const nextConfig: NextConfig = {
     return config;
   },
   images: {
-    domains: ["framerusercontent.com", "media.licdn.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "framerusercontent.com",
+        pathname: "/**",
+      },
+    ],
   },
 };
 
