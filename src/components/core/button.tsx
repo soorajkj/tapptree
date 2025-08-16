@@ -32,7 +32,8 @@ export function Button({
 
 const buttonStyles = tv({
   base: [
-    "inline-flex h-10 items-center justify-center gap-2 rounded-md px-3 text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-zinc-400 focus-visible:ring-2 focus-visible:ring-zinc-400/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-red-600 aria-invalid:ring-red-600/20 dark:focus-visible:border-zinc-500 dark:focus-visible:ring-zinc-500/50 dark:aria-invalid:border-red-700 dark:aria-invalid:ring-red-700/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+    "inline-flex h-9 items-center justify-center gap-2 rounded-md px-3 text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-zinc-400 focus-visible:ring-2 focus-visible:ring-zinc-400/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-red-600 aria-invalid:ring-red-600/20 dark:focus-visible:border-zinc-500 dark:focus-visible:ring-zinc-500/50 dark:aria-invalid:border-red-700 dark:aria-invalid:ring-red-700/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+    "inline-flex h-9 items-center justify-center gap-2 rounded-md px-3 text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-zinc-400 focus-visible:ring-2 focus-visible:ring-zinc-400/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-red-600 aria-invalid:ring-red-600/20 dark:focus-visible:border-zinc-500 dark:focus-visible:ring-zinc-500/50 dark:aria-invalid:border-red-700 dark:aria-invalid:ring-red-700/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   ],
   variants: {
     varinat: {
