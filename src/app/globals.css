@@ -1,3 +1,125 @@
 @import "tailwindcss";
 
+@theme inline {
+  --font-inter: var(--font-inter);
+  --font-archivo: var(--font-archivo);
+}
+
+@theme {
+  --color-brand-025: rgb(252 250 255);
+  --color-brand-050: rgb(249 245 255);
+  --color-brand-100: rgb(244 235 255);
+  --color-brand-200: rgb(233 215 254);
+  --color-brand-300: rgb(214 187 251);
+  --color-brand-400: rgb(182 146 246);
+  --color-brand-500: rgb(158 119 237);
+  --color-brand-600: rgb(127 86 217);
+  --color-brand-700: rgb(105 65 198);
+  --color-brand-800: rgb(83 56 158);
+  --color-brand-900: rgb(66 48 125);
+  --color-brand-950: rgb(44 28 95);
+
+  --color-error-025: rgb(255 251 250);
+  --color-error-050: rgb(254 243 242);
+  --color-error-100: rgb(254 228 226);
+  --color-error-200: rgb(254 205 202);
+  --color-error-300: rgb(253 162 155);
+  --color-error-400: rgb(249 112 102);
+  --color-error-500: rgb(240 68 56);
+  --color-error-600: rgb(217 45 32);
+  --color-error-700: rgb(180 35 24);
+  --color-error-800: rgb(145 32 24);
+  --color-error-900: rgb(122 39 26);
+  --color-error-950: rgb(85 22 12);
+
+  --color-warning-025: rgb(255 252 245);
+  --color-warning-050: rgb(255 250 235);
+  --color-warning-100: rgb(254 240 199);
+  --color-warning-200: rgb(254 223 137);
+  --color-warning-300: rgb(254 200 75);
+  --color-warning-400: rgb(253 176 34);
+  --color-warning-500: rgb(247 144 9);
+  --color-warning-600: rgb(220 104 3);
+  --color-warning-700: rgb(181 71 8);
+  --color-warning-800: rgb(147 55 13);
+  --color-warning-900: rgb(122 46 14);
+  --color-warning-950: rgb(78 29 9);
+
+  --color-success-025: rgb(246 254 249);
+  --color-success-050: rgb(236 253 243);
+  --color-success-100: rgb(220 250 230);
+  --color-success-200: rgb(171 239 198);
+  --color-success-300: rgb(117 224 167);
+  --color-success-400: rgb(71 205 137);
+  --color-success-500: rgb(23 178 106);
+  --color-success-600: rgb(7 148 85);
+  --color-success-700: rgb(6 118 71);
+  --color-success-800: rgb(8 93 58);
+  --color-success-900: rgb(7 77 49);
+  --color-success-950: rgb(5 51 33);
+
+  --color-gray-025: rgb(253 253 253);
+  --color-gray-050: rgb(250 250 250);
+  --color-gray-100: rgb(245 245 245);
+  --color-gray-200: rgb(233 234 235);
+  --color-gray-300: rgb(213 215 218);
+  --color-gray-400: rgb(164 167 174);
+  --color-gray-500: rgb(113 118 128);
+  --color-gray-600: rgb(83 88 98);
+  --color-gray-700: rgb(65 70 81);
+  --color-gray-800: rgb(37 43 55);
+  --color-gray-900: rgb(24 29 39);
+  --color-gray-950: rgb(10 13 18);
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
+@custom-variant aria-atomic (&[aria-atomic="true"]);
+@custom-variant aria-busy (&[aria-busy="true"]);
+@custom-variant aria-checked (&[aria-checked="true"]);
+@custom-variant aria-current (&[aria-current="true"]);
+@custom-variant aria-disabled (&[aria-disabled="true"]);
+@custom-variant aria-expanded (&[aria-expanded="true"]);
+@custom-variant aria-grabbed (&[aria-grabbed="true"]);
+@custom-variant aria-haspopup (&[aria-haspopup="true"]);
+@custom-variant aria-hidden (&[aria-hidden="true"]);
+@custom-variant aria-invalid (&[aria-invalid="true"]);
+@custom-variant aria-live (&[aria-live="true"]);
+@custom-variant aria-modal (&[aria-modal="true"]);
+@custom-variant aria-multiline (&[aria-multiline="true"]);
+@custom-variant aria-multiselectable (&[aria-multiselectable="true"]);
+@custom-variant aria-pressed (&[aria-pressed="true"]);
+@custom-variant aria-readonly (&[aria-readonly="true"]);
+@custom-variant aria-required (&[aria-required="true"]);
+@custom-variant aria-selected (&[aria-selected="true"]);
+
+@custom-variant aria-autocomplete-both (&[aria-autocomplete="both"]);
+@custom-variant aria-autocomplete-inline (&[aria-autocomplete="inline"]);
+@custom-variant aria-autocomplete-list (&[aria-autocomplete="list"]);
+@custom-variant aria-autocomplete-none (&[aria-autocomplete="none"]);
+@custom-variant aria-current-date (&[aria-current="date"]);
+@custom-variant aria-current-location (&[aria-current="location"]);
+@custom-variant aria-current-page (&[aria-current="page"]);
+@custom-variant aria-current-step (&[aria-current="step"]);
+@custom-variant aria-current-time (&[aria-current="time"]);
+@custom-variant aria-dropeffect-copy (&[aria-dropeffect="copy"]);
+@custom-variant aria-dropeffect-execute (&[aria-dropeffect="execute"]);
+@custom-variant aria-dropeffect-link (&[aria-dropeffect="link"]);
+@custom-variant aria-dropeffect-move (&[aria-dropeffect="move"]);
+@custom-variant aria-dropeffect-none (&[aria-dropeffect="none"]);
+@custom-variant aria-dropeffect-popup (&[aria-dropeffect="popup"]);
+@custom-variant aria-haspopup-dialog (&[aria-haspopup="dialog"]);
+@custom-variant aria-haspopup-grid (&[aria-haspopup="grid"]);
+@custom-variant aria-haspopup-listbox (&[aria-haspopup="listbox"]);
+@custom-variant aria-haspopup-menu (&[aria-haspopup="menu"]);
+@custom-variant aria-haspopup-tree (&[aria-haspopup="tree"]);
+@custom-variant aria-orientation-horizontal (&[aria-orientation="horizontal"]);
+@custom-variant aria-orientation-undefined (&[aria-orientation="undefined"]);
+@custom-variant aria-orientation-vertical (&[aria-orientation="vertical"]);
+@custom-variant aria-sort-ascending (&[aria-sort="ascending"]);
+@custom-variant aria-sort-descending (&[aria-sort="descending"]);
+@custom-variant aria-sort-none (&[aria-sort="none"]);
+@custom-variant aria-sort-other (&[aria-sort="other"]);
+@custom-variant aria-relevant-additions (&[aria-relevant="additions"]);
+@custom-variant aria-relevant-all (&[aria-relevant="all"]);
+@custom-variant aria-relevant-removals (&[aria-relevant="removals"]);
+@custom-variant aria-relevant-text (&[aria-relevant="text"]);

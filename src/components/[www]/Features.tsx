@@ -10,7 +10,7 @@ export default function Features() {
             {[...Array(6)].map((_, i) => (
               <div
                 key={i}
-                className="relative flex flex-col gap-10 bg-neutral-950 p-8 lg:px-9 lg:py-10"
+                className="relative flex flex-col gap-10 bg-neutral-900 p-8 lg:px-9 lg:py-10"
               >
                 <Image
                   src="https://framerusercontent.com/images/nEXywAqloedAzBmmJ81l0eWFPDE.webp"

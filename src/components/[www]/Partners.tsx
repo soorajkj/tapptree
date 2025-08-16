@@ -7,7 +7,7 @@ export default function Partners() {
         <div className="border-x border-neutral-900">
           <div className="grid grid-cols-12 gap-px bg-neutral-900">
             <div className="col-span-7">
-              <div className="h-full bg-neutral-950 p-14">
+              <div className="h-full bg-neutral-900 p-14">
                 <h3 className="font-archivo text-2xl text-white">
                   Backed by world-class investors
                 </h3>
@@ -21,7 +21,7 @@ export default function Partners() {
             <div className="col-span-5">
               <div className="grid grid-cols-2 justify-center gap-px bg-neutral-900 transition duration-500 md:grid-cols-2">
                 {[...Array(6)].map((_, i) => (
-                  <div key={i} className="relative bg-neutral-950">
+                  <div key={i} className="relative bg-neutral-900">
                     <div className="relative flex h-24 min-h-16 items-center justify-center p-6">
                       <svg
                         width={140}

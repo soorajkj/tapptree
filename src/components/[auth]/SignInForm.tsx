@@ -82,7 +82,9 @@ export default function SignInForm() {
             </Form.FormItem>
           )}
         />
-        <Button disabled={isPending}>Login</Button>
+        <Button varinat="primary" disabled={isPending}>
+          Login
+        </Button>
       </form>
     </Form.FormRoot>
   );

@@ -3,20 +3,10 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": false,
   "css.validate": false,
-  "tailwindCSS.experimental.classRegex": [
-    ["tv\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
-  ],
+  // "tailwindCSS.experimental.classRegex": [
+  //   ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  // ],
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
-  },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "vue"
-  ]
+  }
 }

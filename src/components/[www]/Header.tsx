@@ -35,7 +35,7 @@ export default function Header() {
         onFocusCapture={() => setIsHidden(false)}
         variants={{ hidden: { y: "-100%" }, isHidden: { y: "0%" } }}
         transition={{ duration: 0.2 }}
-        className="sticky top-0 z-40 mx-auto h-auto w-full border-b border-neutral-900 bg-neutral-950/80 backdrop-blur-md"
+        className="sticky top-0 z-40 mx-auto h-auto w-full border-b border-neutral-900 bg-neutral-900/80 backdrop-blur-md"
       >
         <Container>
           <div className="border-x border-neutral-900">

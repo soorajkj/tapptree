@@ -4,6 +4,7 @@ import { Slot } from "@radix-ui/react-slot";
 import * as RHFrom from "react-hook-form";
 import { classNames } from "@/utils/classNames";
 import { Label } from "@/components/core/label";
+import { Icon } from "@/components/core/icon";
 
 const FormRoot = RHFrom.FormProvider;
 
@@ -69,7 +70,7 @@ function FormItem({ className, ...props }: React.ComponentProps<"div">) {
     <FormItemContext.Provider value={{ id }}>
       <div
         data-slot="form-item"
-        className={classNames("grid gap-2", className)}
+        className={classNames("grid gap-1", className)}
         {...props}
       />
     </FormItemContext.Provider>
@@ -119,7 +120,7 @@ function FormDescription({ className, ...props }: React.ComponentProps<"p">) {
     <p
       data-slot="form-description"
       id={formDescriptionId}
-      className={classNames("text-muted-foreground text-xs", className)}
+      className={classNames("text-xs", className)}
       {...props}
     />
   );
@@ -137,9 +138,15 @@ function FormMessage({ className, ...props }: React.ComponentProps<"p">) {
     <p
       data-slot="form-message"
       id={formMessageId}
-      className={classNames("text-xs text-red-500", className)}
+      className={classNames(
+        "flex items-center gap-1 text-xs leading-none font-medium",
+        className
+      )}
       {...props}
     >
+      <span className="inline-flex items-center justify-center">
+        <Icon icon="Info" className="size-3.5 fill-red-500 text-white" />
+      </span>
       {body}
     </p>
   );

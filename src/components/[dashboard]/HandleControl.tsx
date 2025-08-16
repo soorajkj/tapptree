@@ -31,11 +31,11 @@ export default function HandleControl({ handle }: HandleControlProps) {
       </button>
       <div className="flex flex-1 justify-between p-4 pl-4">
         <div className="flex items-center gap-2">
-          <span className="size-7 shrink-0 text-neutral-950 dark:text-neutral-50">
+          <span className="size-7 shrink-0 text-neutral-900 dark:text-neutral-50">
             <Thread />
           </span>
           <div className="flex w-full flex-col">
-            <p className="text-sm font-medium text-neutral-950 dark:text-white">
+            <p className="text-sm font-medium text-neutral-900 dark:text-white">
               {handle.platform.name}
             </p>
             <p className="text-xs font-medium">{handle.url}</p>

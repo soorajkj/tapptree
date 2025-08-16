@@ -15,13 +15,13 @@ export const metadata: Metadata = {
 export default function Layout({ children }: PropsWithChildren) {
   return (
     <html lang="en" className={fonts} suppressHydrationWarning>
-      <body className="font-inter h-full min-h-screen w-full bg-white text-base leading-normal font-normal text-neutral-950 not-italic antialiased dark:bg-neutral-950 dark:text-neutral-50">
+      <body className="font-inter h-full min-h-screen w-full bg-white text-base leading-normal font-normal text-neutral-600 not-italic antialiased">
         <ThemeProvider
           enableSystem
           disableTransitionOnChange
           defaultTheme="system"
           attribute="class"
-          forcedTheme="dark"
+          // forcedTheme="dark"
         >
           <ThemeToggler />
           <QueryClientProvider>{children}</QueryClientProvider>

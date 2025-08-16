@@ -11,16 +11,11 @@ export default function Hero() {
               Compound Advertising and Ecommerce Outcomes with Real-Time
               Relevance.
             </h1>
-
             <p className="mx-auto max-w-xl text-center font-light">
               Join the beta program now to be one of the first ones to give
               Portal a spin. Present your next project with finesse, impress,
               get paid fast. Open in beta in selected regions.
             </p>
-            <div className="relative flex w-fit flex-wrap gap-4">
-              <Button>Make the switch</Button>
-              <Button>Get a demo</Button>
-            </div>
           </div>
         </div>
       </Container>
