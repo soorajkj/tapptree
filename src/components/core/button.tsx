@@ -33,7 +33,7 @@ export function Button({
 
 const buttonStyles = tv({
   base: [
-    "group relative inline-flex h-max cursor-pointer items-center justify-center whitespace-nowrap transition duration-100 ease-linear before:absolute focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+    "group relative inline-flex cursor-pointer items-center justify-center whitespace-nowrap transition duration-100 ease-linear before:absolute focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   ],
   variants: {
     varinat: {
@@ -48,7 +48,7 @@ const buttonStyles = tv({
     },
     size: {
       sm: "gap-1 rounded-lg px-3 py-2 text-sm font-semibold before:rounded-lg",
-      md: "gap-1 rounded-lg px-3.5 py-2.5 text-sm font-semibold before:rounded-lg",
+      md: "h-11 gap-1 rounded-lg px-3.5 py-2.5 text-sm font-semibold before:rounded-lg",
       lg: "gap-1.5 rounded-lg px-4 py-2.5 text-base font-semibold before:rounded-lg",
     },
   },

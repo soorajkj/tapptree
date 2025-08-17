@@ -3,14 +3,14 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 import { signInSchema } from "@/utils/zod/auth";
 import { Form } from "../core/form";
 import { Input } from "../core/input";
 import { Button } from "../core/button";
 import type z from "zod/v3";
 import { authClient } from "@/lib/authClient";
-import { toast } from "sonner";
-import { useRouter } from "next/navigation";
 
 type SignInSchema = z.infer<typeof signInSchema>;
 
@@ -83,7 +83,7 @@ export default function SignInForm() {
           )}
         />
         <Button varinat="primary" disabled={isPending}>
-          Login
+          Sign in
         </Button>
       </form>
     </Form.FormRoot>

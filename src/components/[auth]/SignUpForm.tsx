@@ -1,6 +1,9 @@
 "use client";
 
+import { useState } from "react";
+import { toast } from "sonner";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
 import type z from "zod/v3";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signUpSchema } from "@/utils/zod/auth";
@@ -8,9 +11,6 @@ import { Form } from "@/components/core/form";
 import { Input } from "@/components/core/input";
 import { Button } from "@/components/core/button";
 import { authClient } from "@/lib/authClient";
-import { useRouter } from "next/navigation";
-import { toast } from "sonner";
-import { useState } from "react";
 
 type SignUpSchema = z.infer<typeof signUpSchema>;
 

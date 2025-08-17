@@ -3,9 +3,9 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": false,
   "css.validate": false,
-  // "tailwindCSS.experimental.classRegex": [
-  //   ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
-  // ],
+  "tailwindCSS.experimental.classRegex": [
+    ["tv\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   }
