@@ -5,7 +5,7 @@ import SignInForm from "@/components/[auth]/SignInForm";
 export default function Page() {
   return (
     <div className="flex w-full flex-col gap-8 sm:max-w-90">
-      <div className="flex flex-col items-center justify-center gap-1">
+      <div className="flex flex-col gap-1">
         <h2 className="text-display-xs dark:text-gray-050 md:text-display-sm font-semibold text-gray-900">
           Welcome back
         </h2>
@@ -19,7 +19,7 @@ export default function Page() {
           Don&apos;t have an account?{" "}
           <Link
             href="/signup"
-            className="text-brand-700 dark:text-brand-300 font-semibold decoration-current underline-offset-1 hover:underline"
+            className="text-brand-700 font-semibold decoration-current underline-offset-1 hover:underline dark:text-gray-300"
           >
             Sign up
           </Link>

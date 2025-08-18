@@ -6,11 +6,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { signInSchema } from "@/utils/zod/auth";
-import { Form } from "../core/form";
-import { Input } from "../core/input";
-import { Button } from "../core/button";
+import { Checkbox } from "@/components/core/checkbox";
+import { Form } from "@/components/core/form";
+import { Input } from "@/components/core/input";
+import { Button } from "@/components/core/button";
 import type z from "zod/v3";
 import { authClient } from "@/lib/authClient";
+import Link from "next/link";
 
 type SignInSchema = z.infer<typeof signInSchema>;
 
@@ -20,7 +22,7 @@ export default function SignInForm() {
   const form = useForm<SignInSchema>({
     resolver: zodResolver(signInSchema),
     mode: "onSubmit",
-    defaultValues: { email: "", password: "" },
+    defaultValues: { email: "", password: "", rememberMe: true },
   });
 
   const onSubmit = async (fields: SignInSchema) => {
@@ -58,7 +60,7 @@ export default function SignInForm() {
             <Form.FormItem>
               <Form.FormLabel>Email</Form.FormLabel>
               <Form.FormControl>
-                <Input placeholder="yourname@example.com" {...field} />
+                <Input placeholder="Enter your email" {...field} />
               </Form.FormControl>
               <Form.FormMessage />
             </Form.FormItem>
@@ -73,7 +75,7 @@ export default function SignInForm() {
               <Form.FormControl>
                 <Input
                   type="password"
-                  placeholder="********"
+                  placeholder="••••••••"
                   autoComplete="off"
                   {...field}
                 />
@@ -82,6 +84,31 @@ export default function SignInForm() {
             </Form.FormItem>
           )}
         />
+        <div className="flex items-center justify-between gap-2">
+          <Form.FormField
+            control={form.control}
+            name="rememberMe"
+            render={({ field }) => (
+              <Form.FormItem className="grid-flow-col-dense items-center">
+                <Form.FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                </Form.FormControl>
+                <Form.FormLabel>Remember me</Form.FormLabel>
+              </Form.FormItem>
+            )}
+          />
+          <div className="flex items-center">
+            <Link
+              href={"/"}
+              className="text-brand-700 text-sm font-semibold dark:text-gray-300"
+            >
+              Forgot password
+            </Link>
+          </div>
+        </div>
         <Button varinat="primary" disabled={isPending}>
           Sign in
         </Button>

@@ -38,4 +38,5 @@ export const signInSchema = z.object({
     .string({ required_error: "Password is required" })
     .trim()
     .nonempty("Password can't be empty"),
+  rememberMe: z.boolean().default(true).optional(),
 });
