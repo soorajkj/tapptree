@@ -60,7 +60,7 @@ export default function SignUpForm() {
             <Form.FormItem>
               <Form.FormLabel>Name</Form.FormLabel>
               <Form.FormControl>
-                <Input placeholder="Sara Jane" {...field} />
+                <Input placeholder="Enter your name" {...field} />
               </Form.FormControl>
               <Form.FormMessage />
             </Form.FormItem>
@@ -73,7 +73,7 @@ export default function SignUpForm() {
             <Form.FormItem>
               <Form.FormLabel>Username</Form.FormLabel>
               <Form.FormControl>
-                <Input placeholder="sarajane" {...field} />
+                <Input placeholder="Enter your username" {...field} />
               </Form.FormControl>
               <Form.FormMessage />
             </Form.FormItem>
@@ -86,7 +86,7 @@ export default function SignUpForm() {
             <Form.FormItem>
               <Form.FormLabel>Email</Form.FormLabel>
               <Form.FormControl>
-                <Input placeholder="yourname@example.com" {...field} />
+                <Input placeholder="Enter your email" {...field} />
               </Form.FormControl>
               <Form.FormMessage />
             </Form.FormItem>
@@ -101,7 +101,7 @@ export default function SignUpForm() {
               <Form.FormControl>
                 <Input
                   type="password"
-                  placeholder="********"
+                  placeholder="Create a password"
                   autoComplete="off"
                   {...field}
                 />
