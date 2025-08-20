@@ -9,8 +9,10 @@ import SortableItem from "./SortableItem";
 import HandleControl from "./HandleControl";
 import HandlesSkeleton from "./HandlesSkeleton";
 import HandlesEmpty from "./HandlesEmpty";
+import { useQueryClient } from "@tanstack/react-query";
 
 export default function Handles() {
+  const queryClient = useQueryClient();
   const handlesQuery = useHandles();
   const { reorderHandleMutation } = useHandlesMutations();
 
@@ -20,6 +22,7 @@ export default function Handles() {
 
   const handleReorder = (handles: THandleWithPlatform[]) => {
     const platformIds = handles.map((handle) => handle.platformId);
+    queryClient.setQueryData(["handles"], handles);
     reorderHandleMutation.mutate({ platformIds });
   };
 
