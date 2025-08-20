@@ -101,7 +101,14 @@ const handles = hono
           })
         )
       );
-      return c.json("Done");
+
+      const updatedHandles = await db.handle.findMany({
+        where: { userId: user.id },
+        include: { platform: true }, // if your UI needs it
+        orderBy: { order: "asc" },
+      });
+
+      return c.json(updatedHandles);
     }
   )
   .patch(

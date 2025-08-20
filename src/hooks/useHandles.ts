@@ -9,5 +9,7 @@ export const useHandles = () => {
       if (!res.ok) throw new Error("Failed to fetch social links");
       return await res.json();
     },
+    staleTime: Infinity, // don’t mark data stale immediately
+    refetchOnWindowFocus: false,
   });
 };

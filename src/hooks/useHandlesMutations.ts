@@ -7,7 +7,7 @@ import type {
   updateHandleSchema,
 } from "@/utils/zod/handles";
 import { rpc } from "@/lib/rpc";
-import { type THandleWithPlatform } from "@/types/handle";
+import { toast } from "sonner";
 
 type CreateHandleSchema = z.infer<typeof createHandleSchema>;
 type ReorderHandlesSchema = z.infer<typeof reorderHandlesSchema>;
@@ -31,29 +31,12 @@ export const useHandlesMutations = () => {
       const res = await rpc.api.me.handles.reorder.$patch({ json });
       if (!res.ok) throw new Error("Failed to reorder links");
     },
-    onMutate: async (newOrder) => {
-      await queryClient.cancelQueries({ queryKey: ["handles"] });
-      const previousHandles = queryClient.getQueryData<THandleWithPlatform[]>([
-        "handles",
-      ]);
-
-      if (previousHandles) {
-        const newHandles = [...previousHandles].sort(
-          (a, b) =>
-            newOrder.platformIds.indexOf(a.platformId) -
-            newOrder.platformIds.indexOf(b.platformId)
-        );
-        queryClient.setQueryData(["handles"], newHandles);
-      }
-
-      return { previousHandles };
+    onSuccess: (updatedHandles) => {
+      queryClient.setQueryData(["handles"], updatedHandles);
+      toast("Your links have been successfully reordered.");
     },
-    onError: (err, newOrder, context) => {
-      if (context?.previousHandles) {
-        queryClient.setQueryData(["handles"], context.previousHandles);
-      }
-    },
-    onSettled: () => {
+    onError: () => {
+      toast("Failed to reorder links. Please try again.");
       queryClient.invalidateQueries({ queryKey: ["handles"] });
     },
   });
