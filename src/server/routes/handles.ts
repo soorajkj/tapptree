@@ -104,7 +104,7 @@ const handles = hono
 
       const updatedHandles = await db.handle.findMany({
         where: { userId: user.id },
-        include: { platform: true }, // if your UI needs it
+        include: { platform: true },
         orderBy: { order: "asc" },
       });
 
