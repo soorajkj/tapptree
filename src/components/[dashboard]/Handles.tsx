@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import SortableList from "./SortableList";
 import { type THandleWithPlatform } from "@/types/handle";
 import { useHandles } from "@/hooks/useHandles";
@@ -15,6 +15,7 @@ export default function Handles() {
   const queryClient = useQueryClient();
   const handlesQuery = useHandles();
   const { reorderHandleMutation } = useHandlesMutations();
+  const [_randomState, setRandomState] = useState(0); // remove the flick, not recommeded
 
   if (handlesQuery.isPending) return <HandlesSkeleton />;
   if (handlesQuery.isError) return "Something went wrong";
@@ -23,12 +24,12 @@ export default function Handles() {
   const handleReorder = (handles: THandleWithPlatform[]) => {
     const platformIds = handles.map((handle) => handle.platformId);
     queryClient.setQueryData(["handles"], handles);
+    setRandomState(Math.random());
     reorderHandleMutation.mutate({ platformIds });
   };
 
   return (
     <SortableList
-      variant="list"
       items={handlesQuery.data}
       onDragEventEnd={handleReorder}
       renderItem={(handle: THandleWithPlatform) => (

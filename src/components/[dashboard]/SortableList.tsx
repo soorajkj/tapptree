@@ -34,7 +34,6 @@ export default function SortableList<T extends SortableItemBase>({
   items,
   onDragEventEnd,
   renderItem,
-  variant = "list",
   className,
 }: SortableListProps<T>) {
   const sensors = useSensors(
@@ -63,10 +62,7 @@ export default function SortableList<T extends SortableItemBase>({
       modifiers={[restrictToParentElement]}
       onDragEnd={handleDragEnd}
     >
-      <ul
-        className={sortableListStyles({ variant, className })}
-        role="application"
-      >
+      <ul className={sortableListStyles({ className })} role="application">
         <SortableContext items={items} strategy={verticalListSortingStrategy}>
           {items.map((item) => renderItem(item))}
         </SortableContext>
@@ -76,6 +72,5 @@ export default function SortableList<T extends SortableItemBase>({
 }
 
 const sortableListStyles = tv({
-  base: ["grid w-full gap-2"],
-  variants: { variant: { grid: "grid-cols-2", list: "grid-cols-1" } },
+  base: ["flex flex-col gap-2"],
 });
