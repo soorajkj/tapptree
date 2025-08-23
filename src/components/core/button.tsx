@@ -13,7 +13,7 @@ export interface ButtonProps
 export function Button({
   children,
   asChild = false,
-  varinat = "primary",
+  variant = "primary",
   size = "md",
   className,
   ...props
@@ -23,7 +23,7 @@ export function Button({
   return (
     <Comp
       data-slot="button"
-      className={classNames(buttonStyles({ varinat, size, className }))}
+      className={classNames(buttonStyles({ variant, size, className }))}
       {...props}
     >
       {children}
@@ -32,23 +32,20 @@ export function Button({
 }
 
 const buttonStyles = tv({
-  base: [
-    "group relative inline-flex cursor-pointer items-center justify-center whitespace-nowrap transition duration-100 ease-linear before:absolute focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
-  ],
+  base: "group relative inline-flex cursor-pointer items-center justify-center whitespace-nowrap transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 disabled:cursor-not-allowed disabled:bg-neutral-100 disabled:text-neutral-400 dark:focus-visible:outline-blue-400 dark:disabled:bg-neutral-800 dark:disabled:text-neutral-600 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   variants: {
-    varinat: {
+    variant: {
       primary:
-        "bg-brand-600 hover:bg-brand-700 disabled:bg-disabled text-white shadow-2xs ring-1 ring-transparent ring-inset before:absolute before:inset-px before:border before:border-white/12 before:mask-b-from-0% disabled:shadow-xs",
+        "bg-neutral-800 text-white/85 before:pointer-events-none before:absolute before:inset-0 before:border before:border-white/15 before:mask-b-from-0% hover:bg-neutral-700 disabled:shadow-xs dark:bg-neutral-600 dark:hover:bg-neutral-500",
       secondary:
-        "hover:bg-gray-050 bg-white text-gray-700 shadow-2xs ring-1 ring-gray-300 ring-inset hover:text-gray-800 disabled:shadow-xs",
-      tertiary: "hover:bg-gray-050 text-gray-600 hover:text-gray-700",
-      link: "justify-normal rounded text-gray-600 underline decoration-transparent underline-offset-2 hover:text-gray-700 hover:decoration-current",
-      destructive:
-        "bg-error-600 outline-error-500 text-white shadow-xs ring-1 ring-transparent ring-inset",
+        "bg-white text-neutral-950 before:pointer-events-none before:absolute before:inset-0 before:border before:border-white/15 before:mask-b-from-0% hover:bg-neutral-100 dark:bg-white/5 dark:text-neutral-100 dark:hover:bg-white/10",
+      transparent:
+        "bg-transparent text-neutral-950 hover:bg-black/5 dark:text-neutral-100 dark:hover:bg-black/10",
+      danger: "bg-red-600 text-white hover:bg-red-700 dark:bg-red-800",
     },
     size: {
       sm: "gap-1 rounded-lg px-3 py-2 text-sm font-semibold before:rounded-lg",
-      md: "h-11 gap-1 rounded-lg px-3.5 py-2.5 text-sm font-semibold before:rounded-lg",
+      md: "h-10 gap-1 rounded-lg px-3.5 py-2.5 text-sm font-semibold before:rounded-lg",
       lg: "gap-1.5 rounded-lg px-4 py-2.5 text-base font-semibold before:rounded-lg",
     },
   },

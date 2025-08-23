@@ -120,7 +120,7 @@ function FormDescription({ className, ...props }: React.ComponentProps<"p">) {
       data-slot="form-description"
       id={formDescriptionId}
       className={classNames(
-        "text-sm text-gray-600 dark:text-gray-400",
+        "text-sm text-neutral-600 dark:text-neutral-400",
         className
       )}
       {...props}
@@ -141,7 +141,7 @@ function FormMessage({ className, ...props }: React.ComponentProps<"p">) {
       data-slot="form-message"
       id={formMessageId}
       className={classNames(
-        "text-error-600 dark:text-error-400 flex items-center gap-1 text-sm leading-none",
+        "flex items-center gap-1 text-xs leading-none text-red-600 dark:text-red-400",
         className
       )}
       {...props}

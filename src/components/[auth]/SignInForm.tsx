@@ -103,7 +103,7 @@ export default function SignInForm() {
           <div className="flex items-center">
             <Link
               href={"/"}
-              className="text-brand-700 text-sm font-semibold dark:text-gray-300"
+              className="text-brand-700 text-sm font-semibold dark:text-neutral-300"
             >
               Forgot password
             </Link>
