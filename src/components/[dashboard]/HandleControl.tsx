@@ -5,7 +5,7 @@ import { type THandleWithPlatform } from "@/types/handle";
 import { useHandlesMutations } from "@/hooks/useHandlesMutations";
 import { Icon } from "../core/icon";
 import { Switch } from "../core/switch";
-import { Button } from "../core/button";
+import { IconButton } from "../core/icon-button";
 import { useSortable } from "@dnd-kit/sortable";
 import { GripVerticalIcon } from "lucide-react";
 import Instagram from "public/icons/tiktok.svg";
@@ -20,7 +20,7 @@ export default function HandleControl({ handle }: HandleControlProps) {
   });
 
   return (
-    <div className="flex h-14 items-center gap-2 rounded-lg border border-neutral-100 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-800">
+    <div className="flex min-h-16 items-center gap-2 rounded-lg border border-neutral-100 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-800">
       <button
         ref={setActivatorNodeRef}
         {...listeners}
@@ -43,11 +43,11 @@ export default function HandleControl({ handle }: HandleControlProps) {
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-2">
-          <Button className="size-7 bg-transparent p-0 text-neutral-600">
-            <Icon icon="Pencil" />
-          </Button>
+        <div className="flex items-center gap-1">
           <ArchiveSwitch id={handle.id} archive={handle.archive} />
+          <IconButton variant="transparent" size="md">
+            <Icon icon="Pencil" />
+          </IconButton>
           <Delete id={handle.id} />
         </div>
       </div>
@@ -77,12 +77,14 @@ function Delete({ id }: Pick<THandleWithPlatform, "id">) {
   const { deleteHandleMutation } = useHandlesMutations();
 
   return (
-    <button
+    <IconButton
+      variant="transparent"
+      size="md"
       onClick={() => {
         deleteHandleMutation.mutate({ id });
       }}
     >
       <Icon icon="Trash" className="size-4" />
-    </button>
+    </IconButton>
   );
 }
