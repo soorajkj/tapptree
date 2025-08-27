@@ -5,10 +5,10 @@ import { type THandleWithPlatform } from "@/types/handle";
 import { useHandlesMutations } from "@/hooks/useHandlesMutations";
 import { Icon } from "../core/icon";
 import { Switch } from "../core/switch";
-import { Button } from "../core/button";
+import { IconButton } from "../core/icon-button";
 import { useSortable } from "@dnd-kit/sortable";
-import { ChevronsUpDown } from "lucide-react";
-import Thread from "public/icons/threads.svg";
+import { GripVerticalIcon } from "lucide-react";
+import Instagram from "public/icons/tiktok.svg";
 
 interface HandleControlProps {
   handle: THandleWithPlatform;
@@ -20,32 +20,34 @@ export default function HandleControl({ handle }: HandleControlProps) {
   });
 
   return (
-    <div className="flex w-full items-center rounded-xl bg-white dark:border-neutral-800/65 dark:bg-neutral-900">
+    <div className="flex min-h-16 items-center gap-2 rounded-lg border border-neutral-100 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-800">
       <button
         ref={setActivatorNodeRef}
         {...listeners}
         {...attributes}
-        className="inline-flex size-6 min-w-8 shrink-0 items-center justify-center text-neutral-500 dark:text-neutral-400 [&_svg]:size-4"
+        className="inline-flex size-6 h-full min-w-8 shrink-0 cursor-grab items-center justify-center text-neutral-500 dark:text-neutral-400 [&_svg]:size-4"
       >
-        <ChevronsUpDown />
+        <GripVerticalIcon />
       </button>
-      <div className="flex flex-1 justify-between p-4 pl-4">
+      <div className="flex flex-1 justify-between pr-4">
         <div className="flex items-center gap-2">
-          <span className="size-7 shrink-0 text-neutral-900 dark:text-neutral-50">
-            <Thread />
+          <span className="inline-flex size-6 shrink-0 items-center justify-center">
+            <Instagram />
           </span>
           <div className="flex w-full flex-col">
             <p className="text-sm font-medium text-neutral-900 dark:text-white">
               {handle.platform.name}
             </p>
-            <p className="text-xs font-medium">{handle.url}</p>
+            <p className="text-xs font-medium text-neutral-600 dark:text-neutral-400">
+              {handle.url}
+            </p>
           </div>
         </div>
         <div className="flex items-center gap-1">
-          <Button className="size-7 bg-transparent p-0 text-neutral-600">
-            <Icon icon="Pencil" />
-          </Button>
           <ArchiveSwitch id={handle.id} archive={handle.archive} />
+          <IconButton variant="transparent" size="md">
+            <Icon icon="Pencil" />
+          </IconButton>
           <Delete id={handle.id} />
         </div>
       </div>
@@ -75,12 +77,14 @@ function Delete({ id }: Pick<THandleWithPlatform, "id">) {
   const { deleteHandleMutation } = useHandlesMutations();
 
   return (
-    <button
+    <IconButton
+      variant="transparent"
+      size="md"
       onClick={() => {
         deleteHandleMutation.mutate({ id });
       }}
     >
       <Icon icon="Trash" className="size-4" />
-    </button>
+    </IconButton>
   );
 }

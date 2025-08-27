@@ -21,6 +21,6 @@ export function Label(props: LabelProps) {
 
 const labelStyle = tv({
   base: [
-    "inline-flex text-sm font-medium text-gray-700 select-none dark:text-gray-300",
+    "inline-flex text-sm font-medium text-neutral-600 select-none dark:text-neutral-400",
   ],
 });
