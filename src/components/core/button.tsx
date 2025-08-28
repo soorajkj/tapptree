@@ -13,7 +13,7 @@ export interface ButtonProps
 export function Button({
   children,
   asChild = false,
-  variant = "primary",
+  variant = "default",
   size = "md",
   className,
   ...props
@@ -32,21 +32,25 @@ export function Button({
 }
 
 const buttonStyles = tv({
-  base: "group relative inline-flex cursor-pointer items-center justify-center border border-transparent whitespace-nowrap transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 disabled:cursor-not-allowed disabled:bg-neutral-100 disabled:text-neutral-400 dark:focus-visible:outline-blue-400 dark:disabled:bg-neutral-800 dark:disabled:text-neutral-600 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  base: "focus-visible:ring-ring inline-flex cursor-pointer items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-colors focus-visible:ring-1 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   variants: {
     variant: {
-      primary:
-        "border-white/15 bg-neutral-800 text-white/85 hover:bg-neutral-700 disabled:shadow-xs dark:bg-neutral-600 dark:hover:bg-neutral-500",
+      default:
+        "bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm shadow-black/20",
+      destructive:
+        "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-md",
+      outline:
+        "bg-background ring-foreground/10 hover:bg-muted/50 dark:ring-foreground/15 dark:hover:bg-muted/50 border border-transparent shadow-sm ring-1 shadow-black/15 duration-200",
       secondary:
-        "border-white/15 bg-white text-neutral-950 hover:bg-neutral-100 dark:bg-white/5 dark:text-neutral-100 dark:hover:bg-white/10",
-      transparent:
-        "bg-transparent text-neutral-950 hover:bg-black/5 focus-visible:border focus-visible:border-white/15 dark:text-neutral-100 dark:hover:bg-black/10",
-      danger: "bg-red-600 text-white hover:bg-red-700 dark:bg-red-800",
+        "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-sm",
+      ghost: "hover:bg-accent hover:text-accent-foreground",
+      link: "text-primary underline-offset-4 hover:underline",
     },
     size: {
-      sm: "gap-1 rounded-lg px-3 py-2 text-sm font-semibold",
-      md: "h-10 gap-1 rounded-lg px-3.5 py-2.5 text-sm font-semibold",
-      lg: "gap-1.5 rounded-lg px-4 py-2.5 text-base font-semibold",
+      md: "h-9 px-4 py-2",
+      sm: "h-8 rounded-md px-3 text-xs",
+      lg: "h-10 rounded-md px-8",
+      icon: "h-9 w-9",
     },
   },
 });

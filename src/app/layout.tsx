@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function Layout({ children }: PropsWithChildren) {
   return (
     <html lang="en" className={fonts} suppressHydrationWarning>
-      <body className="font-inter text-md h-full min-h-svh w-full bg-white leading-normal font-normal text-neutral-950 not-italic antialiased dark:bg-neutral-900 dark:text-neutral-100">
+      <body className="font-inter text-foreground bg-background h-full min-h-svh w-full text-base leading-normal font-normal not-italic antialiased">
         <ThemeProvider
           enableSystem
           disableTransitionOnChange
