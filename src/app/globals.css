@@ -8,7 +8,8 @@
   --card-foreground: var(--color-zinc-950);
   --popover: var(--color-white);
   --popover-foreground: var(--color-zinc-950);
-  --primary: var(--color-zinc-950);
+  --primary: var(--color-indigo-500);
+
   --primary-foreground: var(--color-white);
   --secondary: var(--color-zinc-100);
   --secondary-foreground: var(--color-zinc-950);
@@ -19,6 +20,9 @@
   --destructive: var(--color-red-600);
   --destructive-foreground: var(--color-white);
   --border: var(--color-zinc-200);
+  --input: var(--color-zinc-200);
+  --ring: var(--color-zinc-950);
+
 }
 
 [data-theme="dark"] {
@@ -28,7 +32,7 @@
   --card-foreground: var(--color-white);
   --popover: var(--color-zinc-950);
   --popover-foreground: var(--color-white);
-  --primary: var(--color-white);
+  --primary: var(--color-indigo-500);
   --primary-foreground: var(--color-zinc-950);
   --secondary: var(--color-zinc-800);
   --secondary-foreground: var(--color-white);
@@ -39,6 +43,9 @@
   --destructive: var(--color-red-600);
   --destructive-foreground: var(--color-white);
   --border: var(--color-zinc-800);
+  --input: var(--color-zinc-800);
+  --ring: var(--color-white);
+
 }
 
 @theme inline {
@@ -135,3 +142,17 @@
 @custom-variant aria-relevant-all (&[aria-relevant="all"]);
 @custom-variant aria-relevant-removals (&[aria-relevant="removals"]);
 @custom-variant aria-relevant-text (&[aria-relevant="text"]);
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+}
