@@ -9,6 +9,7 @@
   --popover: var(--color-white);
   --popover-foreground: var(--color-zinc-950);
   --primary: var(--color-indigo-500);
+
   --primary-foreground: var(--color-white);
   --secondary: var(--color-zinc-100);
   --secondary-foreground: var(--color-zinc-950);
@@ -21,6 +22,7 @@
   --border: var(--color-zinc-200);
   --input: var(--color-zinc-200);
   --ring: var(--color-zinc-950);
+
 }
 
 [data-theme="dark"] {
@@ -43,6 +45,7 @@
   --border: var(--color-zinc-800);
   --input: var(--color-zinc-800);
   --ring: var(--color-white);
+
 }
 
 @theme inline {
