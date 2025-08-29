@@ -15,7 +15,5 @@ export function Container({ children, className, ...props }: ContainerProps) {
 }
 
 const containerStyle = tv({
-  base: [
-    "mx-auto w-full px-6 sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-6xl",
-  ],
+  base: ["mx-auto w-full max-w-6xl px-6"],
 });
