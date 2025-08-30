@@ -1,20 +1,21 @@
-import { Container } from "../core/container";
+import { Container } from "@/components/core/container";
+import { Button } from "../core/button";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden py-24">
       <Container>
-        <div className="py-48">
-          <div className="flex flex-col items-center gap-4">
-            <h1 className="font-archivo max-w-4xl text-center text-4xl font-medium md:text-6xl">
-              Compound Advertising and Ecommerce Outcomes with Real-Time
-              Relevance.
-            </h1>
-            <p className="mx-auto max-w-xl text-center">
-              Join the beta program now to be one of the first ones to give
-              Portal a spin. Present your next project with finesse, impress,
-              get paid fast. Open in beta in selected regions.
-            </p>
+        <div className="relative mx-auto max-w-5xl text-center">
+          <h1 className="font-archivo text-4xl font-bold tracking-tight text-balance sm:mt-12 sm:text-7xl">
+            Unify your online presence in one place
+          </h1>
+          <p className="mx-auto mt-4 mb-8 max-w-2xl text-lg text-balance">
+            Create a stylish, professional link-in-bio page with Taptree to
+            showcase your profile and social links — all together in one place.
+          </p>
+          <div className="flex items-center justify-center gap-4">
+            <Button>Start Building</Button>
+            <Button variant="outline">Book a demo</Button>
           </div>
         </div>
       </Container>
