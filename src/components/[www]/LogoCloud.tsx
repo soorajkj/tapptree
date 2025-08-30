@@ -3,12 +3,12 @@ import { Container } from "@/components/core/container";
 
 export default function LogoCloud() {
   return (
-    <section className="bg-muted/50 py-16">
+    <section className="py-16">
       <Container>
-        <h2 className="text-center text-xl font-medium">
+        <h2 className="mb-12 text-center text-xl font-medium">
           Trusted by leading teams worldwide
         </h2>
-        <div className="mx-auto my-12 grid max-w-3xl grid-cols-3 gap-x-6 gap-y-8 *:justify-center *:brightness-50 *:contrast-200 *:grayscale *:duration-200 *:hover:brightness-100 *:hover:contrast-100 *:hover:grayscale-0 sm:grid-cols-4 sm:gap-y-12">
+        <div className="mx-auto grid grid-cols-3 gap-x-6 gap-y-8 border py-12 *:justify-center *:brightness-50 *:contrast-200 *:grayscale *:duration-200 *:hover:brightness-100 *:hover:contrast-100 *:hover:grayscale-0 sm:grid-cols-4 sm:gap-y-12">
           <div className="flex">
             <svg
               xmlns="http://www.w3.org/2000/svg"

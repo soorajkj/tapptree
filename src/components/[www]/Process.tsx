@@ -3,15 +3,14 @@ import { Container } from "../core/container";
 
 export default function Process() {
   return (
-    <section className="bg-secondary/50 @container relative py-24">
+    <section className="@container relative py-24">
       <Container>
-        <div className="text-center @4xl:text-left">
-          <h2 className="text-foreground text-3xl font-semibold">
-            Simple Three-Step Workflow
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="font-archivo text-3xl font-medium text-balance md:text-4xl lg:text-5xl lg:tracking-tight">
+            Three Step Workflow
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl text-lg text-balance">
-            A simple, three-step process to take you from{" "}
-            <span className="text-foreground">scattered links</span> to one
+          <p className="mx-auto mt-4 max-w-xl text-balance">
+            A simple, three-step process to take you from scattered links to one
             beautiful, shareable home for everything you do.
           </p>
         </div>
@@ -19,9 +18,6 @@ export default function Process() {
           <div className="grid overflow-hidden border *:p-8 @max-4xl:divide-y @4xl:grid-cols-3 @4xl:divide-x">
             <div className="row-span-2 grid grid-rows-subgrid gap-8">
               <div className="relative flex flex-col justify-end">
-                <div className="text-foreground top-0 flex size-6 -translate-x-1/3 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full mask-y-from-55% mask-x-from-55% font-mono text-sm before:absolute before:inset-0 before:bg-[repeating-linear-gradient(-45deg,var(--color-foreground),var(--color-foreground)_0.5px,transparent_0.5px,transparent_3px)] before:opacity-35 @4xl:absolute">
-                  1
-                </div>
                 <div className="before:bg-card after:bg-card before:border-border-illustration after:border-border-illustration group relative -mx-4 mask-b-from-65% px-4 pt-6 before:absolute before:inset-x-6 before:top-4 before:bottom-0 before:z-1 before:rounded-2xl before:border after:absolute after:inset-x-8 after:top-2 after:bottom-0 after:rounded-2xl after:border after:opacity-75">
                   <div className="bg-card border-border-illustration relative z-10 rounded-2xl border p-4 text-xs shadow-lg duration-300">
                     <div className="mb-0.5 text-sm font-semibold">Step One</div>
@@ -74,13 +70,10 @@ export default function Process() {
             </div>
             <div className="row-span-2 grid grid-rows-subgrid gap-8">
               <div className="relative flex flex-col">
-                <div className="text-foreground top-0 flex size-6 -translate-x-1/3 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full mask-y-from-55% mask-x-from-55% font-mono text-sm before:absolute before:inset-0 before:bg-[repeating-linear-gradient(-45deg,var(--color-foreground),var(--color-foreground)_0.5px,transparent_0.5px,transparent_3px)] before:opacity-35 @4xl:absolute">
-                  2
-                </div>
-                <div className="relative pt-6">
+                <div className="relative">
                   <div className="relative w-full space-y-2">
                     <div className="pl-5">
-                      <div className="text-foreground before:border-muted-foreground before:bg-background before:ring-background relative mt-0.5 inline-flex items-center gap-2 text-sm font-medium before:absolute before:inset-y-0 before:-left-[22px] before:my-auto before:size-[5px] before:rounded-full before:border before:ring">
+                      <div className="text-foreground before:border-muted-foreground before:bg-background before:ring-background relative mt-0.5 inline-flex items-center gap-2 text-sm before:absolute before:inset-y-0 before:-left-[22px] before:my-auto before:size-[5px] before:rounded-full before:border before:ring">
                         <div className="text-muted-foreground text-xs">
                           06 AM
                         </div>
@@ -88,7 +81,7 @@ export default function Process() {
                       </div>
                     </div>
                     <div className="border-border-illustration relative flex rounded-xl border bg-white/5 p-2 text-xs shadow-md backdrop-blur">
-                      <div className="before:border-primary before:bg-background before:ring-background relative mt-0.5 ml-7 inline-flex items-center gap-2 text-sm font-medium before:absolute before:inset-y-0 before:-left-[19px] before:my-auto before:size-[5px] before:rounded-full before:border before:ring">
+                      <div className="before:border-primary before:bg-background before:ring-background relative mt-0.5 ml-7 inline-flex items-center gap-2 text-sm before:absolute before:inset-y-0 before:-left-[19px] before:my-auto before:size-[5px] before:rounded-full before:border before:ring">
                         <div className="flex items-center -space-x-2">
                           <div className="bg-illustration border-border-illustration size-6 rounded-full border p-0.5 shadow shadow-zinc-950/5 *:rounded-full">
                             <img
@@ -117,7 +110,36 @@ export default function Process() {
                       </div>
                     </div>
                     <div className="border-border-illustration relative flex rounded-xl border bg-white/5 p-2 text-xs shadow-md backdrop-blur">
-                      <div className="before:border-primary before:bg-background before:ring-background relative mt-0.5 ml-7 inline-flex items-center gap-2 text-sm font-medium before:absolute before:inset-y-0 before:-left-[19px] before:my-auto before:size-[5px] before:rounded-full before:border before:ring">
+                      <div className="before:border-primary before:bg-background before:ring-background relative mt-0.5 ml-7 inline-flex items-center gap-2 text-sm before:absolute before:inset-y-0 before:-left-[19px] before:my-auto before:size-[5px] before:rounded-full before:border before:ring">
+                        <div className="flex items-center -space-x-2">
+                          <div className="bg-illustration border-border-illustration size-6 rounded-full border p-0.5 shadow shadow-zinc-950/5 *:rounded-full">
+                            <img
+                              src="https://avatars.githubusercontent.com/u/47919550?v=4"
+                              className="aspect-square rounded-[calc(var(--avatar-radius)-2px)] object-cover"
+                              alt="Méschac Irung"
+                              width={460}
+                              height={460}
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          </div>
+                          <div className="bg-illustration border-border-illustration size-6 rounded-full border p-0.5 shadow shadow-zinc-950/5 *:rounded-full">
+                            <img
+                              src="https://avatars.githubusercontent.com/u/31113941?v=4"
+                              className="aspect-square rounded-[calc(var(--avatar-radius)-2px)] object-cover"
+                              alt="Bernard Ngandu"
+                              width={460}
+                              height={460}
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          </div>
+                        </div>
+                        +50 Users voted
+                      </div>
+                    </div>
+                    <div className="border-border-illustration relative flex rounded-xl border bg-white/5 p-2 text-xs shadow-md backdrop-blur">
+                      <div className="before:border-primary before:bg-background before:ring-background relative mt-0.5 ml-7 inline-flex items-center gap-2 text-sm before:absolute before:inset-y-0 before:-left-[19px] before:my-auto before:size-[5px] before:rounded-full before:border before:ring">
                         <div className="flex items-center -space-x-2">
                           <div className="bg-illustration border-border-illustration size-6 rounded-full border p-0.5 shadow shadow-zinc-950/5 *:rounded-full">
                             <img
@@ -146,7 +168,7 @@ export default function Process() {
                       </div>
                     </div>
                     <div className="pl-5">
-                      <div className="text-foreground before:border-muted-foreground before:bg-background before:ring-background relative mt-0.5 inline-flex items-center gap-2 text-sm font-medium before:absolute before:inset-y-0 before:-left-[22px] before:my-auto before:size-[5px] before:rounded-full before:border before:ring">
+                      <div className="text-foreground before:border-muted-foreground before:bg-background before:ring-background relative mt-0.5 inline-flex items-center gap-2 text-sm before:absolute before:inset-y-0 before:-left-[22px] before:my-auto before:size-[5px] before:rounded-full before:border before:ring">
                         <div className="text-muted-foreground text-xs">
                           01 PM
                         </div>
@@ -167,17 +189,8 @@ export default function Process() {
               </div>
             </div>
             <div className="row-span-2 grid grid-rows-subgrid gap-8">
-              <div
-                aria-hidden="true"
-                className="relative flex flex-col justify-center"
-              >
-                <div className="text-foreground top-0 flex size-6 -translate-x-1/3 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full mask-y-from-55% mask-x-from-55% font-mono text-sm before:absolute before:inset-0 before:bg-[repeating-linear-gradient(-45deg,var(--color-foreground),var(--color-foreground)_0.5px,transparent_0.5px,transparent_3px)] before:opacity-35 @4xl:absolute">
-                  3
-                </div>
-                <div
-                  aria-hidden="true"
-                  className="-mx-8 -mb-8 flex flex-col justify-end border-b mask-r-from-55% mask-l-from-85% px-8 pt-4 pb-8"
-                >
+              <div className="relative flex flex-col justify-center">
+                <div className="-mx-8 -mb-8 flex flex-col justify-end border-b mask-r-from-55% mask-l-from-85% px-8 pt-4 pb-8">
                   <div className="space-y-2.5">
                     <span className="text-foreground block text-sm font-medium">
                       Memory Usage

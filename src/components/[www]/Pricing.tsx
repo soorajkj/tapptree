@@ -8,19 +8,19 @@ import { Button } from "../core/button";
 
 export default function Pricing() {
   return (
-    <section className="bg-muted/50 @container relative py-16 md:py-32">
+    <section className="@container relative py-16 md:py-32">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-balance md:text-4xl lg:text-5xl lg:tracking-tight">
-            Pricing that scale with your business
+          <h2 className="font-archivo text-3xl font-semibold text-balance md:text-4xl lg:text-5xl lg:tracking-tight">
+            Plans Built for Every Creator
           </h2>
-          <p className="text-muted-foreground mx-auto mt-4 max-w-xl text-lg text-balance">
-            Choose the perfect plan for your needs and start optimizing your
-            workflow today
+          <p className="mx-auto mt-4 max-w-xl text-balance">
+            Whether you’re just starting out or growing your brand, our flexible
+            plans give you the tools you need to shine online.
           </p>
         </div>
         <div className="relative mt-12 flex w-full flex-col gap-6">
-          <div className="mx-auto w-full rounded-lg border @max-4xl:max-w-sm">
+          <div className="mx-auto w-full border @max-4xl:max-w-sm">
             <div className="grid @4xl:grid-cols-3">
               {plans.map((plan, i) => (
                 <Plan key={i} plan={plan} />
@@ -80,7 +80,7 @@ const planStyles = tv({
   base: ["row-span-4 grid grid-rows-subgrid gap-8 p-8"],
   variants: {
     recommended: {
-      true: "ring-foreground/10 bg-card my-2 rounded-lg ring",
+      true: "ring-foreground/10 bg-card my-2 rounded-lg shadow-md ring",
       false: "",
     },
   },

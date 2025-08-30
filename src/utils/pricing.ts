@@ -2,7 +2,8 @@ export const plans = [
   {
     id: "free",
     title: "Free",
-    description: "For creators trying out Taptree for the first time",
+    description:
+      "For creators trying out Taptree for the first time, completely free",
     price: "$0",
     recommended: false,
     status: true,

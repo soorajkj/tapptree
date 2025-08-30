@@ -7,7 +7,7 @@ export default function Layout({ children }: PropsWithChildren) {
   return (
     <div className="flex h-full min-h-screen w-full flex-col">
       <Header />
-      <main className="flex-1">{children}</main>
+      <main className="bg-secondary/50 flex-1">{children}</main>
       <Footer />
     </div>
   );
