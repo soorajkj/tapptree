@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
         hostname: "framerusercontent.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+        pathname: "/**",
+      },
     ],
   },
 };

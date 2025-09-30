@@ -2,7 +2,14 @@
 
 import type { ThemeProviderProps } from "next-themes";
 import { ThemeProvider as NextThemeProvider } from "next-themes";
+import { usePathname } from "next/navigation";
+
+function forcedTheme(pathname: string) {
+  return ["/", "/about"].includes(pathname) ? "light" : "dark";
+}
 
 export default function ThemeProvider({ ...props }: ThemeProviderProps) {
-  return <NextThemeProvider {...props} />;
+  const pathname = usePathname();
+
+  return <NextThemeProvider forcedTheme={forcedTheme(pathname)} {...props} />;
 }

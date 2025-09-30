@@ -1,8 +1,8 @@
-import React, { ComponentProps } from "react";
+import React, { type ComponentProps } from "react";
 import { Container } from "@/components/core/container";
 import { Icon } from "@/components/core/icon";
 import { plans } from "@/utils/pricing";
-import { tv, VariantProps } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
 import { classNames } from "@/utils/classNames";
 import { Button } from "../core/button";
 

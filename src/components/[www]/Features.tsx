@@ -1,10 +1,20 @@
 import { Container } from "@/components/core/container";
-import { Icon, IconType } from "@/components/core/icon";
+import { Icon, type IconType } from "@/components/core/icon";
 
 export default function Features() {
   return (
-    <section className="bg-muted/50 py-24">
+    <section className="py-24">
       <Container>
+        <div className="mx-auto mb-16 max-w-2xl text-center">
+          <h2 className="font-archivo text-3xl font-medium text-balance md:text-4xl lg:text-5xl lg:tracking-tight">
+            Built to Cover Everything You Need
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-balance">
+            Everything you need to create, customize, and share your profile in
+            one place. Our features are designed to be simple, powerful, and
+            built around your goals.
+          </p>
+        </div>
         <div className="grid max-md:divide-y md:grid-cols-2 md:divide-x">
           <div className="row-span-2 grid grid-rows-subgrid gap-8 pb-12 md:pr-12">
             <div>
@@ -299,7 +309,6 @@ export default function Features() {
             </div>
           </div>
         </div>
-
         <div className="relative grid grid-cols-1 gap-x-3 gap-y-6 border-t pt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {[
             {
