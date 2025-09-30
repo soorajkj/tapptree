@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "../core/container";
+import Image from "next/image";
 
 export default function Process() {
   return (
@@ -31,7 +32,7 @@ export default function Process() {
                       <div className="bg-illustration flex gap-2 rounded-md border p-2">
                         <div className="flex items-center gap-2">
                           <div className="bg-illustration border-border-illustration size-6 rounded-full border p-0.5 shadow shadow-zinc-950/5 *:rounded-full">
-                            <img
+                            <Image
                               src="https://avatars.githubusercontent.com/u/31113941?v=4"
                               className="aspect-square rounded-[calc(var(--avatar-radius)-2px)] object-cover"
                               alt="Bernard Ngandu"
@@ -84,7 +85,7 @@ export default function Process() {
                       <div className="before:border-primary before:bg-background before:ring-background relative mt-0.5 ml-7 inline-flex items-center gap-2 text-sm before:absolute before:inset-y-0 before:-left-[19px] before:my-auto before:size-[5px] before:rounded-full before:border before:ring">
                         <div className="flex items-center -space-x-2">
                           <div className="bg-illustration border-border-illustration size-6 rounded-full border p-0.5 shadow shadow-zinc-950/5 *:rounded-full">
-                            <img
+                            <Image
                               src="https://avatars.githubusercontent.com/u/47919550?v=4"
                               className="aspect-square rounded-[calc(var(--avatar-radius)-2px)] object-cover"
                               alt="Méschac Irung"
@@ -95,7 +96,7 @@ export default function Process() {
                             />
                           </div>
                           <div className="bg-illustration border-border-illustration size-6 rounded-full border p-0.5 shadow shadow-zinc-950/5 *:rounded-full">
-                            <img
+                            <Image
                               src="https://avatars.githubusercontent.com/u/31113941?v=4"
                               className="aspect-square rounded-[calc(var(--avatar-radius)-2px)] object-cover"
                               alt="Bernard Ngandu"
@@ -113,7 +114,7 @@ export default function Process() {
                       <div className="before:border-primary before:bg-background before:ring-background relative mt-0.5 ml-7 inline-flex items-center gap-2 text-sm before:absolute before:inset-y-0 before:-left-[19px] before:my-auto before:size-[5px] before:rounded-full before:border before:ring">
                         <div className="flex items-center -space-x-2">
                           <div className="bg-illustration border-border-illustration size-6 rounded-full border p-0.5 shadow shadow-zinc-950/5 *:rounded-full">
-                            <img
+                            <Image
                               src="https://avatars.githubusercontent.com/u/47919550?v=4"
                               className="aspect-square rounded-[calc(var(--avatar-radius)-2px)] object-cover"
                               alt="Méschac Irung"
@@ -124,7 +125,7 @@ export default function Process() {
                             />
                           </div>
                           <div className="bg-illustration border-border-illustration size-6 rounded-full border p-0.5 shadow shadow-zinc-950/5 *:rounded-full">
-                            <img
+                            <Image
                               src="https://avatars.githubusercontent.com/u/31113941?v=4"
                               className="aspect-square rounded-[calc(var(--avatar-radius)-2px)] object-cover"
                               alt="Bernard Ngandu"
@@ -142,7 +143,7 @@ export default function Process() {
                       <div className="before:border-primary before:bg-background before:ring-background relative mt-0.5 ml-7 inline-flex items-center gap-2 text-sm before:absolute before:inset-y-0 before:-left-[19px] before:my-auto before:size-[5px] before:rounded-full before:border before:ring">
                         <div className="flex items-center -space-x-2">
                           <div className="bg-illustration border-border-illustration size-6 rounded-full border p-0.5 shadow shadow-zinc-950/5 *:rounded-full">
-                            <img
+                            <Image
                               src="https://avatars.githubusercontent.com/u/47919550?v=4"
                               className="aspect-square rounded-[calc(var(--avatar-radius)-2px)] object-cover"
                               alt="Méschac Irung"
@@ -153,7 +154,7 @@ export default function Process() {
                             />
                           </div>
                           <div className="bg-illustration border-border-illustration size-6 rounded-full border p-0.5 shadow shadow-zinc-950/5 *:rounded-full">
-                            <img
+                            <Image
                               src="https://avatars.githubusercontent.com/u/31113941?v=4"
                               className="aspect-square rounded-[calc(var(--avatar-radius)-2px)] object-cover"
                               alt="Bernard Ngandu"
