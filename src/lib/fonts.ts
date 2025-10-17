@@ -1,26 +1,24 @@
-import { Geist } from "next/font/google";
-import localFont from "next/font/local";
+import { Geist, Geist_Mono } from "next/font/google";
 
 const geistSansFont = Geist({
-  variable: "--font-inter",
+  variable: "--font-sans",
   subsets: ["latin"],
-});
-
-const geistMonoFont = localFont({
-  variable: "--font-archivo",
-  src: [
-    {
-      path: "../../public/fonts/RykerBold.woff",
-      weight: "800",
-      style: "normal",
-    },
-  ],
   display: "swap",
+  adjustFontFallback: true,
 });
 
-const geistMono = geistMonoFont.variable;
-const geistSans = geistSansFont.variable;
+const geistMonoFont = Geist_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: "variable",
+  display: "swap",
+  adjustFontFallback: true,
+});
 
-const fonts = geistMono + " " + geistSans;
+const geistSans = geistSansFont.variable;
+const geistMono = geistMonoFont.variable;
+
+const join = (fonts: string[]) => fonts.join(" ");
+const fonts = join([geistSans, geistMono]);
 
 export default fonts;

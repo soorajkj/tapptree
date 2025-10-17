@@ -1,9 +1,8 @@
 import React, { Fragment } from "react";
 import Hero from "@/components/[www]/Hero";
-import LogoCloud from "@/components/[www]/LogoCloud";
+import Blogs from "@/components/[www]/Blogs";
 import Features from "@/components/[www]/Features";
-import Process from "@/components/[www]/Process";
-import Pricing from "@/components/[www]/Pricing";
+import LogoCloud from "@/components/[www]/LogoCloud";
 
 export default function Page() {
   return (
@@ -11,8 +10,7 @@ export default function Page() {
       <Hero />
       <LogoCloud />
       <Features />
-      <Process />
-      <Pricing />
+      <Blogs />
     </Fragment>
   );
 }
