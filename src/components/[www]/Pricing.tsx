@@ -48,7 +48,7 @@ function Plan({ className, plan }: PlanProps) {
     >
       <div className="self-end">
         <div className="text-lg font-medium tracking-tight">{plan.title}</div>
-        <div className="text-muted-foreground mt-1 text-sm text-balance">
+        <div className="mt-1 text-sm text-balance text-neutral-600">
           {plan.description}
         </div>
       </div>
@@ -56,7 +56,7 @@ function Plan({ className, plan }: PlanProps) {
         <div className="text-3xl font-semibold">
           <span className="inline-block">{plan.price}</span>
         </div>
-        <div className="text-muted-foreground text-sm">Per month</div>
+        <div className="text-sm text-neutral-600">Per month</div>
       </div>
       <Button variant={!plan.recommended ? "outline" : "default"}>
         {plan.label}
@@ -65,7 +65,7 @@ function Plan({ className, plan }: PlanProps) {
         {plan.features.map((feature, i) => (
           <li
             key={i}
-            className="[&_svg]:text-muted-foreground flex items-center gap-2 [&_svg]:size-3 [&_svg]:shrink-0"
+            className="flex items-center gap-2 [&_svg]:size-3 [&_svg]:shrink-0 [&_svg]:text-neutral-600"
           >
             <Icon icon="Check" strokeWidth={3.5} />
             <span>{feature}</span>

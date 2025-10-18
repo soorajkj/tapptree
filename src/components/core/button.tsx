@@ -40,7 +40,7 @@ const buttonStyles = tv({
       destructive:
         "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-md",
       outline:
-        "bg-background ring-foreground/10 hover:bg-muted/50 dark:ring-foreground/15 dark:hover:bg-muted/50 border border-transparent shadow-sm ring-1 shadow-black/15 duration-200",
+        "bg-background ring-foreground/10 hover:bg-muted/50 text-neutral-950ring-foreground/15 text-neutral-950hover:bg-muted/50 border border-transparent shadow-sm ring-1 shadow-black/15 duration-200",
       secondary:
         "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-sm",
       ghost: "hover:bg-accent hover:text-accent-foreground",

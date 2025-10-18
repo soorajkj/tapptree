@@ -4,7 +4,7 @@ import React from "react";
 export default function Testimonial() {
   return (
     <figure className="flex max-w-4xl flex-col gap-8 px-20 text-center">
-      <blockquote className="text-display-sm font-medium text-neutral-900 dark:text-neutral-50">
+      <blockquote className="text-display-sm -neutral-50 font-medium text-neutral-900">
         Taptree has completely transformed the way I share my online presence.
         Instead of juggling multiple links across different platforms, I now
         have one beautiful, customizable page that showcases everything I do.
@@ -26,10 +26,10 @@ export default function Testimonial() {
             </div>
           </div>
           <div className="flex flex-col gap-1">
-            <p className="text-md font-semibold text-neutral-900 dark:text-neutral-50">
+            <p className="text-md -neutral-50 font-semibold text-neutral-900">
               Lyle Kauffman
             </p>
-            <cite className="text-sm font-medium text-neutral-600 not-italic dark:text-neutral-400">
+            <cite className="-neutral-400 text-sm font-medium text-neutral-600 not-italic">
               Content Creator
             </cite>
           </div>

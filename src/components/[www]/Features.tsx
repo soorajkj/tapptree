@@ -2,19 +2,18 @@ import { Container } from "@/components/core/container";
 
 export default function Features() {
   return (
-    <section className="relative overflow-hidden border-y border-neutral-200 bg-neutral-50">
+    <section className="relative overflow-hidden border-b border-neutral-200">
       <Container>
         <div className="border-x border-b border-neutral-200 px-2 lg:px-2">
           <div className="border-x border-neutral-200 py-16 md:py-24">
             <div className="mx-auto max-w-2xl space-y-4 text-center">
-              <span className="text-foreground font-mono text-sm uppercase">
-                <span className="text-muted-foreground">[01]</span> Complete
-                Platform
+              <span className="font-mono text-sm text-neutral-950 uppercase">
+                <span className="text-neutral-600">[01]</span> Complete Platform
               </span>
-              <h2 className="text-foreground mt-6 text-4xl font-semibold text-balance lg:text-5xl">
+              <h2 className="mt-6 text-4xl font-medium tracking-tighter text-balance text-neutral-950 sm:text-5xl lg:text-5xl">
                 Unveil the contact info you’ve been seeking
               </h2>
-              <p className="text-muted-foreground text-lg text-balance">
+              <p className="text-lg text-balance text-neutral-600">
                 Our powerful analytics platform helps you visualize complex
                 data, identify trends, and make data-driven decisions with
                 confidence.
@@ -27,13 +26,13 @@ export default function Features() {
             {[...Array(4)].map((_, i) => (
               <div
                 key={i}
-                className="row-span-2 grid grid-rows-subgrid gap-8 bg-neutral-50 py-12 md:px-12"
+                className="row-span-2 grid grid-rows-subgrid gap-8 bg-neutral-50 px-4 py-12 md:px-12"
               >
                 <div>
                   <h3 className="text-base font-semibold text-neutral-950">
                     Intuitive Invoice Creation
                   </h3>
-                  <p className="mt-2 text-base text-neutral-500">
+                  <p className="mt-2 text-base text-neutral-600">
                     Create professional invoices instantly with our intuitive
                     tools. Customize templates and automate billing to save
                     time.
@@ -66,9 +65,11 @@ export default function Features() {
                 >
                   <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
                 </svg>
-                <h3 className="text-sm font-medium">Faaast</h3>
+                <h3 className="text-base font-medium text-neutral-950">
+                  Faaast
+                </h3>
               </div>
-              <p className="text-sm text-neutral-500">
+              <p className="text-sm text-neutral-600">
                 It supports an entire helping developers and innovate.
               </p>
             </div>
@@ -97,9 +98,11 @@ export default function Features() {
                   <path d="M9 2v2" />
                   <path d="M9 20v2" />
                 </svg>
-                <h3 className="text-sm font-medium">Powerful</h3>
+                <h3 className="text-base font-medium text-neutral-950">
+                  Powerful
+                </h3>
               </div>
-              <p className="text-sm text-neutral-500">
+              <p className="text-sm text-neutral-600">
                 It supports an entire helping developers and businesses.
               </p>
             </div>
@@ -120,9 +123,11 @@ export default function Features() {
                   <rect width={18} height={11} x={3} y={11} rx={2} ry={2} />
                   <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                 </svg>
-                <h3 className="text-sm font-medium">Security</h3>
+                <h3 className="text-base font-medium text-neutral-950">
+                  Security
+                </h3>
               </div>
-              <p className="text-sm text-neutral-500">
+              <p className="text-sm text-neutral-600">
                 An helping developers businesses innovate.
               </p>
             </div>
@@ -146,9 +151,11 @@ export default function Features() {
                   <path d="M4 17v2" />
                   <path d="M5 18H3" />
                 </svg>
-                <h3 className="text-sm font-medium">AI Powered</h3>
+                <h3 className="text-base font-medium text-neutral-950">
+                  AI Powered
+                </h3>
               </div>
-              <p className="text-sm text-neutral-500">
+              <p className="text-sm text-neutral-600">
                 Helping developers businesses innovate.
               </p>
             </div>

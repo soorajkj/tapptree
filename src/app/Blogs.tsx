@@ -3,7 +3,7 @@ import { Container } from "@/components/core/container";
 
 export default function Blogs() {
   return (
-    <section className="relative overflow-hidden border-b border-neutral-200">
+    <section className="bg-neutral-50">
       <Container>
         <div className="border-x border-b border-neutral-200 px-2 lg:px-2">
           <div className="border-x border-neutral-200 py-16 md:py-24">
@@ -11,7 +11,7 @@ export default function Blogs() {
               <span className="font-mono text-sm text-neutral-950 uppercase">
                 <span className="text-neutral-600">[01]</span> Complete Platform
               </span>
-              <h2 className="mt-6 text-4xl font-medium tracking-tighter text-balance text-neutral-950 sm:text-5xl lg:text-5xl">
+              <h2 className="mt-6 text-4xl font-semibold text-balance text-neutral-950 lg:text-5xl">
                 Unveil the contact info you’ve been seeking
               </h2>
               <p className="text-lg text-balance text-neutral-600">
@@ -24,7 +24,7 @@ export default function Blogs() {
         </div>
         <div className="border-x border-neutral-200 px-2 lg:px-2">
           <div className="border-x border-neutral-200">
-            <article className="relative overflow-hidden border-b border-neutral-200 bg-white sm:grid sm:grid-cols-3">
+            <article className="relative gap-2 overflow-hidden border-b border-neutral-200 bg-white sm:grid sm:grid-cols-3">
               <div className="relative m-1 aspect-square overflow-hidden rounded-xl">
                 <img
                   alt="Embracing Remote Work Culture"
@@ -38,15 +38,15 @@ export default function Blogs() {
                 />
               </div>
               <div className="col-span-2 grid gap-3 p-6">
-                <time className="text-sm text-neutral-600" dateTime="">
+                <time className="text-sm" dateTime="2025-08-18T00:00:00.000Z">
                   Aug 18, 2025
                 </time>
-                <h2 className="text-lg font-semibold text-balance text-neutral-950 md:text-xl">
+                <h2 className="text-lg font-semibold text-balance md:text-xl">
                   <a className="before:absolute before:inset-0" href="#">
                     Embracing Remote Work Culture
                   </a>
                 </h2>
-                <p className="text-neutral-600">
+                <p>
                   Explore the transformative shift towards remote work and how
                   it has reshaped business operations globally. Discover
                   strategies for effective communication, collaboration, and
@@ -65,9 +65,7 @@ export default function Blogs() {
                         decoding="async"
                       />
                     </div>
-                    <span className="line-clamp-1 text-sm text-neutral-600">
-                      Theo Balick
-                    </span>
+                    <span className="line-clamp-1 text-sm">Theo Balick</span>
                   </div>
                 </div>
               </div>
@@ -92,10 +90,10 @@ export default function Blogs() {
 function Blog() {
   return (
     <article className="relative flex flex-col space-y-4 bg-white p-6 duration-200">
-      <time className="block text-sm text-neutral-600" dateTime="">
+      <time className="block text-sm" dateTime="2025-09-10T00:00:00.000Z">
         Sep 10, 2025
       </time>
-      <h3 className="font-semibold text-neutral-950">
+      <h3 className="font-semibold">
         <a className="before:absolute before:inset-0" href="#">
           The Top Industries and Business Models Using AI for Fraud Prevention
           and Detection
@@ -118,9 +116,7 @@ function Blog() {
               decoding="async"
             />
           </div>
-          <span className="line-clamp-1 text-sm text-neutral-600">
-            Theo Balick
-          </span>
+          <span className="line-clamp-1 text-sm">Theo Balick</span>
         </div>
       </div>
     </article>

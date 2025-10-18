@@ -24,9 +24,7 @@ export default function Process() {
                     <div className="mb-0.5 text-sm font-semibold">Step One</div>
                     <div className="mb-4 flex gap-2 text-sm">
                       <span>Create your space,</span>
-                      <span className="text-muted-foreground">
-                        your own page
-                      </span>
+                      <span className="text-neutral-600">your own page</span>
                     </div>
                     <div className="mb-4 grid gap-2 @md:grid-cols-1">
                       <div className="bg-illustration flex gap-2 rounded-md border p-2">
@@ -42,14 +40,14 @@ export default function Process() {
                               decoding="async"
                             />
                           </div>
-                          <div className="text-muted-foreground line-clamp-1">
+                          <div className="line-clamp-1 text-neutral-600">
                             Sooraj Janardhanan
                           </div>
                         </div>
                       </div>
                       <div className="bg-illustration flex gap-2 rounded-md border p-2">
                         <div>
-                          <div className="text-muted-foreground line-clamp-3">
+                          <div className="line-clamp-3 text-neutral-600">
                             A senoior software enginner based in Kochi, India.
                             Crafting beautiful digital experience
                           </div>
@@ -60,10 +58,10 @@ export default function Process() {
                 </div>
               </div>
               <div>
-                <h3 className="text-foreground font-semibold">
+                <h3 className="font-semibold text-neutral-950">
                   Claim Your Page
                 </h3>
-                <p className="text-muted-foreground mt-2 text-sm">
+                <p className="mt-2 text-sm text-neutral-600">
                   Pick your unique link, add a profile photo, and start fresh
                   with a personal hub.
                 </p>
@@ -74,10 +72,8 @@ export default function Process() {
                 <div className="relative">
                   <div className="relative w-full space-y-2">
                     <div className="pl-5">
-                      <div className="text-foreground before:border-muted-foreground before:bg-background before:ring-background relative mt-0.5 inline-flex items-center gap-2 text-sm before:absolute before:inset-y-0 before:-left-[22px] before:my-auto before:size-[5px] before:rounded-full before:border before:ring">
-                        <div className="text-muted-foreground text-xs">
-                          06 AM
-                        </div>
+                      <div className="before:border-muted-foreground before:bg-background before:ring-background relative mt-0.5 inline-flex items-center gap-2 text-sm text-neutral-950 before:absolute before:inset-y-0 before:-left-[22px] before:my-auto before:size-[5px] before:rounded-full before:border before:ring">
+                        <div className="text-xs text-neutral-600">06 AM</div>
                         Poll Created
                       </div>
                     </div>
@@ -169,10 +165,8 @@ export default function Process() {
                       </div>
                     </div>
                     <div className="pl-5">
-                      <div className="text-foreground before:border-muted-foreground before:bg-background before:ring-background relative mt-0.5 inline-flex items-center gap-2 text-sm before:absolute before:inset-y-0 before:-left-[22px] before:my-auto before:size-[5px] before:rounded-full before:border before:ring">
-                        <div className="text-muted-foreground text-xs">
-                          01 PM
-                        </div>
+                      <div className="before:border-muted-foreground before:bg-background before:ring-background relative mt-0.5 inline-flex items-center gap-2 text-sm text-neutral-950 before:absolute before:inset-y-0 before:-left-[22px] before:my-auto before:size-[5px] before:rounded-full before:border before:ring">
+                        <div className="text-xs text-neutral-600">01 PM</div>
                         Poll Closed
                       </div>
                     </div>
@@ -180,10 +174,10 @@ export default function Process() {
                 </div>
               </div>
               <div>
-                <h3 className="text-foreground font-semibold">
+                <h3 className="font-semibold text-neutral-950">
                   Add Everything You Do
                 </h3>
-                <p className="text-muted-foreground mt-2 text-sm">
+                <p className="mt-2 text-sm text-neutral-600">
                   From Instagram to YouTube, shops to portfolios—connect
                   unlimited links in seconds.
                 </p>
@@ -193,24 +187,24 @@ export default function Process() {
               <div className="relative flex flex-col justify-center">
                 <div className="-mx-8 -mb-8 flex flex-col justify-end border-b mask-r-from-55% mask-l-from-85% px-8 pt-4 pb-8">
                   <div className="space-y-2.5">
-                    <span className="text-foreground block text-sm font-medium">
+                    <span className="block text-sm font-medium text-neutral-950">
                       Memory Usage
                     </span>
                     <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground text-sm">
+                      <span className="text-sm text-neutral-600">
                         56 GB / 128 GB
                       </span>
-                      <span className="text-foreground">45%</span>
+                      <span className="text-neutral-950">45%</span>
                     </div>
-                    <div className="bg-muted relative my-1.5 h-1.5 rounded-full before:absolute before:inset-0 before:z-1 before:w-2/5 before:rounded-full before:bg-linear-to-r before:from-white before:to-indigo-400 after:absolute after:inset-0 after:w-2/5 after:bg-linear-to-r after:from-white after:to-indigo-400 after:opacity-50 after:blur-xs" />
+                    <div className="bg-muted relative my-1.5 h-1.5 rounded-full before:absolute before:inset-0 before:z-1 before:w-2/5 before:rounded-full before:bg-linear-to-r before:from-white before:to-orange-400 after:absolute after:inset-0 after:w-2/5 after:bg-linear-to-r after:from-white after:to-orange-400 after:opacity-50 after:blur-xs" />
                   </div>
                 </div>
               </div>
               <div className="mt-8 @4xl:mt-0">
-                <h3 className="text-foreground font-semibold">
+                <h3 className="font-semibold text-neutral-950">
                   Share &amp; Grow
                 </h3>
-                <p className="text-muted-foreground mt-2 text-sm">
+                <p className="mt-2 text-sm text-neutral-600">
                   Put your link in bio, email signature, or QR code. Watch your
                   audience grow with built-in insights.
                 </p>

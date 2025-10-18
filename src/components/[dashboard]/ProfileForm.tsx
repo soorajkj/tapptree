@@ -147,7 +147,7 @@ export default function ProfileForm() {
         </div>
       </form>
       <div className="flex items-center gap-4">
-        <button className="inline-flex h-10 min-h-10 w-full cursor-pointer items-center justify-center rounded-lg bg-emerald-600 text-white">
+        <button className="inline-flex h-10 min-h-10 w-full cursor-pointer items-center justify-center rounded-lg bg-orange-600 text-white">
           Edit profile
         </button>
       </div>
