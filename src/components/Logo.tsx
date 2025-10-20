@@ -202,8 +202,8 @@ export default function Logo() {
           </clipPath>
         </defs>
       </svg>
-      <span className="text-xl font-semibold text-neutral-950 dark:text-white">
-        Taptree
+      <span className="-white text-xl font-semibold text-neutral-950">
+        Tapptree
       </span>
     </Link>
   );

@@ -20,12 +20,12 @@ export default function HandleControl({ handle }: HandleControlProps) {
   });
 
   return (
-    <div className="flex min-h-16 items-center gap-2 rounded-lg border border-neutral-100 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-800">
+    <div className="text-neutral-950border-neutral-800 text-neutral-950bg-neutral-800 flex min-h-16 items-center gap-2 rounded-lg border border-neutral-100 bg-neutral-50">
       <button
         ref={setActivatorNodeRef}
         {...listeners}
         {...attributes}
-        className="inline-flex size-6 h-full min-w-8 shrink-0 cursor-grab items-center justify-center text-neutral-500 dark:text-neutral-400 [&_svg]:size-4"
+        className="-neutral-400 inline-flex size-6 h-full min-w-8 shrink-0 cursor-grab items-center justify-center text-neutral-500 [&_svg]:size-4"
       >
         <GripVerticalIcon />
       </button>
@@ -35,10 +35,10 @@ export default function HandleControl({ handle }: HandleControlProps) {
             <Instagram />
           </span>
           <div className="flex w-full flex-col">
-            <p className="text-sm font-medium text-neutral-900 dark:text-white">
+            <p className="-white text-sm font-medium text-neutral-900">
               {handle.platform.name}
             </p>
-            <p className="text-xs font-medium text-neutral-600 dark:text-neutral-400">
+            <p className="-neutral-400 text-xs font-medium text-neutral-600">
               {handle.url}
             </p>
           </div>

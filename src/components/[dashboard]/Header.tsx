@@ -19,7 +19,7 @@ export default function Header() {
               fill="#43E660"
             ></path>
           </svg>
-          <span className="text-xl font-medium text-white">Taptree</span>
+          <span className="text-xl font-medium text-white">Tapptree</span>
         </Link>
         <div className="flex flex-1 items-center justify-end">
           <SignOut />

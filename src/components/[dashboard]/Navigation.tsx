@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Navigation() {
   return (
-    <aside className="h-auto w-full max-w-72 bg-neutral-50 dark:bg-neutral-950">
+    <aside className="text-neutral-950bg-neutral-950 h-auto w-full max-w-72 bg-neutral-50">
       <div className="flex h-full w-full flex-col">
-        <div className="flex h-14 w-full items-center gap-2 border-b border-dashed border-neutral-300 p-3 dark:border-white/15">
-          <span className="inline-flex size-7 items-center justify-center rounded bg-white dark:bg-neutral-900">
+        <div className="text-neutral-950border-white/15 flex h-14 w-full items-center gap-2 border-b border-dashed border-neutral-300 p-3">
+          <span className="text-neutral-950bg-neutral-900 inline-flex size-7 items-center justify-center rounded bg-white">
             <svg
               width={28}
               height={28}
@@ -45,7 +45,7 @@ export default function Navigation() {
           <p>Acme</p>
         </div>
         <nav className="flex-1"></nav>
-        <div className="flex h-14 w-full items-center gap-2 border-t border-dashed border-neutral-300 p-3 dark:border-white/15">
+        <div className="text-neutral-950border-white/15 flex h-14 w-full items-center gap-2 border-t border-dashed border-neutral-300 p-3">
           <div className="flex w-full items-center gap-2">
             <div className="size-7 bg-neutral-900"></div>
             <p>Ludvig Rask</p>

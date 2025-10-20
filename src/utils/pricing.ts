@@ -3,13 +3,13 @@ export const plans = [
     id: "free",
     title: "Free",
     description:
-      "For creators trying out Taptree for the first time, completely free",
+      "For creators trying out Tapptree for the first time, completely free",
     price: "$0",
     recommended: false,
     status: true,
     label: "Get Started",
     features: [
-      "1 Taptree profile",
+      "1 Tapptree profile",
       "Basic analytics (clicks & views)",
       "Up to 25 links",
       "Customizable themes (limited)",
@@ -21,7 +21,7 @@ export const plans = [
     id: "pro",
     title: "Pro",
     description:
-      "For creators and professionals who want to maximize their Taptree profile",
+      "For creators and professionals who want to maximize their Tapptree profile",
     price: "$19",
     recommended: true,
     label: "Upgrade Now",

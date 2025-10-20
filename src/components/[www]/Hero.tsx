@@ -1,21 +1,38 @@
 import { Container } from "@/components/core/container";
-import { Button } from "../core/button";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden py-24">
+    <section className="relative overflow-hidden border-b border-neutral-200 bg-gradient-to-t from-transparent via-transparent to-transparent">
       <Container>
-        <div className="relative mx-auto max-w-5xl text-center">
-          <h1 className="font-archivo text-4xl font-bold tracking-tight text-balance sm:mt-12 sm:text-7xl">
-            Unify your online presence in one place
-          </h1>
-          <p className="mx-auto mt-4 mb-8 max-w-2xl text-lg text-balance">
-            Create a stylish, professional link-in-bio page with Taptree to
-            showcase your profile and social links — all together in one place.
-          </p>
-          <div className="flex items-center justify-center gap-4">
-            <Button>Start Building</Button>
-            <Button variant="outline">Book a demo</Button>
+        <div className="border-x border-neutral-200 px-2 lg:px-2">
+          <div className="relative border-x border-neutral-200 py-16 lg:py-36">
+            <div className="relative mx-auto flex max-w-5xl flex-col justify-center text-center">
+              <h1 className="mx-auto text-center text-4xl font-medium tracking-tighter text-balance text-neutral-950 sm:text-5xl lg:text-6xl">
+                Unify your online presence and let the world explore it.
+              </h1>
+              <p className="mx-auto mt-7 mb-9 max-w-3xl text-lg text-balance text-neutral-600">
+                Turn your online presence into one link that tells your story.
+                With a single tap, anyone can explore your social media,
+                products and content — no clutter, no hassle, just a smooth,
+                unified experience.
+              </p>
+              <div className="flex items-center justify-center gap-4">
+                <div className="flex w-full max-w-md flex-col items-center gap-2 md:flex-row">
+                  <div className="flex h-10 w-full items-center justify-center rounded-md border border-neutral-950/5 bg-neutral-950/5 pr-px pl-4 text-base font-light whitespace-nowrap text-neutral-950 backdrop-blur-sm">
+                    <span className="pointer-events-none shrink-0 select-none">
+                      tapptree.com&#47;
+                    </span>
+                    <input
+                      placeholder="johndoe"
+                      className="size-full py-2 outline-none"
+                    />
+                  </div>
+                  <button className="relative isolate inline-flex h-9 w-auto cursor-pointer items-center justify-center gap-x-2 rounded-md border border-transparent bg-orange-500 px-3.5 py-2.5 text-base/6 font-medium whitespace-nowrap text-white before:absolute before:inset-0 before:-z-10 before:rounded-md before:bg-orange-500 before:shadow-sm after:absolute after:inset-0 after:-z-10 after:rounded-md after:inset-shadow-2xs after:inset-shadow-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 disabled:pointer-events-none disabled:opacity-50 disabled:before:shadow-none disabled:after:shadow-none sm:px-3 sm:py-1.5 sm:text-sm/6 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">
+                    Launch my Tapp
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </Container>

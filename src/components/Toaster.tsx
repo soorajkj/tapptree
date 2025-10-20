@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 
 export default function Toaster({ ...props }: ToasterProps) {
   const { resolvedTheme } = useTheme();
-  const t = resolvedTheme as ToasterProps["theme"];
+  const theme = resolvedTheme as ToasterProps["theme"];
 
-  return <SonnerToaster theme={t} {...props} />;
+  return <SonnerToaster theme={theme} {...props} />;
 }

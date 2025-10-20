@@ -1,7 +1,7 @@
 import { createFactory } from "hono/factory";
 import type { AppBindings } from "@/server/types/bindings";
 import prisma from "@/lib/prisma";
-import { auth } from "./auth";
+import { auth } from "@/lib/auth";
 
 export const hono = createFactory<AppBindings>({
   defaultAppOptions: { strict: false },
