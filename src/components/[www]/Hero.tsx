@@ -18,13 +18,12 @@ export default function Hero() {
               </p>
               <div className="flex items-center justify-center gap-4">
                 <div className="flex w-full max-w-md flex-col items-center gap-2 md:flex-row">
-                  <div className="flex h-10 w-full items-center justify-center rounded-md border border-neutral-950/5 bg-neutral-950/5 pr-px pl-4 text-sm font-light whitespace-nowrap text-neutral-950 backdrop-blur-sm">
+                  <div className="flex h-10 w-full items-center justify-center rounded-md border border-neutral-950/5 bg-neutral-950/5 pr-px pl-4 text-base font-light whitespace-nowrap text-neutral-950 backdrop-blur-sm">
                     <span className="pointer-events-none shrink-0 select-none">
-                      taptree.com&#47;
+                      tapptree.com&#47;
                     </span>
                     <input
                       placeholder="johndoe"
-                      spellCheck={false}
                       className="size-full py-2 outline-none"
                     />
                   </div>

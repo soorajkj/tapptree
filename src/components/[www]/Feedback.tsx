@@ -9,7 +9,7 @@ export default function Feedback() {
           <div className="relative border-x border-neutral-200 bg-white py-16">
             <div className="mx-auto flex max-w-2xl flex-col gap-8 py-12 lg:pt-16">
               <p className="text-xl font-medium text-neutral-950 md:text-2xl">
-                Using Taptree has been like unlocking a secret design
+                Using Tapptree has been like unlocking a secret design
                 superpower. It's the perfect fusion of simplicity and
                 versatility, enabling us to create UIs that are as stunning as
                 they are user-friendly.

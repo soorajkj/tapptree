@@ -101,6 +101,9 @@ importers:
       tailwind-variants:
         specifier: ^2.0.1
         version: 2.0.1(tailwind-merge@3.3.1)(tailwindcss@4.1.11)
+      twmx:
+        specifier: ^0.0.2
+        version: 0.0.2
       zod:
         specifier: ^4.0.14
         version: 4.0.14
@@ -3659,6 +3662,9 @@ packages:
     resolution: {integrity: sha512-qjbnuR9Tr+FJOMBqJCW5ehvIo/buZq7vH7qD7JziU98h6l3qGy0a/yPFjwO+y0/T7GFpNgNAvEcPPVfyT8rrPQ==}
     engines: {node: '>=18.0.0'}
     hasBin: true
+
+  twmx@0.0.2:
+    resolution: {integrity: sha512-juknQwd7r2N3mBxR/iTT7X4VMFgZNl/COOXX0HIVgOhTfc7CXMmFjf0CP49JTBYoOqY/BvgOf+zI4BXmxQINUA==}
 
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -7530,6 +7536,11 @@ snapshots:
       get-tsconfig: 4.10.1
     optionalDependencies:
       fsevents: 2.3.3
+
+  twmx@0.0.2:
+    dependencies:
+      clsx: 2.1.1
+      tailwind-merge: 3.3.1
 
   type-check@0.4.0:
     dependencies:

@@ -5,7 +5,7 @@ export default function Testimonial() {
   return (
     <figure className="flex max-w-4xl flex-col gap-8 px-20 text-center">
       <blockquote className="text-display-sm -neutral-50 font-medium text-neutral-900">
-        Taptree has completely transformed the way I share my online presence.
+        Tapptree has completely transformed the way I share my online presence.
         Instead of juggling multiple links across different platforms, I now
         have one beautiful, customizable page that showcases everything I do.
       </blockquote>

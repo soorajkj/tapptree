@@ -1,56 +1,57 @@
-import type { ComponentProps } from "react";
-import React from "react";
-import { tv, type VariantProps } from "tailwind-variants";
-import { Slot } from "@radix-ui/react-slot";
-import { classNames } from "@/utils/classNames";
+"use client";
 
+import * as React from "react";
+import * as SlotPrimitive from "@radix-ui/react-slot";
+import { tv, type VariantProps } from "tailwind-variants";
+import { twmx } from "twmx";
+
+export type ButtonVarinat = VariantProps<typeof buttonVariants>;
 export interface ButtonProps
-  extends ComponentProps<"button">,
-    VariantProps<typeof buttonStyles> {
+  extends React.ComponentProps<"button">,
+    ButtonVarinat {
   asChild?: boolean;
 }
 
-export function Button({
-  children,
-  asChild = false,
-  variant = "default",
+export default function Button({
+  variant = "primary",
   size = "md",
+  width = "auto",
+  asChild,
   className,
   ...props
 }: ButtonProps) {
-  const Comp = asChild ? Slot : "button";
+  const Comp = asChild ? SlotPrimitive.Slot : "button";
 
   return (
     <Comp
       data-slot="button"
-      className={classNames(buttonStyles({ variant, size, className }))}
+      className={twmx(buttonVariants({ variant, size, width, className }))}
       {...props}
-    >
-      {children}
-    </Comp>
+    />
   );
 }
 
-const buttonStyles = tv({
-  base: "focus-visible:ring-ring inline-flex cursor-pointer items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-colors focus-visible:ring-1 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+export const buttonVariants = tv({
+  base: [
+    "relative isolate inline-flex cursor-pointer items-center justify-center gap-x-2 rounded-md border border-transparent px-3.5 py-2.5 text-base/6 font-medium whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 sm:px-3 sm:py-1.5 sm:text-sm/6 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  ],
   variants: {
     variant: {
-      default:
-        "bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm shadow-black/20",
-      destructive:
-        "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-md",
-      outline:
-        "bg-background ring-foreground/10 hover:bg-muted/50 text-neutral-950ring-foreground/15 text-neutral-950hover:bg-muted/50 border border-transparent shadow-sm ring-1 shadow-black/15 duration-200",
+      primary:
+        "bg-orange-500 text-white before:absolute before:inset-0 before:-z-10 before:rounded-md before:bg-orange-500 before:shadow-sm after:absolute after:inset-0 after:-z-10 after:rounded-md after:inset-shadow-2xs after:inset-shadow-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 disabled:pointer-events-none disabled:opacity-50 disabled:before:shadow-none disabled:after:shadow-none",
       secondary:
-        "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-sm",
-      ghost: "hover:bg-accent hover:text-accent-foreground",
-      link: "text-primary underline-offset-4 hover:underline",
+        "border-neutral-200 bg-white text-neutral-950 before:absolute before:inset-0 before:-z-10 before:rounded-md before:bg-white before:shadow-sm after:absolute after:inset-0 after:-z-10 after:rounded-md after:inset-shadow-2xs after:inset-shadow-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 disabled:pointer-events-none disabled:opacity-50 disabled:before:shadow-none disabled:after:shadow-none",
+      destruct:
+        "bg-red-600 text-white before:absolute before:inset-0 before:-z-10 before:rounded-md before:bg-red-600 before:shadow-sm after:absolute after:inset-0 after:-z-10 after:rounded-md after:inset-shadow-2xs after:inset-shadow-white/15 hover:bg-red-700 hover:after:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:bg-red-700 active:after:bg-white/10 disabled:before:shadow-none disabled:after:shadow-none dark:border-white/5 dark:bg-red-600 dark:before:hidden dark:after:-inset-px dark:after:rounded-md dark:hover:after:bg-white/5 dark:active:after:bg-white/5",
+    },
+    width: {
+      full: "w-full",
+      auto: "w-auto",
     },
     size: {
-      md: "h-9 px-4 py-2",
-      sm: "h-8 rounded-md px-3 text-xs",
-      lg: "h-10 rounded-md px-8",
-      icon: "h-9 w-9",
+      sm: "h-8",
+      md: "h-9",
+      lg: "h-10",
     },
   },
 });

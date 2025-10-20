@@ -9,7 +9,7 @@ export default function LogoCloud() {
           <div className="relative border-x border-neutral-200 py-16 lg:py-24">
             <div className="mx-auto mb-12 max-w-xl text-center text-balance md:mb-6">
               <p className="mx-auto max-w-xl text-balance text-neutral-600 md:text-lg">
-                Taptree is trusted by leading teams from Generative AI
+                Tapptree is trusted by leading teams from Generative AI
                 Companies, Hosting Providers, Payments Providers, Streaming
                 Providers
               </p>

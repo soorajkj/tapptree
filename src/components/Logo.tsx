@@ -203,7 +203,7 @@ export default function Logo() {
         </defs>
       </svg>
       <span className="-white text-xl font-semibold text-neutral-950">
-        Taptree
+        Tapptree
       </span>
     </Link>
   );
