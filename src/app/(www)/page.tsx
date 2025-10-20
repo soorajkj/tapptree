@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import Hero from "@/components/[www]/Hero";
 import Features from "@/components/[www]/Features";
 import LogoCloud from "@/components/[www]/LogoCloud";
-import Feedback from "@/components/[www]/Feedback";
+import Testimonials from "@/components/[www]/Testimonials";
 
 export default function Page() {
   return (
@@ -10,7 +10,7 @@ export default function Page() {
       <Hero />
       <LogoCloud />
       <Features />
-      <Feedback />
+      <Testimonials />
     </Fragment>
   );
 }
