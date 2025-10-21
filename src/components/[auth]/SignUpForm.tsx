@@ -9,7 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { signUpSchema } from "@/utils/zod/auth";
 import { Form } from "@/components/core/form";
 import { Input } from "@/components/core/input";
-import { Button } from "@/components/core/button";
+import Button from "@/components/core/button";
 import { authClient } from "@/lib/authClient";
 
 type SignUpSchema = z.infer<typeof signUpSchema>;

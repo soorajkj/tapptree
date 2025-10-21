@@ -9,7 +9,7 @@ import { signInSchema } from "@/utils/zod/auth";
 import { Checkbox } from "@/components/core/checkbox";
 import { Form } from "@/components/core/form";
 import { Input } from "@/components/core/input";
-import { Button } from "@/components/core/button";
+import Button from "@/components/core/button";
 import type z from "zod/v3";
 import { authClient } from "@/lib/authClient";
 import Link from "next/link";
