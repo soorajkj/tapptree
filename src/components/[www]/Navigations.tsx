@@ -29,10 +29,12 @@ export default function Navigations({ ...props }: NavigationsProps) {
       >
         <Items />
         <div className="flex flex-col gap-2">
-          <Button variant="secondary" width="full">
-            Sign In
+          <Button variant="secondary" width="full" asChild={true}>
+            <Link href="/signin">Sign In</Link>
           </Button>
-          <Button width="full">Get started</Button>
+          <Button width="full" asChild={true}>
+            <Link href="/signup">Get started</Link>
+          </Button>
         </div>
       </motion.nav>
     </AnimatePresence>

@@ -3,208 +3,24 @@ import React from "react";
 
 export default function Logo() {
   return (
-    <Link href={"/"} className="inline-flex h-8 w-fit items-center gap-1">
-      <svg width={32} height={32} viewBox="0 0 48 48" fill="none">
-        <g filter="url(#filter0_iii_3051_46879)">
-          <g clipPath="url(#clip0_3051_46879)">
-            <rect width={48} height={48} rx={12} fill="#7839EE" />
-            <rect
-              width={48}
-              height={48}
-              fill="url(#paint0_linear_3051_46879)"
-            />
-            <g filter="url(#filter1_d_3051_46879)">
-              <path
-                d="M19.5 12L23.3184 20.1816L31.5 24L23.3184 27.8184L19.5 36L15.6816 27.8184L7.5 24L15.6816 20.1816L19.5 12Z"
-                fill="url(#paint1_linear_3051_46879)"
-              />
-              <path
-                opacity={0.5}
-                d="M22.5352 29.4964L27.3006 28.6765L30.0006 36L32.7006 28.6765L40.3929 30L35.4006 24L40.3929 18L32.7006 19.3235L30.0006 12L27.3006 19.3235L22.5352 18.5036L23.3183 20.1816L31.4999 24L23.3183 27.8184L22.5352 29.4964Z"
-                fill="url(#paint2_linear_3051_46879)"
-              />
-            </g>
-          </g>
-          <rect
-            x={1}
-            y={1}
-            width={46}
-            height={46}
-            rx={11}
-            stroke="url(#paint3_linear_3051_46879)"
-            strokeWidth={2}
-          />
-        </g>
-        <defs>
-          <filter
-            id="filter0_iii_3051_46879"
-            x={0}
-            y={-3}
-            width={48}
-            height={54}
-            filterUnits="userSpaceOnUse"
-            colorInterpolationFilters="sRGB"
-          >
-            <feFlood floodOpacity={0} result="BackgroundImageFix" />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="BackgroundImageFix"
-              result="shape"
-            />
-            <feColorMatrix
-              in="SourceAlpha"
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-              result="hardAlpha"
-            />
-            <feOffset dy={-3} />
-            <feGaussianBlur stdDeviation={1.5} />
-            <feComposite in2="hardAlpha" operator="arithmetic" k2={-1} k3={1} />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="shape"
-              result="effect1_innerShadow_3051_46879"
-            />
-            <feColorMatrix
-              in="SourceAlpha"
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-              result="hardAlpha"
-            />
-            <feOffset dy={3} />
-            <feGaussianBlur stdDeviation={1.5} />
-            <feComposite in2="hardAlpha" operator="arithmetic" k2={-1} k3={1} />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.1 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="effect1_innerShadow_3051_46879"
-              result="effect2_innerShadow_3051_46879"
-            />
-            <feColorMatrix
-              in="SourceAlpha"
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-              result="hardAlpha"
-            />
-            <feMorphology
-              radius={1}
-              operator="erode"
-              in="SourceAlpha"
-              result="effect3_innerShadow_3051_46879"
-            />
-            <feOffset />
-            <feComposite in2="hardAlpha" operator="arithmetic" k2={-1} k3={1} />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="effect2_innerShadow_3051_46879"
-              result="effect3_innerShadow_3051_46879"
-            />
-          </filter>
-          <filter
-            id="filter1_d_3051_46879"
-            x={4.5}
-            y={5.25}
-            width={39}
-            height={42}
-            filterUnits="userSpaceOnUse"
-            colorInterpolationFilters="sRGB"
-          >
-            <feFlood floodOpacity={0} result="BackgroundImageFix" />
-            <feColorMatrix
-              in="SourceAlpha"
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-              result="hardAlpha"
-            />
-            <feMorphology
-              radius={1.5}
-              operator="erode"
-              in="SourceAlpha"
-              result="effect1_dropShadow_3051_46879"
-            />
-            <feOffset dy={2.25} />
-            <feGaussianBlur stdDeviation={2.25} />
-            <feComposite in2="hardAlpha" operator="out" />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0.141176 0 0 0 0 0.141176 0 0 0 0 0.141176 0 0 0 0.1 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="BackgroundImageFix"
-              result="effect1_dropShadow_3051_46879"
-            />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="effect1_dropShadow_3051_46879"
-              result="shape"
-            />
-          </filter>
-          <linearGradient
-            id="paint0_linear_3051_46879"
-            x1={24}
-            y1={5.96047e-7}
-            x2={26}
-            y2={48}
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="white" stopOpacity={0} />
-            <stop offset={1} stopColor="white" stopOpacity={0.12} />
-          </linearGradient>
-          <linearGradient
-            id="paint1_linear_3051_46879"
-            x1={19.5}
-            y1={12}
-            x2={19.5}
-            y2={36}
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="white" stopOpacity={0.8} />
-            <stop offset={1} stopColor="white" stopOpacity={0.5} />
-          </linearGradient>
-          <linearGradient
-            id="paint2_linear_3051_46879"
-            x1={31.4641}
-            y1={12}
-            x2={31.4641}
-            y2={36}
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="white" stopOpacity={0.8} />
-            <stop offset={1} stopColor="white" stopOpacity={0.5} />
-          </linearGradient>
-          <linearGradient
-            id="paint3_linear_3051_46879"
-            x1={24}
-            y1={0}
-            x2={24}
-            y2={48}
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="white" stopOpacity={0.12} />
-            <stop offset={1} stopColor="white" stopOpacity={0} />
-          </linearGradient>
-          <clipPath id="clip0_3051_46879">
-            <rect width={48} height={48} rx={12} fill="white" />
-          </clipPath>
-        </defs>
+    <Link
+      href={"/"}
+      className="flex items-center gap-0.5 rounded-xl p-px shadow-sm outline-none"
+    >
+      <svg
+        width={40}
+        height={40}
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M2.34315 29.6568C4.68629 32 8.45752 32 16 32C23.5424 32 27.3138 32 29.6568 29.6568C32 27.3138 32 23.5424 32 16C32 8.45752 32 4.68629 29.6568 2.34315C27.3138 -1.90735e-07 23.5424 0 16 0C8.45752 0 4.68629 -1.90735e-07 2.34315 2.34315C-1.90735e-07 4.68629 0 8.45752 0 16C0 23.5424 -1.90735e-07 27.3138 2.34315 29.6568ZM12 10.8C9.12811 10.8 6.8 13.1282 6.8 16C6.8 18.8718 9.12811 21.2 12 21.2C14.8718 21.2 17.2 18.8718 17.2 16C17.2 15.3373 17.7373 14.8 18.4 14.8C19.0627 14.8 19.6 15.3373 19.6 16C19.6 20.1974 16.1974 23.6 12 23.6C7.80264 23.6 4.4 20.1974 4.4 16C4.4 11.8026 7.80264 8.4 12 8.4C12.6627 8.4 13.2 8.93726 13.2 9.6C13.2 10.2627 12.6627 10.8 12 10.8ZM25.2 16C25.2 18.8718 22.8718 21.2 20 21.2C19.3373 21.2 18.8 21.7373 18.8 22.4C18.8 23.0627 19.3373 23.6 20 23.6C24.1974 23.6 27.6 20.1974 27.6 16C27.6 11.8026 24.1974 8.4 20 8.4C15.8026 8.4 12.4 11.8026 12.4 16C12.4 16.6627 12.9373 17.2 13.6 17.2C14.2627 17.2 14.8 16.6627 14.8 16C14.8 13.1282 17.1282 10.8 20 10.8C22.8718 10.8 25.2 13.1282 25.2 16Z"
+          fill="#FF6900"
+        />
       </svg>
-      <span className="-white text-xl font-semibold text-neutral-950">
-        Tapptree
-      </span>
     </Link>
   );
 }

@@ -1,10 +1,15 @@
-import type { PropsWithChildren } from "react";
+import Link from "next/link";
+import { type PropsWithChildren } from "react";
+import Logo from "public/images/tapptree.svg";
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
-    <section className="text-neutral-950bg-neutral-950 grid min-h-svh grid-cols-1 bg-white">
-      <div className="relative flex flex-col items-center justify-center gap-4 px-4 py-8 md:items-center md:px-8">
-        <div className="flex w-full flex-col justify-center gap-8 sm:max-w-90">
+    <section className="flex min-h-screen items-center justify-center overflow-y-auto">
+      <div className="relative flex size-full flex-col items-center justify-center gap-4 overflow-y-auto px-4 py-8 md:items-center md:px-8">
+        <div className="flex size-full flex-col justify-center gap-4 sm:max-w-90">
+          <Link href="/" className="flex items-center justify-center">
+            <Logo width={48} height={48} />
+          </Link>
           {children}
         </div>
       </div>

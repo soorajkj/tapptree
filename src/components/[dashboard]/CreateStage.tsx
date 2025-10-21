@@ -29,7 +29,7 @@ export default function CreateStage({
 }) {
   const form = useForm({
     resolver: zodResolver(createHandlePayload),
-    mode: "onSubmit",
+    mode: "onChange",
     defaultValues: { url: "" },
   });
 
