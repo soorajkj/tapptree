@@ -19,7 +19,7 @@ export default function SignUpForm() {
   const router = useRouter();
   const form = useForm<SignUpSchema>({
     resolver: zodResolver(signUpSchema),
-    mode: "onSubmit",
+    mode: "onChange",
     defaultValues: { email: "", password: "", name: "", username: "" },
   });
 

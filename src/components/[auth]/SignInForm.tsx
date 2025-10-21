@@ -21,7 +21,7 @@ export default function SignInForm() {
   const router = useRouter();
   const form = useForm<SignInSchema>({
     resolver: zodResolver(signInSchema),
-    mode: "onSubmit",
+    mode: "onChange",
     defaultValues: { email: "", password: "", rememberMe: true },
   });
 
@@ -103,7 +103,7 @@ export default function SignInForm() {
           <div className="flex items-center">
             <Link
               href={"/"}
-              className="text-brand-700 -neutral-300 text-sm font-semibold"
+              className="pointer-events-none text-sm font-medium text-orange-500"
             >
               Forgot password
             </Link>
