@@ -4,7 +4,7 @@ import { Icon } from "@/components/core/icon";
 import { plans } from "@/utils/pricing";
 import { tv, type VariantProps } from "tailwind-variants";
 import { classNames } from "@/utils/classNames";
-import { Button } from "../core/button";
+import Button from "@/components/core/button";
 
 export default function Pricing() {
   return (
@@ -58,7 +58,7 @@ function Plan({ className, plan }: PlanProps) {
         </div>
         <div className="text-sm text-neutral-600">Per month</div>
       </div>
-      <Button variant={!plan.recommended ? "outline" : "default"}>
+      <Button variant={!plan.recommended ? "secondary" : "primary"}>
         {plan.label}
       </Button>
       <ul className="flex flex-col gap-3 text-sm">
