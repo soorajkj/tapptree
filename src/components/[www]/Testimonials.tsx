@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { Container } from "@/components/core/container";
 
@@ -100,7 +101,7 @@ function Testimonial({
         </p>
         <div className="flex items-center gap-3">
           <div className="aspect-square size-10 overflow-hidden rounded-full">
-            <img src={img} alt={testimonial.name} width={460} height={460} />
+            <Image src={img} alt={testimonial.name} width={460} height={460} />
           </div>
           <div className="space-y-px">
             <p className="text-sm font-medium text-neutral-950">

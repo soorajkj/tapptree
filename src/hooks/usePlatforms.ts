@@ -1,8 +1,8 @@
 import { rpc } from "@/lib/rpc";
 import { useQuery } from "@tanstack/react-query";
 
-export const usePlatforms = () =>
-  useQuery({
+export const usePlatforms = () => {
+  return useQuery({
     queryKey: ["platforms"],
     queryFn: async () => {
       const res = await rpc.api.me.platforms.$get();
@@ -10,3 +10,4 @@ export const usePlatforms = () =>
       return await res.json();
     },
   });
+};

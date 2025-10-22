@@ -1,4 +1,4 @@
-import { type PropsWithChildren } from "react";
+import { Suspense, type PropsWithChildren } from "react";
 import { type Metadata } from "next";
 import fonts from "@/lib/fonts";
 import ThemeProvider from "@/components/ThemeProvider";
@@ -6,6 +6,7 @@ import ThemeToggler from "@/components/ThemeToggler";
 import QueryClientProvider from "@/components/QueryClientProvider";
 import Toaster from "@/components/Toaster";
 import "@/app/globals.css";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +23,9 @@ export default function Layout({ children }: PropsWithChildren) {
           defaultTheme="system"
         >
           <ThemeToggler />
-          <QueryClientProvider>{children}</QueryClientProvider>
+          <QueryClientProvider>
+            <Suspense fallback={<Loading />}>{children}</Suspense>
+          </QueryClientProvider>
           <Toaster />
         </ThemeProvider>
       </body>

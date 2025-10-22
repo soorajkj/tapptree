@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
+import LoadingComp from "@/components/Loading";
 
 export default function Loading() {
-  return <div className="">Loading</div>;
+  return <LoadingComp />;
 }

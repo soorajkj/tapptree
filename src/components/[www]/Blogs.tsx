@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "@/components/core/container";
+import Image from "next/image";
 
 export default function Blogs() {
   return (
@@ -26,14 +27,11 @@ export default function Blogs() {
           <div className="border-x border-neutral-200">
             <article className="relative overflow-hidden border-b border-neutral-200 bg-white sm:grid sm:grid-cols-3">
               <div className="relative m-1 aspect-square overflow-hidden rounded-xl">
-                <img
-                  alt="Embracing Remote Work Culture"
-                  loading="eager"
+                <Image
+                  alt=""
                   width={6394}
                   height={4500}
-                  decoding="async"
                   className="h-full w-full object-cover"
-                  style={{ color: "transparent" }}
                   src="/images/blog.webp"
                 />
               </div>
@@ -55,14 +53,12 @@ export default function Blogs() {
                 <div className="mt-auto flex items-center gap-2">
                   <div className="flex items-center gap-2">
                     <div className="aspect-square size-6 overflow-hidden rounded-full">
-                      <img
+                      <Image
                         src="https://avatars.githubusercontent.com/u/68236786?v=4"
-                        alt="Theo Balick"
+                        alt=""
                         width={460}
                         height={460}
                         className="size-full object-cover"
-                        loading="lazy"
-                        decoding="async"
                       />
                     </div>
                     <span className="line-clamp-1 text-sm text-neutral-600">
@@ -108,14 +104,12 @@ function Blog() {
       <div className="mt-auto flex justify-between gap-2">
         <div className="flex items-center gap-2">
           <div className="aspect-square size-6 overflow-hidden rounded-full">
-            <img
+            <Image
               src="https://avatars.githubusercontent.com/u/68236786?v=4"
-              alt="Theo Balick"
+              alt=""
               width={460}
               height={460}
               className="size-full object-cover"
-              loading="lazy"
-              decoding="async"
             />
           </div>
           <span className="line-clamp-1 text-sm text-neutral-600">

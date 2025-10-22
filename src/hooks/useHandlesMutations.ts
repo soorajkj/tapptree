@@ -23,7 +23,10 @@ export const useHandlesMutations = () => {
       if (!res.ok) throw new Error("Failed to create post!");
       return await res.json();
     },
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["handles"] }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["handles"] });
+      toast("Handle created successfully.");
+    },
   });
 
   const reorderHandleMutation = useMutation({
@@ -33,11 +36,11 @@ export const useHandlesMutations = () => {
     },
     onSuccess: (updatedHandles) => {
       queryClient.setQueryData(["handles"], updatedHandles);
-      toast("Your links have been successfully reordered.");
+      toast("Links reordered successfully.");
     },
     onError: () => {
-      toast("Failed to reorder links. Please try again.");
       queryClient.invalidateQueries({ queryKey: ["handles"] });
+      toast("Failed to reorder links. Please try again.");
     },
   });
 
