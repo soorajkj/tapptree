@@ -23,6 +23,8 @@ export default function ManageHandles() {
   const [stage, setStage] = useState<Stage>("list");
   const [sltdPlatform, setSltdPlatform] = useState<Platform | null>(null);
   // const [sltdHandle, setSltddHandle] = useState<Handle | null>(null);
+  // Force SortableList to re-render using a random key to avoid inconsistent drag behavior (DnD-kit quirk)
+  const [_random, setRandom] = useState<number | null>(null);
   const queryClient = useQueryClient();
 
   const platformsQuery = usePlatforms();
@@ -40,6 +42,7 @@ export default function ManageHandles() {
   const handleReorder = (handles: Handle[]) => {
     queryClient.setQueryData(["handles"], handles);
     const platformIds = handles.map((h) => h.platformId);
+    setRandom(Math.random());
     reorderHandleMutation.mutate({ platformIds });
   };
 
