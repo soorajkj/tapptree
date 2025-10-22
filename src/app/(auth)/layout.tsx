@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { type PropsWithChildren } from "react";
+import { Suspense, type PropsWithChildren } from "react";
 import Logo from "public/images/tapptree.svg";
+import Loading from "../loading";
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
@@ -10,7 +11,7 @@ export default function Layout({ children }: PropsWithChildren) {
           <Link href="/" className="flex items-center justify-center">
             <Logo width={48} height={48} />
           </Link>
-          {children}
+          <Suspense fallback={<Loading />}>{children}</Suspense>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ComponentProps } from "react";
+import React, { type ComponentProps } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/core/button";
@@ -13,7 +13,7 @@ const items = [
   { label: "Pricing", href: "/" },
 ];
 
-interface NavigationsProps extends ComponentProps<typeof motion.nav> {}
+type NavigationsProps = ComponentProps<typeof motion.nav>;
 
 export default function Navigations({ ...props }: NavigationsProps) {
   return (

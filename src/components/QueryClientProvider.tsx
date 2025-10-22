@@ -3,17 +3,14 @@
 import {
   isServer,
   QueryClient,
-  QueryClientConfig,
   QueryClientProvider as TQClientProvider,
   type QueryClientProviderProps,
 } from "@tanstack/react-query";
 
-const queryClientConfig = {
-  defaultOptions: { queries: { staleTime: 60 * 1000 } },
-} as QueryClientConfig;
-
 const makeQueryClient = () => {
-  return new QueryClient(queryClientConfig);
+  return new QueryClient({
+    defaultOptions: { queries: { staleTime: 60 * 1000 } },
+  });
 };
 
 let browserQueryClient: QueryClient | undefined = undefined;

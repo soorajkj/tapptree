@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  useCallback,
-  useEffect,
-  useState,
-  type ComponentProps,
-  type ReactNode,
-} from "react";
+import { useCallback, type ComponentProps, type ReactNode } from "react";
 import {
   closestCenter,
   DndContext,
@@ -42,15 +36,12 @@ export default function SortableList<T extends SortableItemBase>({
   renderItem,
   className,
 }: SortableListProps<T>) {
-  const [localItems, setLocalItems] = useState(items);
   const sensors = useSensors(
     useSensor(PointerSensor),
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
     })
   );
-
-  useEffect(() => setLocalItems(items), [items]);
 
   const handleDragEnd = useCallback(
     (event: DragEndEvent) => {
@@ -59,7 +50,6 @@ export default function SortableList<T extends SortableItemBase>({
       const from = items.findIndex(({ id }) => id === active.id);
       const to = items.findIndex(({ id }) => id === over.id);
       const state = arrayMove(items, from, to);
-      setLocalItems(state);
       onDragEventEnd(state);
     },
     [items, onDragEventEnd]
@@ -73,11 +63,8 @@ export default function SortableList<T extends SortableItemBase>({
       onDragEnd={handleDragEnd}
     >
       <ul className={sortableListStyles({ className })} role="application">
-        <SortableContext
-          items={localItems}
-          strategy={verticalListSortingStrategy}
-        >
-          {localItems.map((item) => renderItem(item))}
+        <SortableContext items={items} strategy={verticalListSortingStrategy}>
+          {items.map((item) => renderItem(item))}
         </SortableContext>
       </ul>
     </DndContext>
@@ -85,5 +72,5 @@ export default function SortableList<T extends SortableItemBase>({
 }
 
 const sortableListStyles = tv({
-  base: ["flex flex-col gap-2"],
+  base: ["flex flex-col gap-1"],
 });

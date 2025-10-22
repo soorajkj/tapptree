@@ -9,7 +9,7 @@ interface SortableItemProps extends ComponentProps<"li"> {
   uid: UniqueIdentifier;
 }
 
-export default function SortableItem({ children, uid }: SortableItemProps) {
+export default function SortableItem({ uid, ...props }: SortableItemProps) {
   const { setNodeRef, transform, transition } = useSortable({
     id: uid,
   });
@@ -19,9 +19,5 @@ export default function SortableItem({ children, uid }: SortableItemProps) {
     transition,
   } as CSSProperties;
 
-  return (
-    <li ref={setNodeRef} style={style}>
-      {children}
-    </li>
-  );
+  return <li ref={setNodeRef} style={style} className="relative" {...props} />;
 }

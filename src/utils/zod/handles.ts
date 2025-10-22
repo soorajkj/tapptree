@@ -5,6 +5,10 @@ export const createHandleSchema = z.object({
   url: z.string().min(1, "URL is rquired"),
 });
 
+export const createHandleWithoutPlatformIdSchema = createHandleSchema.omit({
+  platformId: true,
+});
+
 export const reorderHandlesSchema = z.object({
   platformIds: z.string().array().min(1),
 });
