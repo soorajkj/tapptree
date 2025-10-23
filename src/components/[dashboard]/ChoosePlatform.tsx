@@ -2,7 +2,6 @@
 
 import React, { Fragment } from "react";
 import { Dialog } from "@/components/core/dialog";
-import Button from "@/components/core/button";
 import { type Platform } from "@/types/platform";
 import { Icon } from "@/components/core/icon";
 
