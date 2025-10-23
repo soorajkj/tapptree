@@ -72,5 +72,5 @@ export default function SortableList<T extends SortableItemBase>({
 }
 
 const sortableListStyles = tv({
-  base: ["flex flex-col gap-1"],
+  base: ["flex flex-col"],
 });
