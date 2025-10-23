@@ -14,7 +14,7 @@ export const reorderHandlesSchema = z.object({
 });
 
 export const updateHandleSchema = z.object({
-  url: z.string().min(1, "URL is required").optional(),
+  url: z.string().trim().min(1, "URL is required"),
 });
 
 export const archiveHandleSchema = z.object({
