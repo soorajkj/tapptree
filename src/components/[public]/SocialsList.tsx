@@ -1,31 +1,15 @@
-import type { MediaIconType } from "../MediaIcon";
-import MediaIcon from "../MediaIcon";
-
-const test: { icon: MediaIconType }[] = [
-  { icon: "Telegram" },
-  { icon: "Threads" },
-  { icon: "Twitch" },
-  { icon: "Facebook" },
-  { icon: "Instagram" },
-  { icon: "Youtube" },
-  { icon: "X" },
-  { icon: "Tiktok" },
-  { icon: "Whatsapp" },
-  { icon: "Clubhouse" },
-  { icon: "Discord" },
-  { icon: "Linkedin" },
-];
+import React from "react";
 
 export default function SocialsList() {
   return (
-    <div className="mx-auto flex w-full flex-wrap items-center justify-center gap-2">
-      {test.map((_, i) => (
+    <div className="scrollbar-none flex w-full items-center gap-4 overflow-y-auto">
+      {[...Array(8)].map((_, i) => (
         <button
           key={i}
-          className="flex size-12 cursor-pointer items-center justify-center overflow-hidden rounded-lg hover:bg-neutral-800/30"
+          className="size-16 shrink-0 cursor-pointer rounded-full border-2 border-neutral-800 p-1"
         >
-          <div className="flex size-7 items-center justify-center">
-            <MediaIcon icon={_.icon} className="size-full" />
+          <div className="flex size-full items-center justify-center overflow-hidden rounded-full">
+            <div className="size-full dark:bg-neutral-900/60"></div>
           </div>
         </button>
       ))}

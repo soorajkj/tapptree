@@ -11,7 +11,7 @@ export const useSidebarStore = create(
       close: () => set({ isOpen: false }),
     })),
     {
-      name: "tapptree-sidebar",
+      name: "sidebar",
     }
   )
 );

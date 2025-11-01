@@ -7,7 +7,8 @@ export const authMiddleware = hono.createMiddleware(async (c, next) => {
   if (!session) {
     c.set("user", null);
     c.set("session", null);
-    return c.json({ error: "Unauthorized" }, 401);
+    await next();
+    return;
   }
 
   c.set("user", session.user);

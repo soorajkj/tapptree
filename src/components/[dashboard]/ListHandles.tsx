@@ -30,10 +30,7 @@ export default function ListHandles({
         </Dialog.DialogClose>
       </Dialog.DialogHeader>
       <div className="flex w-full flex-col gap-2">
-        <p>
-          Add your media handles, email and more as linked icons on your
-          Tapptree.
-        </p>
+        <p>Add your media handles as icons on your Tapptree.</p>
         <SortableList
           items={handles}
           onDragEventEnd={(handles: Handle[]) => onReorder(handles)}

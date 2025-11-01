@@ -7,7 +7,7 @@ export default function ThemeToggler() {
   const { themes, setTheme } = useTheme();
 
   return (
-    <div className="fixed right-6 bottom-6 z-50 flex items-center gap-1">
+    <div className="fixed top-6 right-6 z-50 flex items-center gap-1">
       {themes.map((theme) => (
         <div key={theme} onClick={() => setTheme(theme)}>
           {theme}

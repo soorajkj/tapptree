@@ -52,10 +52,14 @@ export default function PermaLink({}: PermaLinkProps) {
           influencer based in NYC.
         </p>
       </div>
-      <div className="flex items-center justify-center gap-6">
+      <div className="flex flex-col flex-wrap items-center gap-y-3">
         <div className="flex items-center gap-1 leading-none">
           <Icon icon="Globe" className="size-5" />
           <p className="text-neutral-50">sarahgreen.com</p>
+        </div>
+        <div className="flex items-center gap-1 leading-none">
+          <Icon icon="Mail" className="size-5" />
+          <p className="text-neutral-50">saragree@gmail.com</p>
         </div>
         <div className="flex items-center gap-1 leading-none">
           <Icon icon="Phone" className="size-5" />

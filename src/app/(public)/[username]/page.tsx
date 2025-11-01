@@ -9,7 +9,7 @@ export default async function Page({ params }: PageProps) {
   const { username } = await params;
 
   return (
-    <div className="flex min-h-screen flex-col items-stretch gap-8 px-4 py-12 md:px-0">
+    <div className="mx-auto flex min-h-screen w-full flex-col items-stretch gap-8">
       <PublicPage username={username} />
     </div>
   );

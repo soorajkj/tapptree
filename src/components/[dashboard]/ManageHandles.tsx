@@ -130,7 +130,7 @@ export default function ManageHandles() {
   return (
     <Dialog.DialogRoot onOpenChange={() => setStage("list")}>
       <Dialog.DialogTrigger asChild>
-        <Button>Manage Handles</Button>
+        <Button width="full">Manage Handles</Button>
       </Dialog.DialogTrigger>
       <Dialog.DialogContent className="max-w-md" aria-describedby={undefined}>
         {renderStage()}

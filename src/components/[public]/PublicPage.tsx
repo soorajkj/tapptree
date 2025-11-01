@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Fragment } from "react";
+import React from "react";
 import { notFound } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import PermaLink from "./Permalink";
@@ -27,12 +27,12 @@ export default function PublicPage({ username }: { username: string }) {
   if (isError || !data) return notFound();
 
   return (
-    <Fragment>
+    <div className="mx-auto flex max-w-md flex-col gap-8 py-12">
       <PermaLink user={data} />
       <SocialsList />
       <ShareTools />
       <OtherLinks />
       <Footer />
-    </Fragment>
+    </div>
   );
 }

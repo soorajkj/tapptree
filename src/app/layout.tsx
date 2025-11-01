@@ -1,12 +1,12 @@
 import { Suspense, type PropsWithChildren } from "react";
 import { type Metadata } from "next";
 import fonts from "@/lib/fonts";
+import QueryClientProvider from "@/components/QueryClientProvider";
 import ThemeProvider from "@/components/ThemeProvider";
 import ThemeToggler from "@/components/ThemeToggler";
-import QueryClientProvider from "@/components/QueryClientProvider";
 import Toaster from "@/components/Toaster";
+import Loader from "@/components/Loader";
 import "@/app/globals.css";
-import Loading from "./loading";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,18 +16,18 @@ export const metadata: Metadata = {
 export default function Layout({ children }: PropsWithChildren) {
   return (
     <html lang="en" className={fonts} suppressHydrationWarning>
-      <body className="h-full min-h-svh w-screen bg-neutral-50 font-sans text-base leading-normal font-normal text-neutral-500 not-italic antialiased">
-        <ThemeProvider
-          enableSystem
-          disableTransitionOnChange
-          defaultTheme="system"
-        >
-          <ThemeToggler />
-          <QueryClientProvider>
-            <Suspense fallback={<Loading />}>{children}</Suspense>
-          </QueryClientProvider>
-          <Toaster />
-        </ThemeProvider>
+      <body className="h-full min-h-screen w-screen bg-neutral-50 font-sans text-base leading-normal font-normal text-neutral-500 antialiased dark:bg-neutral-950 dark:text-neutral-500">
+        <QueryClientProvider>
+          <ThemeProvider
+            enableSystem
+            disableTransitionOnChange
+            defaultTheme="system"
+          >
+            <ThemeToggler />
+            <Suspense fallback={<Loader />}>{children}</Suspense>
+          </ThemeProvider>
+        </QueryClientProvider>
+        <Toaster />
       </body>
     </html>
   );
